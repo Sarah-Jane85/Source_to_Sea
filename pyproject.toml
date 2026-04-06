@@ -1,0 +1,19 @@
+[project]
+name = "river-risk-index"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "geopandas>=1.1.3",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.4",
+    "plotly>=6.6.0",
+    "polars>=1.39.3",
+    "scikit-learn>=1.8.0",
+    "scipy>=1.17.1",
+    "seaborn>=0.13.2",
+    "sqlalchemy>=2.0.48",
+    "streamlit>=1.55.0",
+]
