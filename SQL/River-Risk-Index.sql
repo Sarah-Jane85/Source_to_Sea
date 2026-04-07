@@ -1,3 +1,4 @@
+-- Reasearch Question 1: Where does ocean plastic come from?
 -- H1:  A small number of rivers (top 50) account for the majority of plastic entering the ocean 
 SET @global_total = 1005984.0;  
 
@@ -52,19 +53,21 @@ ORDER BY total_emissions_tons DESC;
 
 /*Findings:
 1. The "Middle-Income Trap" Dominates
-Lower-Middle-Income Countries: Contribute 50.07% of all global plastic emissions.
-Upper-Middle-Income Countries: Contribute 25.19%.
-Combined: These two groups account for 75.26% (three-quarters) of the world's ocean plastic.
+Lower-Middle-Income Countries: Contribute 65.02% of all global plastic emissions.
+Upper-Middle-Income Countries: Contribute 31.17%.
+Combined: These two groups account for 86.19% of the world's ocean plastic.
 
 2. High-Income Countries are relatively clean 
-Despite high consumption, High-Income Countries contribute only 1.83% of total emissions.
-Why? Their average emission per point is tiny (4.31 tons) compared to Lower-Middle-Income countries (67.13 tons). 
+Despite high consumption, High-Income Countries contribute only 2.11% of total emissions.
+Why? Their average emission per point is tiny (3.88 tons) compared to Lower-Middle-Income countries (52.69 tons). 
 This proves that wealth correlates with better waste management infrastructure, preventing plastic from leaking into rivers.
 
 3. The "Unknown" Category
-Our analysis covers 78% of global plastic emissions assigned to specific income groups. 
-The remaining 22% originates from emission points with no assigned country 
-(likely international waters or unresolved geographic coordinates) and was excluded from the income correlation analysis.
+Our analysis covers 99.4% of global plastic emissions assigned to specific income groups (Low: 1.09%, Lower-middle: 65.02%, Upper-middle: 24.9%, High: 3.88%). 
+The remaining 0.59% (5,961 tons) originates from 217 emission points located in countries with no available income classification for 2021. 
+These are not geographic unknowns—all points are mapped to specific countries—but reflect gaps in World Bank economic data. 
+Given their high average emission per point (27.47 tons), these locations warrant further investigation but were excluded from 
+income-correlation analysis to maintain methodological rigor.
 */
 
 -- H3: Asian rivers dominate global plastic input, but European rivers are underestimated
@@ -85,13 +88,13 @@ GROUP BY continent
 ORDER BY total_emissions_tons DESC;
 
 /*Finding: 
-Asia is the Primary Source, but Pollution Intensity Varies Globally Our analysis confirms that Asia is the dominant source of riverine plastic, contributing 63.6% of global emissions. 
-Crucially, this dominance is driven by both quantity and intensity: the average Asian river emits 53.5 tons/year, which is 69% higher than the global average (31.6 tons).
+Asia is the Primary Source, but Pollution Intensity Varies Globally Our analysis confirms that Asia is the dominant source of riverine plastic, contributing 82.06% of global emissions. 
+Crucially, this dominance is driven by both quantity and intensity: the average Asian river emits 42.54 tons/year, which is 35% higher than the global average (31.62 tons).
 
-Conversely, Europe contributes a negligible 0.45%, with an average emission of just 2.8 tons/river—eleven times cleaner than the global mean. 
+Conversely, Europe contributes a negligible 0.55%, with an average emission of just 2.61 tons/river —92% lower than the global mean. 
 This disproves the hypothesis that European rivers are "underestimated"; rather, it highlights the effectiveness of European waste containment systems.
 
 Strategic Implication: Global cleanup efforts must prioritize Asia for immediate volume reduction. 
-However, the high average emission in Africa (36.3 tons) signals a critical need for preventative infrastructure there before consumption rates rise further.
+However, the high average emission in Africa and South America (29.35 / 24.01 tons per point) signals a critical need for preventative infrastructure there before consumption rates rise further.
 */
 
