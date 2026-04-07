@@ -94,3 +94,4 @@ This disproves the hypothesis that European rivers are "underestimated"; rather,
 Strategic Implication: Global cleanup efforts must prioritize Asia for immediate volume reduction. 
 However, the high average emission in Africa (36.3 tons) signals a critical need for preventative infrastructure there before consumption rates rise further.
 */
+
