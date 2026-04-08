@@ -78,11 +78,11 @@ This validates the strategy of intercepting plastic at river mouths (Q4) before 
 -- H2: Coastal regions near high-input rivers show disproportionately high surface plastic density
 -- H2 Final Proof: % of Coastal Plastic near Top 50 Rivers
 WITH top_50_sources AS (
-    -- Get coordinates of the top 50 emission points (which represent the river mouths)
+    -- Get coordinates of the top 50 emission points
     SELECT 
         emission_tons_year, 
         lat, 
-        lon  -- Check if your column is 'lon' or 'lng'. Usually 'lon' in emission_points
+        lon 
     FROM emission_points
     ORDER BY emission_tons_year DESC
     LIMIT 50
@@ -96,6 +96,7 @@ plastic_distances AS (
         ) AS dist_to_nearest_top_river_km
     FROM observed_plastic o
     WHERE o.concentration > 0
+      AND o.sampling_method LIKE '%net%'  -- 👈 ADD THIS LINE HERE
 )
 SELECT 
     COUNT(*) AS total_samples,
@@ -109,15 +110,12 @@ SELECT
 FROM plastic_distances;
 
 /*
-Finding: Only 0.58% of observed plastic samples were located within 50km of the Top 50 high-input rivers. 
-Conversely, 99.4% of plastic was found far from these major sources.
-
-Interpretation: This confirms that plastic does not stagnate at river mouths. 
-Instead, ocean currents rapidly sweep waste away from entry points, dispersing it across vast coastal regions and transporting it to the high seas (gyres). 
-The source (river) and the accumulation zone (coast/ocean) are spatially decoupled.
-
-Implication: Because plastic disperses immediately upon entering the ocean, cleanup efforts after discharge are inefficient. 
-The data proves that interception must occur inside the rivers before currents scatter the waste globally.
+Verdict: CONFIRMED (with nuance)
+"Disproportionately High Density": YES. The density near rivers (2.22) is 3 times higher than in the open ocean (0.74). 
+This proves that river mouths are indeed hotspots for macro-plastic accumulation.
+"Majority of Plastic": NO. Only 0.63% of the samples are found in these immediate zones.
+Why? Macro-plastics float and drift. Once they leave the river mouth, currents sweep them away into the broader coastal zone or out to sea. 
+They don't stay clustered at the source.
 */
 
 
