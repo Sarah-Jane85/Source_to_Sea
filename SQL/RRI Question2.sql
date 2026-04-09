@@ -118,5 +118,3 @@ Why? Macro-plastics float and drift. Once they leave the river mouth, currents s
 They don't stay clustered at the source.
 */
 
-
-
