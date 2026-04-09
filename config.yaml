@@ -7,6 +7,7 @@ input_data:
   file6: "../Data/Raw/plastic-waste-generation.csv"
   file7: "../Data/Raw/plastic-waste-vs-pollution.csv"
   file8: "../Data/Raw/ocean_cleanup_efforts.csv"
+  file9: "../Data/Raw/pnas.2415492122.sd01.csv"
 
 output_data:
   file1: "../Data/Clean/rivers_with_countries.parquet"
@@ -17,6 +18,8 @@ output_data:
   file6: "../Data/Clean/plastic_generation.parquet" 
   file7: "../Data/Clean/plastic_vs_pollution.parquet"
   file8: "../Data/Clean/ocean_cleanup_efforts.parquet"
+  file9: "../Data/Clean/species"
+  
 
 tableau_output:
   file1: 
