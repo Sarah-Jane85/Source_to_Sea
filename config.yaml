@@ -18,7 +18,8 @@ output_data:
   file6: "../Data/Clean/plastic_generation.parquet" 
   file7: "../Data/Clean/plastic_vs_pollution.parquet"
   file8: "../Data/Clean/ocean_cleanup_efforts.parquet"
-  file9: "../Data/Clean/species"
+  file9: "../Data/Clean/species.parquet"
+  file10: "../Data/Clean/fish_to_human.parquet"
   
 
 tableau_output:
