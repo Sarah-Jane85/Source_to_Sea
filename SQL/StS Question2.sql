@@ -117,4 +117,3 @@ This proves that river mouths are indeed hotspots for macro-plastic accumulation
 Why? Macro-plastics float and drift. Once they leave the river mouth, currents sweep them away into the broader coastal zone or out to sea. 
 They don't stay clustered at the source.
 */
-

@@ -38,6 +38,17 @@ This offers a high-efficiency starting point for cleanup initiatives, proving th
 Original H1: "Top 50 rivers account for the majority." -> Rejected (They account for 15%).
 */
 
+CREATE OR REPLACE VIEW all_emission_points AS
+SELECT 
+    point_id,
+    country_id,
+    continent_id,
+    lat,
+    lon,
+    emission_tons_year AS emission,
+    income_group
+FROM emission_points;
+
 -- H2: Plastic input correlates with GDP per capita — lower income countries contribute more due to less waste infrastructure
 -- Calculate the Correlation Coefficient
 SELECT
