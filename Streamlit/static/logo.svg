@@ -1,0 +1,26 @@
+<svg width="200" height="200" viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <clipPath id="cc">
+    <circle cx="340" cy="200" r="148"/>
+  </clipPath>
+</defs>
+<circle cx="340" cy="200" r="156" fill="#0d1f2d"/>
+<circle cx="340" cy="200" r="148" fill="#0a2a4a"/>
+<g clip-path="url(#cc)">
+  <path d="M192 195 Q240 188 290 193 Q320 197 340 192 Q360 187 390 193 Q430 199 488 193" fill="none" stroke="#00856b" stroke-width="1.2" stroke-linecap="round" opacity="0.3"/>
+  <path d="M192 214 Q230 204 270 211 Q310 218 340 210 Q370 202 410 210 Q445 217 488 210" fill="none" stroke="#00d4aa" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/>
+  <rect x="192" y="217" width="296" height="131" fill="#061828" opacity="0.5"/>
+  <path d="M192 234 Q235 224 278 231 Q318 238 350 228 Q385 218 430 226 Q458 231 488 226" fill="none" stroke="#00d4aa" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/>
+  <path d="M192 252 Q238 242 282 249 Q322 256 354 246 Q388 236 432 244 Q460 249 488 244" fill="none" stroke="#00856b" stroke-width="1.5" stroke-linecap="round" opacity="0.45"/>
+  <path d="M192 270 Q240 260 285 267 Q325 274 357 264 Q390 254 434 262 Q462 267 488 262" fill="none" stroke="#00d4aa" stroke-width="1.2" stroke-linecap="round" opacity="0.35"/>
+  <path d="M192 288 Q242 278 288 285 Q328 292 360 282 Q393 272 436 280 Q463 285 488 280" fill="none" stroke="#00856b" stroke-width="1" stroke-linecap="round" opacity="0.25"/>
+  <path d="M192 306 Q244 296 290 303 Q330 310 363 300 Q396 290 438 298 Q464 303 488 298" fill="none" stroke="#00d4aa" stroke-width="0.8" stroke-linecap="round" opacity="0.18"/>
+  <g transform="translate(340, 168) scale(0.32) translate(-256, -180)">
+    <path fill="#e2e8f0" d="M453.004 35.117c-65.314 46.61-189.755 41.018-213.559 125.426C184.41 101.41 98.625 83.031 21.771 63.209c6.532 139.103 71.38 147.437 192.44 194.547 23.71 25.786 29.786 49.93 19.254 82.705 46.403 5.1 71.504 15.468 106.754 27.742-.708-71.67-25.14-108.928-75.518-175.035 11.058 4.233 44.979 37.02 56.578 58.607 109.419-42.421 147.64-112.074 131.725-216.658z"/>
+  </g>
+  <path d="M296 220 Q316 214 333 217" fill="none" stroke="#00d4aa" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/>
+  <path d="M347 217 Q364 214 384 220" fill="none" stroke="#00d4aa" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/>
+</g>
+<circle cx="340" cy="200" r="148" fill="none" stroke="#00856b" stroke-width="2.5"/>
+<circle cx="340" cy="200" r="156" fill="none" stroke="#1f2d40" stroke-width="1.5"/>
+</svg>
