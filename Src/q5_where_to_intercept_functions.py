@@ -64,30 +64,68 @@ def load_rivers(rivers_raw: pd.DataFrame, df_countries: pd.DataFrame) -> pd.Data
 
 
 def build_interceptors() -> pd.DataFrame:
-    """Return the manually curated interceptors dataframe."""
+    """Return the manually curated interceptors dataframe.
+    
+    Status types:
+    - 'In operation'
+    - 'Operation paused'
+    - 'Installed for testing'
+    - 'Port call / mobilisation' (ocean system, not river)
+    - 'Maintenance'
+    """
     interceptor_data = [
-        {"interceptor_id": "001", "river": "Cengkareng Drain",     "city": "Jakarta",        "country": "Indonesia",           "lat": -6.1144,  "lon": 106.7436, "year_deployed": 2019, "type": "Original"},
-        {"interceptor_id": "002", "river": "Klang River",          "city": "Selangor",       "country": "Malaysia",            "lat":  3.0319,  "lon": 101.3841, "year_deployed": 2019, "type": "Original"},
-        {"interceptor_id": "005", "river": "Klang River",          "city": "Klang",          "country": "Malaysia",            "lat":  3.0350,  "lon": 101.3900, "year_deployed": 2022, "type": "Original Gen3"},
-        {"interceptor_id": "004", "river": "Rio Ozama",            "city": "Santo Domingo",  "country": "Dominican Republic",  "lat": 18.4777,  "lon": -69.8803, "year_deployed": 2021, "type": "Original"},
-        {"interceptor_id": "003", "river": "Can Tho River",        "city": "Can Tho",        "country": "Vietnam",             "lat": 10.0341,  "lon": 105.7878, "year_deployed": 2021, "type": "Original"},
-        {"interceptor_id": "007", "river": "Ballona Creek",        "city": "Los Angeles",    "country": "United States",       "lat": 33.9800,  "lon": -118.4300,"year_deployed": 2022, "type": "Original Gen3"},
-        {"interceptor_id": "008", "river": "Kingston Pen Gully",   "city": "Kingston",       "country": "Jamaica",             "lat": 17.9927,  "lon": -76.7894, "year_deployed": 2022, "type": "Barrier"},
-        {"interceptor_id": "009", "river": "Barnes Gully",         "city": "Kingston",       "country": "Jamaica",             "lat": 17.9940,  "lon": -76.7850, "year_deployed": 2022, "type": "Barrier"},
-        {"interceptor_id": "010", "river": "Rae Town Gully",       "city": "Kingston",       "country": "Jamaica",             "lat": 17.9910,  "lon": -76.7820, "year_deployed": 2022, "type": "Tender"},
-        {"interceptor_id": "011", "river": "Tivoli Gully",         "city": "Kingston",       "country": "Jamaica",             "lat": 17.9960,  "lon": -76.7980, "year_deployed": 2022, "type": "Guard"},
-        {"interceptor_id": "012", "river": "D'Aguilar Gully",      "city": "Kingston",       "country": "Jamaica",             "lat": 17.9980,  "lon": -76.7930, "year_deployed": 2023, "type": "Guard"},
-        {"interceptor_id": "013", "river": "Mountain View Gully",  "city": "Kingston",       "country": "Jamaica",             "lat": 17.9970,  "lon": -76.7700, "year_deployed": 2023, "type": "Barrier"},
-        {"interceptor_id": "014", "river": "Shoemaker Gully",      "city": "Kingston",       "country": "Jamaica",             "lat": 17.9950,  "lon": -76.7860, "year_deployed": 2023, "type": "Barrier"},
-        {"interceptor_id": "006", "river": "Rio Las Vacas",        "city": "Guatemala City", "country": "Guatemala",           "lat": 14.7200,  "lon": -90.5500, "year_deployed": 2023, "type": "Barricade"},
-        {"interceptor_id": "021", "river": "Rio Motagua",          "city": "El Quetzalito",  "country": "Guatemala",           "lat": 15.7300,  "lon": -88.5700, "year_deployed": 2024, "type": "Barricade XL"},
-        {"interceptor_id": "019", "river": "Chao Phraya River",    "city": "Bangkok",        "country": "Thailand",            "lat": 13.7200,  "lon": 100.5300, "year_deployed": 2024, "type": "Original Gen3"},
-        {"interceptor_id": "020", "river": "Panama Bay tributary", "city": "Panama City",    "country": "Panama",              "lat":  8.9940,  "lon": -79.5190, "year_deployed": 2025, "type": "Original"},
+        # ── Indonesia ─────────────────────────────────────────
+        {"interceptor_id": "001", "river": "Cengkareng Drain",     "city": "Jakarta",        "country": "Indonesia",          "lat": -6.1144,   "lon": 106.7436,   "year_deployed": 2019, "type": "Original",        "status": "In operation"},
+        # ── Malaysia ──────────────────────────────────────────
+        {"interceptor_id": "002", "river": "Klang River",          "city": "Selangor",       "country": "Malaysia",           "lat":  3.0319,   "lon": 101.3841,   "year_deployed": 2019, "type": "Original",        "status": "In operation"},
+        {"interceptor_id": "005", "river": "Klang River",          "city": "Klang",          "country": "Malaysia",           "lat":  3.0350,   "lon": 101.3900,   "year_deployed": 2022, "type": "Original Gen3",   "status": "Maintenance"},
+        # ── Vietnam ───────────────────────────────────────────
+        {"interceptor_id": "003", "river": "Can Tho River",        "city": "Can Tho",        "country": "Vietnam",            "lat": 10.0341,   "lon": 105.7878,   "year_deployed": 2021, "type": "Original",        "status": "In operation"},
+        # ── Dominican Republic ────────────────────────────────
+        {"interceptor_id": "004", "river": "Rio Ozama",            "city": "Santo Domingo",  "country": "Dominican Republic", "lat": 18.4777,   "lon": -69.8803,   "year_deployed": 2021, "type": "Original",        "status": "Operation paused"},
+        # ── United States ─────────────────────────────────────
+        {"interceptor_id": "007", "river": "Ballona Creek",        "city": "Los Angeles",    "country": "United States",      "lat": 33.9800,   "lon": -118.4300,  "year_deployed": 2022, "type": "Original Gen3",   "status": "In operation"},
+        # ── Jamaica ───────────────────────────────────────────
+        {"interceptor_id": "008", "river": "Kingston Pen Gully",   "city": "Kingston",       "country": "Jamaica",            "lat": 17.9927,   "lon": -76.7894,   "year_deployed": 2022, "type": "Barrier",         "status": "In operation"},
+        {"interceptor_id": "009", "river": "Barnes Gully",         "city": "Kingston",       "country": "Jamaica",            "lat": 17.9940,   "lon": -76.7850,   "year_deployed": 2022, "type": "Barrier",         "status": "In operation"},
+        {"interceptor_id": "010", "river": "Rae Town Gully",       "city": "Kingston",       "country": "Jamaica",            "lat": 17.9910,   "lon": -76.7820,   "year_deployed": 2022, "type": "Tender",          "status": "In operation"},
+        {"interceptor_id": "011", "river": "Tivoli Gully",         "city": "Kingston",       "country": "Jamaica",            "lat": 17.9960,   "lon": -76.7980,   "year_deployed": 2022, "type": "Guard",           "status": "In operation"},
+        {"interceptor_id": "012", "river": "D'Aguilar Gully",      "city": "Kingston",       "country": "Jamaica",            "lat": 17.9980,   "lon": -76.7930,   "year_deployed": 2023, "type": "Guard",           "status": "In operation"},
+        {"interceptor_id": "013", "river": "Mountain View Gully",  "city": "Kingston",       "country": "Jamaica",            "lat": 17.9970,   "lon": -76.7700,   "year_deployed": 2023, "type": "Barrier",         "status": "In operation"},
+        {"interceptor_id": "014", "river": "Shoemaker Gully",      "city": "Kingston",       "country": "Jamaica",            "lat": 17.9950,   "lon": -76.7860,   "year_deployed": 2023, "type": "Barrier",         "status": "In operation"},
+        {"interceptor_id": "015", "river": "Sandy Gully",          "city": "Kingston",       "country": "Jamaica",            "lat": 17.999322, "lon": -76.845990, "year_deployed": 2024, "type": "Guard",           "status": "In operation"},
+        {"interceptor_id": "016", "river": "Balmagie Gully",       "city": "Kingston",       "country": "Jamaica",            "lat": 17.998279, "lon": -76.841219, "year_deployed": 2025, "type": "Guard",           "status": "In operation"},
+        # ── Guatemala ─────────────────────────────────────────
+        {"interceptor_id": "006", "river": "Rio Las Vacas",        "city": "Guatemala City", "country": "Guatemala",          "lat": 14.7200,   "lon": -90.5500,   "year_deployed": 2023, "type": "Barricade",       "status": "In operation"},
+        {"interceptor_id": "021", "river": "Rio Motagua",          "city": "El Quetzalito",  "country": "Guatemala",          "lat": 15.7300,   "lon": -88.5700,   "year_deployed": 2024, "type": "Barricade XL",    "status": "In operation"},
+        # ── Honduras ──────────────────────────────────────────
+        {"interceptor_id": "023", "river": "Rio Chamelecon",       "city": "San Pedro Sula", "country": "Honduras",           "lat": 15.771882, "lon": -87.841552, "year_deployed": 2025, "type": "Guard",           "status": "Installed for testing"},
+        # ── Thailand ──────────────────────────────────────────
+        {"interceptor_id": "019", "river": "Chao Phraya River",    "city": "Bangkok",        "country": "Thailand",           "lat": 13.7200,  "lon": 100.5300,     "year_deployed": 2024, "type": "Original Gen3",   "status": "In operation"},
+        # ── Panama ────────────────────────────────────────────
+        {"interceptor_id": "020", "river": "Panama Bay tributary", "city": "Panama City",    "country": "Panama",             "lat":  8.9940,  "lon": -79.5190,     "year_deployed": 2025, "type": "Original",        "status": "In operation"},
+        {"interceptor_id": "022", "river": "Rio Abajo",            "city": "Panama City",    "country": "Panama",             "lat": 9.013421, "lon": -79.485937,   "year_deployed": 2025, "type": "Guard",           "status": "Installed for testing"},
+        # ── Ocean System (not a river interceptor) ────────────
+        {"interceptor_id": "S03", "river": "Pacific Ocean",        "city": "Victoria",       "country": "Canada",             "lat": 48.4284,  "lon": -123.3656,    "year_deployed": 2023, "type": "Ocean System",    "status": "Port call / mobilisation"},
     ]
     df = pd.DataFrame(interceptor_data)
     df["has_interceptor"] = True
-    print(f"Total interceptors: {len(df)}")
-    print(f"Countries covered : {df['country'].nunique()}")
+
+    # Summary stats
+    river_df = df[df["type"] != "Ocean System"]
+    active    = river_df[~river_df["status"].isin(["Operation paused", "Maintenance"])]
+    paused    = river_df[river_df["status"] == "Operation paused"]
+    maintenance = river_df[river_df["status"] == "Maintenance"]
+    testing   = river_df[river_df["status"] == "Installed for testing"]
+
+    print(f"Total interceptors (incl. ocean system) : {len(df)}")
+    print(f"River interceptors total                : {len(river_df)}")
+    print(f"  — In operation                        : {len(river_df[river_df['status'] == 'In operation'])}")
+    print(f"  — Installed for testing               : {len(testing)}")
+    print(f"  — Operation paused                    : {len(paused)}")
+    print(f"  — Maintenance                         : {len(maintenance)}")
+    print(f"Countries covered                       : {river_df['country'].nunique()}")
+
     return df
 
 
