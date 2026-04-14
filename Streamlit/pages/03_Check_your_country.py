@@ -177,15 +177,15 @@ with col_bar:
           TOP 3 EMISSION POINTS
         </div>
         <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
-          <div style="color:#e2e8f0; font-size:0.8rem;">{get_name(top3.iloc[0]["lat"], top3.iloc[0]["lon"], selected_country)}</div>
+          <div style="color:#e2e8f0; font-size:0.8rem;">{get_name(top3.iloc[0]["lat"], top3.iloc[0]["lon"], selected)}</div>
           <div style="color:#8b1a2d; font-size:0.8rem; font-weight:700;">{top3.iloc[0]["emission"]:,.0f} t/yr</div>
         </div>
         <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
-          <div style="color:#e2e8f0; font-size:0.8rem;">{get_name(top3.iloc[1]["lat"], top3.iloc[1]["lon"], selected_country)}</div>
+          <div style="color:#e2e8f0; font-size:0.8rem;">{get_name(top3.iloc[1]["lat"], top3.iloc[1]["lon"], selected)}</div>
           <div style="color:#8b1a2d; font-size:0.8rem; font-weight:700;">{top3.iloc[1]["emission"]:,.0f} t/yr</div>
         </div>
         <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
-          <div style="color:#e2e8f0; font-size:0.8rem;">{get_name(top3.iloc[2]["lat"], top3.iloc[2]["lon"], selected_country)}</div>
+          <div style="color:#e2e8f0; font-size:0.8rem;">{get_name(top3.iloc[2]["lat"], top3.iloc[2]["lon"], selected)}</div>
           <div style="color:#8b1a2d; font-size:0.8rem; font-weight:700;">{top3.iloc[2]["emission"]:,.0f} t/yr</div>
         </div>
       </div>
