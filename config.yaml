@@ -1,4 +1,4 @@
-input_data:
+input_data_modular:
   file1: "../Data/Raw/meijer2021/Meijer2021_midpoint_emissions.shp"
   file2: "../Data/Raw/global_index13320_starts_in_jan.csv"
   file3: "../Data/Raw/marine_microplastics_wgs84_-4941760893681039301.csv"
@@ -9,7 +9,18 @@ input_data:
   file8: "../Data/Raw/ocean_cleanup_efforts.csv"
   file9: "../Data/Raw/pnas.2415492122.sd01.csv"
 
-output_data:
+input_data_exploratory:
+  file1: "../../Data/Raw/meijer2021/Meijer2021_midpoint_emissions.shp"
+  file2: "../../Data/Raw/global_index13320_starts_in_jan.csv"
+  file3: "../../Data/Raw/marine_microplastics_wgs84_-4941760893681039301.csv"
+  file4: "../../Data/Raw/ocean-waste-by-item.csv"
+  file5: "../../Data/Raw/plastic-waste-accumulated-in-oceans.csv"
+  file6: "../../Data/Raw/plastic-waste-generation.csv"
+  file7: "../../Data/Raw/plastic-waste-vs-pollution.csv"
+  file8: "../../Data/Raw/ocean_cleanup_efforts.csv"
+  file9: "../../Data/Raw/pnas.2415492122.sd01.csv"
+
+output_data_modular:
   file1: "../Data/Clean/rivers_with_countries.parquet"
   file2: "../Data/Clean/plastic_adrift.parquet"
   file3: "../Data/Clean/marine_microplastics.parquet"
@@ -20,6 +31,18 @@ output_data:
   file8: "../Data/Clean/ocean_cleanup_efforts.parquet"
   file9: "../Data/Clean/species.parquet"
   file10: "../Data/Clean/fish_to_human.parquet"
+
+output_data_exploratory:
+  file1: "../../Data/Clean/rivers_with_countries.parquet"
+  file2: "../../Data/Clean/plastic_adrift.parquet"
+  file3: "../../Data/Clean/marine_microplastics.parquet"
+  file4: "../../Data/Clean/top50_rivers_ranked.parquet" 
+  file5: "../../Data/Clean/ocean_plastic.parquet"
+  file6: "../../Data/Clean/plastic_generation.parquet" 
+  file7: "../../Data/Clean/plastic_vs_pollution.parquet"
+  file8: "../../Data/Clean/ocean_cleanup_efforts.parquet"
+  file9: "../../Data/Clean/species.parquet"
+  file10: "../../Data/Clean/fish_to_human.parquet"
   
 
 tableau_output:

@@ -37,9 +37,9 @@ def load_data(config: dict) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     Load microplastics, cleanup efforts, and rivers parquets.
     Returns (microplastic, df_cleanup, rivers).
     """
-    microplastic = pd.read_parquet(config["output_data"]["file3"])
-    df_cleanup   = pd.read_parquet(config["output_data"]["file8"])
-    rivers       = pd.read_parquet(config["output_data"]["file1"])
+    microplastic = pd.read_parquet(config["output_data_modular"]["file3"])
+    df_cleanup   = pd.read_parquet(config["output_data_modular"]["file8"])
+    rivers       = pd.read_parquet(config["output_data_modular"]["file1"])
     return microplastic, df_cleanup, rivers
 
 
