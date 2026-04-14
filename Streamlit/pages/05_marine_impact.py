@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 import pandas as pd
 import numpy as np
 from components.shared import (
-    load_species, apply_global_css, page_header
+    load_species, load_fish_to_human, apply_global_css, page_header
 )
 
 st.set_page_config(page_title="Marine Impact", page_icon="🐢", layout="wide")
@@ -239,3 +239,147 @@ fig_map.update_layout(
     legend=dict(bgcolor="#111827", bordercolor="#1f2d40"),
 )
 st.plotly_chart(fig_map, use_container_width=True)
+
+# ── From Ocean to Plate ───────────────────────────────────────
+
+st.markdown("---")
+with open("assets/sushi_icon.svg", "r") as f:
+    sushi_svg = f.read()
+
+sushi_svg_small = sushi_svg.replace('width="800px" height="800px"', 'width="50px" height="50px"')
+
+st.markdown("""
+<div style="display:flex; align-items:center; gap:0.75rem;">
+  <h3 style="font-family:'Orbitron',sans-serif; color:#e2e8f0; margin:0;">
+    From Ocean to Plate
+  </h3>
+  <div style="width:50px; height:50px; flex-shrink:0;">""" + sushi_svg_small + """</div>
+</div>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<div style="font-family:'DM Sans',sans-serif; font-size:0.85rem; color:#64748b;
+            margin-top:0.5rem; margin-bottom:1rem; line-height:1.6;">
+  Microplastic particles found per individual fish examined.<br>
+  Fish consumed whole <strong style="color:#f59e0b;">(★) mean the entire plastic load
+  is ingested by the consumer.</strong>
+</div>
+""", unsafe_allow_html=True)
+
+fish = load_fish_to_human()
+fish = fish.sort_values("mp_per_individual", ascending=True)
+
+habitat_colors = {
+    "Pelagic":  "#00d4aa",
+    "Demersal": "#f59e0b",
+    "Farmed":   "#ff3b5c",
+}
+
+bar_colors = [habitat_colors.get(h, "#64748b") for h in fish["habitat"]]
+
+# Add star to consumed_whole fish
+fish["label"] = fish["common_name"] + fish["consumed_whole"].apply(
+    lambda x: " ★" if x else ""
+)
+
+col_fish, col_info = st.columns([3, 2], gap="large")
+
+with col_fish:
+    fig_fish = go.Figure(go.Bar(
+        x=fish["mp_per_individual"],
+        y=fish["label"],
+        orientation="h",
+        marker=dict(
+            color=bar_colors,
+            line=dict(color="#0a0e17", width=0.5),
+        ),
+        text=[f"{v:.1f} MPs" for v in fish["mp_per_individual"]],
+        textposition="outside",
+        textfont=dict(color="#64748b", size=9),
+        hovertemplate="<b>%{y}</b><br>%{x:.1f} microplastic particles per individual"
+                      "<br>Habitat: %{customdata[0]}"
+                      "<br>Feeding: %{customdata[1]}"
+                      "<br>Region: %{customdata[2]}<extra></extra>",
+        customdata=fish[["habitat", "feeding_type", "region"]].values,
+    ))
+
+    fig_fish.update_layout(
+        paper_bgcolor="#0a0e17",
+        plot_bgcolor="#111827",
+        font=dict(color="#e2e8f0"),
+        title=dict(text="Microplastics per Individual Fish",
+                   font=dict(color="#e2e8f0", size=14)),
+        height=420,
+        xaxis=dict(
+            title="Microplastic particles per individual",
+            gridcolor="#1f2d40",
+        ),
+        yaxis=dict(gridcolor="#1f2d40"),
+        margin=dict(l=12, r=80, t=40, b=40),
+    )
+    st.plotly_chart(fig_fish, use_container_width=True)
+
+with col_info:
+    # Legend
+    st.markdown("""
+    <div style="background:#111827; border:1px solid #1f2d40; border-radius:6px;
+                padding:1.2rem; margin-bottom:0.75rem; margin-top:-5rem;">
+      <div style="font-family:'Space Mono',monospace; font-size:0.65rem; color:#64748b;
+                  letter-spacing:0.08em; margin-bottom:0.75rem;">HABITAT</div>
+      <div style="display:flex; flex-direction:column; gap:0.5rem;">
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <div style="width:12px; height:12px; border-radius:2px;
+                      background:#00d4aa;"></div>
+          <span style="font-size:0.82rem; color:#e2e8f0;">Pelagic (open water)</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <div style="width:12px; height:12px; border-radius:2px;
+                      background:#f59e0b;"></div>
+          <span style="font-size:0.82rem; color:#e2e8f0;">Demersal (bottom-dwelling)</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <div style="width:12px; height:12px; border-radius:2px;
+                      background:#ff3b5c;"></div>
+          <span style="font-size:0.82rem; color:#e2e8f0;">Farmed</span>
+        </div>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Key findings
+    st.markdown(f"""
+    <div style="background:#111827; border:1px solid #1f2d40; border-left:3px solid #ff3b5c;
+                border-radius:6px; padding:1.2rem; margin-bottom:0.75rem;">
+      <div style="font-family:'Space Mono',monospace; font-size:0.65rem; color:#64748b;
+                  letter-spacing:0.08em; margin-bottom:0.5rem;">SURPRISING FINDING</div>
+      <div style="font-size:0.85rem; color:#e2e8f0; line-height:1.6;">
+        <strong style="color:#ff3b5c;">Farmed rainbow trout</strong> has the highest
+        contamination at <strong style="color:#ff3b5c;">9.3 MPs</strong> per individual —
+        more than wild-caught species. Likely from microplastic-contaminated feed
+        and water in aquaculture systems.
+      </div>
+    </div>
+
+    <div style="background:#111827; border:1px solid #1f2d40; border-left:3px solid #00d4aa;
+                border-radius:6px; padding:1.2rem; margin-bottom:0.75rem;">
+      <div style="font-family:'Space Mono',monospace; font-size:0.65rem; color:#64748b;
+                  letter-spacing:0.08em; margin-bottom:0.5rem;">★ CONSUMED WHOLE</div>
+      <div style="font-size:0.85rem; color:#e2e8f0; line-height:1.6;">
+        <strong style="color:#00d4aa;">Sardines and anchovies</strong> are typically
+        eaten whole — meaning the consumer ingests 100% of the plastic load
+        found in the fish, gut and all.
+      </div>
+    </div>
+
+    <div style="background:#111827; border:1px solid #1f2d40; border-left:3px solid #64748b;
+                border-radius:6px; padding:1.2rem;">
+      <div style="font-family:'Space Mono',monospace; font-size:0.65rem; color:#64748b;
+                  letter-spacing:0.08em; margin-bottom:0.5rem;">SOURCES</div>
+      <div style="font-size:0.75rem; color:#64748b; line-height:1.7;">
+        Danopoulos et al. 2020<br>
+        Frontiers Marine Science 2023<br>
+        Black Sea study 2023<br>
+        Iberian Peninsula study 2023
+      </div>
+    </div>
+    """, unsafe_allow_html=True)

@@ -91,3 +91,22 @@ def page_header(title, logo_svg):
     with col2:
         st.title(title)
     st.markdown('<hr style="margin-top:-0.3rem; border-color:#1f2d40;">', unsafe_allow_html=True)
+
+@st.cache_data
+def load_fish_to_human():
+    return pd.read_parquet(os.path.join(CLEAN_DIR, "fish_to_human.parquet")) 
+
+
+# Load river names lookup
+river_names_df = load_river_names()
+
+def get_name(lat, lon, country):
+    """Return river name if available, else formatted coordinates."""
+    match = river_names_df[
+        (river_names_df['country'] == country) &
+        (abs(river_names_df['lat'] - lat) < 0.01) &
+        (abs(river_names_df['lon'] - lon) < 0.01)
+    ]
+    if not match.empty and match.iloc[0]['river_name'] != '':
+        return match.iloc[0]['river_name']
+    return f"{lat:.2f}°N, {lon:.2f}°E"

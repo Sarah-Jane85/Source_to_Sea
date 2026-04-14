@@ -49,7 +49,7 @@ with col2:
 
 st.markdown("""
 <div style="display:flex; flex-direction:column; align-items:center;
-            text-align:center; gap:0.5rem; margin-top:-2rem;">
+            text-align:center; gap:0.5rem; margin-top:-6rem;">
   <div style="font-family:'Syne',sans-serif; font-weight:800; font-size:2.8rem;
               color:#e2e8f0; letter-spacing:-0.03em;">
     Source to Sea

@@ -33,17 +33,20 @@ covered_lons = interceptors["lon"].tolist()
 top_rivers = rivers.nlargest(500, "emission").copy()
 
 # ── KPIs ──────────────────────────────────────────────────────
-k1, k2, k3, k4 = st.columns(4)
+k1, k2, k3, k4, k5 = st.columns(5)
 with k1:
-    st.metric("Interceptors Deployed", f"{INTERCEPTORS_DEPLOYED} / {INTERCEPTORS_NEEDED}")
+    st.metric("Top 101 Rivers", f"{TOP_101_PCT}%",
+              delta="of global input", delta_color="off")
 with k2:
-    st.metric("Still Needed", str(INTERCEPTORS_GAP), delta_color="inverse")
+    st.metric("Guatemala Benchmark", f"{GUATEMALA_T_PER_YEAR:,} t/yr",
+              delta="per interceptor", delta_color="off")
 with k3:
-    st.metric("Guatemala Benchmark", f"{GUATEMALA_T_PER_YEAR:,} t/yr", delta="per interceptor", delta_color="off")
+    st.metric("Interceptors Deployed", f"{INTERCEPTORS_DEPLOYED} / {INTERCEPTORS_NEEDED}")
 with k4:
-    st.metric("Top River (Philippines)", f"{PHILIPPINES_TOP_T:,} t/yr", delta="uncovered", delta_color="inverse")
-
-st.markdown("<br>", unsafe_allow_html=True)
+    st.metric("Still Needed", str(INTERCEPTORS_GAP), delta_color="inverse")    
+with k5:
+    st.metric("Top River (Philippines)", f"{PHILIPPINES_TOP_T:,} t/yr",
+              delta="uncovered", delta_color="inverse")
 
 # ── Map ───────────────────────────────────────────────────────
 fig_map = go.Figure()
