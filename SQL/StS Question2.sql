@@ -1,6 +1,7 @@
 -- Research Question 2: Where does plastic accumulate?
 -- create marine_microplastic table
 
+USE source_to_sea;
 
 -- H1 The majority of floating plastic concentrates in 5 gyre systems, with the North Pacific being the largest
 WITH real_zones AS (

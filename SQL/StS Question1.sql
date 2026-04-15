@@ -1,6 +1,9 @@
 -- Reasearch Question 1: Where does ocean plastic come from?
 -- H1:  A small number of rivers (top 50) account for the majority of plastic entering the ocean 
-SET @global_total = 1005984.0;  
+USE source_to_sea;
+
+select round(sum(emission_tons_year)) from emission_points;
+-- global total = 1.001.00 tons a year 
 
 WITH ranked_rivers AS (
     SELECT
@@ -20,8 +23,8 @@ SELECT
     river_name,
     country_name,
     emission_tons_year,
-    ROUND(emission_tons_year      / @global_total * 100, 2) AS pct_of_global,
-    ROUND(cumulative_emissions    / @global_total * 100, 2) AS cumulative_pct_of_global
+    ROUND(emission_tons_year      / (select round(sum(emission_tons_year)) from emission_points) * 100, 2) AS pct_of_global,
+    ROUND(cumulative_emissions    / (select round(sum(emission_tons_year)) from emission_points) * 100, 2) AS cumulative_pct_of_global
 FROM ranked_rivers
 WHERE river_rank <= 50
 ORDER BY river_rank;

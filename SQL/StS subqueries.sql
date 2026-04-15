@@ -12,6 +12,7 @@
 --   4. Window Function (RANK OVER PARTITION BY) to reset ranking per continent.
 --   5. Outer Query Filtering to isolate the Top 3.
 -- =============================================================================
+USE source_to_sea;
 
 SELECT 
     continent_name,

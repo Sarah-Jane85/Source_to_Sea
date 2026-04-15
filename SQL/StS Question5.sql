@@ -1,4 +1,5 @@
 -- H3: Deploying interceptors in the top 5 unaddressed rivers could reduce ocean plastic input by 25%
+USE source_to_sea;
 
 WITH UnaddressedRivers AS (
     SELECT 
@@ -12,6 +13,7 @@ WITH UnaddressedRivers AS (
             FROM ocean_cleanup_efforts 
             WHERE source_url IS NOT NULL
         )
+		AND r.river_name != 'Klang'  -- Exclude 'Klang' because it is number 4 on the list but has an interceptor)
 ),
 RankedRivers AS (
     SELECT 
