@@ -25,11 +25,11 @@ COLORS = {
     "teal_dim":"#00856b",
     "red":     "#8b1a2d",
     "amber":   "#f59e0b",
-    "bg":      "#0a0e17",
-    "surface": "#111827",
+    "bg":      "#014654",
+    "surface": "#014654",
     "border":  "#1f2d40",
     "text":    "#e2e8f0",
-    "muted":   "#64748b",
+    "muted":   "#ccc7c7",
 }
 
 # ── Data loaders ──────────────────────────────────────────────
@@ -67,7 +67,7 @@ def apply_global_css():
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800&family=DM+Sans:wght@300;400;500&family=Space+Mono&display=swap');
     html, body, [data-testid="stAppViewContainer"] {
-        background-color: #0a0e17 !important;
+        background-color: #014654 !important;
         color: #e2e8f0 !important;
         font-family: 'DM Sans', sans-serif !important;
     }
@@ -95,13 +95,4 @@ def page_header(title, logo_svg):
 @st.cache_data
 def load_fish_to_human():
     return pd.read_parquet(os.path.join(CLEAN_DIR, "fish_to_human.parquet")) 
-
-@st.cache_data
-def load_river_names():
-    path = os.path.join(CLEAN_DIR, "river_names.parquet")
-    if not os.path.exists(path):
-        return pd.DataFrame(columns=["country", "lat", "lon", "river_name"])
-    df = pd.read_parquet(path)
-    return df[["country", "lat", "lon", "river_name"]]
-
 

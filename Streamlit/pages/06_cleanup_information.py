@@ -13,8 +13,8 @@ with open("assets/logo_icon.svg", "r") as f:
 page_header("Ways Action is being taken", logo_svg)
 
 st.markdown("""
-<div style="font-family:'DM Sans',sans-serif; font-size:0.95rem; color:#64748b;
-            max-width:800px; line-height:1.7; margin-bottom:2rem;">
+<div style="font-family:'DM Sans',sans-serif; font-size:1rem; color:#ccc7c7;
+            max-width:800px; line-height:1; margin-bottom:2rem;">
   Plastic reaches the ocean in stages — from land to waterway to sea.
   That means we can intercept it at every stage.
   Here are the three most impactful ways to stop plastic before it becomes an ocean problem.
@@ -25,17 +25,19 @@ st.markdown("""
 col1, col2 = st.columns([2, 3], gap="large")
 
 with col1:
+    st.markdown('<div style="padding-top:6rem;">', unsafe_allow_html=True)
     st.image("assets/park_cleanup.jpg", use_container_width=True)
+    st.markdown('</div>', unsafe_allow_html=True)
 
 with col2:
     st.markdown("""
     <div style="padding-top:1rem;">
-      <div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#00d4aa;
+      <div style="font-family:'Space Mono',monospace; font-size:1rem; color:#00d4aa;
                   letter-spacing:0.15em; margin-bottom:0.5rem;">STEP 01 — STOP IT AT THE SOURCE</div>
       <h2 style="font-family:'Orbitron',sans-serif; color:#e2e8f0; margin-bottom:1rem;
                  font-size:1.6rem;">Community Land Cleanups</h2>
-      <div style="font-family:'DM Sans',sans-serif; font-size:0.92rem; color:#94a3b8;
-                  line-height:1.8;">
+      <div style="font-family:'DM Sans',sans-serif; font-size:1.2rem; color:#ccc7c7;
+                  line-height:1;">
         The most effective intervention is the simplest — picking up plastic before
         it ever reaches a waterway. Litter left on land gets carried by rain and wind
         into drains, rivers and ultimately the ocean.
@@ -73,12 +75,12 @@ col1, col2 = st.columns([3, 2], gap="large")
 with col1:
     st.markdown("""
     <div style="padding-top:1rem;">
-      <div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#f59e0b;
+      <div style="font-family:'Space Mono',monospace; font-size:1rem; color:#f59e0b;
                   letter-spacing:0.15em; margin-bottom:0.5rem;">STEP 02 — CATCH IT AT THE COAST</div>
       <h2 style="font-family:'Orbitron',sans-serif; color:#e2e8f0; margin-bottom:1rem;
                  font-size:1.6rem;">Beach Cleanups</h2>
-      <div style="font-family:'DM Sans',sans-serif; font-size:0.92rem; color:#94a3b8;
-                  line-height:1.8;">
+      <div style="font-family:'DM Sans',sans-serif; font-size:1.2rem; color:#ccc7c7;
+                  line-height:1;">
         Beaches are the last checkpoint before plastic enters open water — but they're
         also where ocean plastic washes back ashore, giving us a second chance to
         remove it from the cycle.
@@ -106,7 +108,9 @@ with col1:
     """, unsafe_allow_html=True)
 
 with col2:
+    st.markdown('<div style="padding-top:6rem;">', unsafe_allow_html=True)
     st.image("assets/beach_cleanup.jpg", use_container_width=True)
+    st.markdown('</div>', unsafe_allow_html=True)
 
 st.markdown("<br>", unsafe_allow_html=True)
 st.markdown('<hr style="border-color:#1f2d40;">', unsafe_allow_html=True)
@@ -115,12 +119,12 @@ st.markdown("<br>", unsafe_allow_html=True)
 # ── Section 3 — Interceptors ──────────────────────────────────
 st.markdown("""
 <div style="margin-bottom:1.5rem;">
-  <div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#ff3b5c;
+  <div style="font-family:'Space Mono',monospace; font-size:1rem; color:#ff3b5c;
               letter-spacing:0.15em; margin-bottom:0.5rem;">STEP 03 — STOP IT IN THE RIVER</div>
   <h2 style="font-family:'Orbitron',sans-serif; color:#e2e8f0; margin-bottom:1rem;
              font-size:1.6rem;">River Interceptors</h2>
-  <div style="font-family:'DM Sans',sans-serif; font-size:0.92rem; color:#94a3b8;
-              line-height:1.8; max-width:900px;">
+  <div style="font-family:'DM Sans',sans-serif; font-size:1.2rem; color:#ccc7c7;
+              line-height:1; max-width:900px;">
     Rivers are the main highway for plastic travelling from land to ocean —
     <strong style="color:#e2e8f0;">1,000 rivers account for 80%</strong> of all
     river-borne plastic entering the sea. Interceptors are autonomous, solar-powered
@@ -190,8 +194,8 @@ with s2:
     <div style="background:#111827; border:1px solid #1f2d40; border-left:3px solid #f59e0b;
                 border-radius:6px; padding:1rem 1.2rem; text-align:center;">
       <div style="color:#f59e0b; font-family:'Orbitron',sans-serif;
-                  font-size:1.4rem; font-weight:700;">10M kg</div>
-      <div style="color:#64748b; font-size:0.8rem; margin-top:0.3rem;">removed by 2024</div>
+                  font-size:1.4rem; font-weight:700;">10,000 t</div>
+      <div style="color:#64748b; font-size:0.8rem; margin-top:0.3rem;">removed by 1 interceptor in 2024</div>
     </div>
     """, unsafe_allow_html=True)
 

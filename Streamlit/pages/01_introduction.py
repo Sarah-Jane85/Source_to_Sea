@@ -14,8 +14,8 @@ page_header("Source to Sea", logo_svg)
 
 # ── Intro ──────────────────────────────────────────────────────
 st.markdown("""
-<div style="font-family:'DM Sans',sans-serif; font-size:1rem; color:#64748b;
-            max-width:900px; line-height:1.8; margin-bottom:2rem;">
+<div style="font-family:'DM Sans',sans-serif; font-size:1.5rem; color:#ccc7c7;
+            max-width:900px; line-height:1.3; margin-bottom:2rem;">
   Every year, <strong style="color:#e2e8f0;">1,001,000 tonnes</strong> of plastic
   enters the world's oceans — not in one catastrophic event, but bottle by bottle,
   bag by bag, through rivers and coastlines across the globe.
@@ -32,28 +32,32 @@ col1, col2, col3 = st.columns(3, gap="medium")
 with col1:
     st.image("assets/garbage_patch.jpg", use_container_width=True)
     st.markdown("""
-    <div style="font-family:'Space Mono',monospace; font-size:0.65rem; color:#64748b;
+    <div style="font-family:'Space Mono',monospace; font-size:0.85rem; color:#ccc7c7;
                 text-align:center; margin-top:0.4rem;">
     A plastic garbage patch in the ocean
     </div>""", unsafe_allow_html=True)
 with col2:
     st.image("assets/turtle1.jpg", use_container_width=True)
     st.markdown("""
-    <div style="font-family:'Space Mono',monospace; font-size:0.65rem; color:#64748b;
+    <div style="font-family:'Space Mono',monospace; font-size:0.85rem; color:#ccc7c7;
                 text-align:center; margin-top:0.4rem;">
     Sea turtle ingesting a plastic bag
     </div>""", unsafe_allow_html=True)
 with col3:
     st.image("assets/inceptors.jpg", use_container_width=True)
     st.markdown("""
-    <div style="font-family:'Space Mono',monospace; font-size:0.65rem; color:#64748b;
+    <div style="font-family:'Space Mono',monospace; font-size:0.85rem; color:#ccc7c7;
                 text-align:center; margin-top:0.4rem;">
     The Ocean Cleanup Interceptor concept
     </div>""", unsafe_allow_html=True)
 
+# ── Divider ────────────────────────────────────────────────────
+st.markdown("<br>", unsafe_allow_html=True)
+st.markdown('<hr style="border-color:#1f2d40;">', unsafe_allow_html=True)
+
 # ── What this dashboard covers ────────────────────────────────
 st.markdown("""
-<div style="font-family:'Space Mono',monospace; font-size:1rem; color:#00d4aa;
+<div style="font-family:'Space Mono',monospace; font-size:1.8rem; color:#00d4aa;
             letter-spacing:0.15em; margin-bottom:1.5rem;">WHAT THIS DASHBOARD COVERS</div>
 """, unsafe_allow_html=True)
 
@@ -100,7 +104,7 @@ def card_html(icon, title, desc, color):
       <div style="font-family:'Orbitron',sans-serif; font-size:0.8rem;
                   color:#e2e8f0; margin-bottom:0.5rem;">{title}</div>
       <div style="font-family:'DM Sans',sans-serif; font-size:0.77rem;
-                  color:#64748b; line-height:1.5;">{desc}</div>
+                  color:#ccc7c7; line-height:1.5;">{desc}</div>
     </div>"""
 
 def arrow_h(direction="→"):
@@ -147,106 +151,3 @@ st.markdown("<br>", unsafe_allow_html=True)
 st.markdown('<hr style="border-color:#1f2d40;">', unsafe_allow_html=True)
 st.markdown("<br>", unsafe_allow_html=True)
 
-
-# ── Datasets ───────────────────────────────────────────────────
-st.markdown("""
-<div style="font-family:'Space Mono',monospace; font-size:1rem; color:#00d4aa;
-            letter-spacing:0.15em; margin-bottom:1.5rem;">DATA SOURCES</div>
-""", unsafe_allow_html=True)
-
-datasets = [
-    (
-        "rivers_with_countries.parquet",
-        "Meijer et al. 2021 — PNAS",
-        "31,819 river mouth emission points with lat/lon coordinates and estimated plastic output in tonnes/year. The most comprehensive global river plastic dataset available.",
-        "https://figshare.com/articles/dataset/Supplementary_data_for_More_than_1000_rivers_account_for_80_of_global_riverine_plastic_emissions_into_the_ocean_/14515590",
-        "#f59e0b",
-    ),
-    (
-        "marine_microplastics.parquet",
-        "NOAA National Centers for Environmental Information",
-        "13,000+ net-tow and water sample measurements of floating microplastic concentration (pieces/m³) from ocean expeditions worldwide, spanning 1972–present.",
-        "https://www.ncei.noaa.gov/products/microplastics",
-        "#00d4aa",
-    ),
-    (
-        "ocean_plastic.parquet",
-        "Our World in Data — Plastic Waste Accumulated in Oceans",
-        "Country-level estimates of cumulative plastic waste accumulated in the ocean over time, derived from mismanaged waste and coastal population data.",
-        "https://ourworldindata.org/grapher/plastic-waste-accumulated-in-oceans",
-        "#00d4aa",
-    ),
-    (
-        "plastic_generation.parquet + plastic_vs_pollution.parquet",
-        "Our World in Data — Plastic Pollution",
-        "Annual plastic generation by country (tonnes) and plastic waste vs pollution metrics including mismanaged waste rates and income group breakdowns.",
-        "https://ourworldindata.org/plastic-pollution",
-        "#00d4aa",
-    ),
-    (
-        "species.parquet",
-        "Wilcox et al. 2015 — Science (aaz5803)",
-        "10,412 marine animal records across species groups with plastic ingestion, entanglement and plastic type data. Used for the Marine Impact analysis.",
-        "https://www.science.org/doi/10.1126/science.aaz5803",
-        "#ff3b5c",
-    ),
-    (
-        "ocean_cleanup_efforts.parquet",
-        "The Ocean Cleanup + Ocean Conservancy (ICC)",
-        "Manually compiled annual cleanup removal data (kg) for The Ocean Cleanup and International Coastal Cleanup (ICC/Ocean Conservancy), sourced from published annual reports and website data.",
-        "https://theoceancleanup.com",
-        "#ff3b5c",
-    ),
-    (
-        "interceptors.parquet",
-        "The Ocean Cleanup — manually curated",
-        "22 interceptor deployments with location, river, city, country, year deployed, type and operational status. Built from The Ocean Cleanup's published deployment data and media gallery.",
-        "https://theoceancleanup.com/rivers/",
-        "#ff3b5c",
-    ),
-    (
-        "fish_to_human.parquet",
-        "Danopoulos et al. 2020 + 3 regional studies",
-        "Manually curated dataset of microplastic particles per individual for 10 commercially consumed fish species. Sources: Danopoulos et al. 2020, Frontiers Marine Science 2023, Black Sea study 2023, Iberian Peninsula study 2023.",
-        "https://www.sciencedirect.com/science/article/pii/S0160412020319698",
-        "#f59e0b",
-    ),
-    (
-        "top50_rivers_ranked.parquet",
-        "Derived — Meijer et al. 2021",
-        "Top 50 river emission points ranked by plastic output, derived from rivers_with_countries. Used for the Where to Act priority analysis.",
-        "https://figshare.com/articles/dataset/Supplementary_data_for_More_than_1000_rivers_account_for_80_of_global_riverine_plastic_emissions_into_the_ocean_/14515590",
-        "#f59e0b",
-    ),
-]
-
-for name, source, desc, url, color in datasets:
-    st.markdown(f"""
-    <div style="background:#111827; border:1px solid #1f2d40; border-left:3px solid {color};
-                border-radius:8px; padding:1.1rem 1.4rem; margin-bottom:0.75rem;
-                display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;">
-      <div style="flex:1;">
-        <div style="display:flex; align-items:baseline; gap:0.75rem; margin-bottom:0.3rem;">
-          <span style="font-family:'Space Mono',monospace; font-size:0.75rem;
-                       color:{color}; font-weight:700;">{name}</span>
-        </div>
-        <div style="font-family:'Orbitron',sans-serif; font-size:0.72rem;
-                    color:#e2e8f0; margin-bottom:0.4rem;">{source}</div>
-        <div style="font-family:'DM Sans',sans-serif; font-size:0.8rem;
-                    color:#64748b; line-height:1.6;">{desc}</div>
-      </div>
-      <div style="flex-shrink:0; padding-top:0.2rem;">
-        <a href="{url}" target="_blank"
-           style="background:{color}22; border:1px solid {color}; color:{color};
-                  padding:0.3rem 0.7rem; border-radius:4px; font-family:'Space Mono',monospace;
-                  font-size:0.62rem; text-decoration:none; white-space:nowrap;">SOURCE →</a>
-      </div>
-    </div>
-    """, unsafe_allow_html=True)
-
-st.markdown("<br>", unsafe_allow_html=True)
-st.markdown("""
-<div style="font-size:0.75rem; color:#1f2d40; text-align:center; font-family:'Space Mono',monospace;">
-  Built with Python · Streamlit · Plotly · Pandas · Source to Sea · 2025
-</div>
-""", unsafe_allow_html=True)

@@ -47,6 +47,8 @@ with k4:
 with k5:
     st.metric("Top River (Philippines)", f"{PHILIPPINES_TOP_T:,} t/yr",
               delta="uncovered", delta_color="inverse")
+# ── Divider ────────────────────────────────────────────────────
+st.markdown('<hr style="border-color:#1f2d40;">', unsafe_allow_html=True)
 
 # ── Map ───────────────────────────────────────────────────────
 fig_map = go.Figure()
@@ -67,8 +69,8 @@ fig_map.add_trace(go.Scattergeo(
 
         showscale=True,
         colorbar=dict(
-            title=dict(text="t/yr", font=dict(color="#64748b", size=9)),
-            tickfont=dict(color="#64748b", size=9),
+            title=dict(text="t/yr", font=dict(color="#ccc7c7", size=9)),
+            tickfont=dict(color="#ccc7c7", size=9),
             thickness=10,
             len=0.5,
             bgcolor="#111827",
@@ -126,7 +128,7 @@ st.plotly_chart(fig_map, use_container_width=True)
 
 # ── Top uncovered by country ──────────────────────────────────
 st.markdown("---")
-col1, col2 = st.columns(2, gap="large")
+col1, col2 = st.columns([1.3, 1], gap="large")
 
 with col1:
     st.markdown("### Top 10 Countries by Emission")
@@ -145,22 +147,22 @@ with col1:
         marker=dict(color="#8b1a2d", line=dict(color="#0a0e17", width=0.5)),
         text=[f"{v/1000:.0f}k t" for v in top_countries["emission"]],
         textposition="outside",
-        textfont=dict(color="#64748b", size=9),
+        textfont=dict(color="#ccc7c7", size=11),
         hovertemplate="<b>%{y}</b><br>%{x:,.0f} t/yr<extra></extra>",
     ))
     fig_countries.update_layout(
         paper_bgcolor="#0a0e17",
         plot_bgcolor="#111827",
         font=dict(color="#e2e8f0"),
-        height=360,
-        xaxis=dict(gridcolor="#1f2d40", tickformat=","),
-        yaxis=dict(gridcolor="#1f2d40"),
+        height=400,
+        xaxis=dict(gridcolor="#1f2d40", tickformat=",", showgrid=False),
+        yaxis=dict(gridcolor="#1f2d40", showgrid=False),
         margin=dict(l=12, r=60, t=20, b=20),
     )
     st.plotly_chart(fig_countries, use_container_width=True)
 
 with col2:
-    st.markdown("### Interceptor Coverage by Country")
+    st.markdown("### Coverage by Country")
     intercept_countries = (
         interceptors.groupby("country")
         .size()
@@ -175,16 +177,16 @@ with col2:
         marker=dict(color="#00856b", line=dict(color="#0a0e17", width=0.5)),
         text=intercept_countries["count"],
         textposition="outside",
-        textfont=dict(color="#64748b", size=9),
+        textfont=dict(color="#ccc7c7", size=11),
         hovertemplate="<b>%{y}</b><br>%{x} interceptors<extra></extra>",
     ))
     fig_intercept.update_layout(
         paper_bgcolor="#0a0e17",
         plot_bgcolor="#111827",
         font=dict(color="#e2e8f0"),
-        height=360,
-        xaxis=dict(gridcolor="#1f2d40"),
-        yaxis=dict(gridcolor="#1f2d40"),
+        height=400,
+        xaxis=dict(gridcolor="#1f2d40", showgrid=False),
+        yaxis=dict(gridcolor="#1f2d40", showgrid=False),
         margin=dict(l=12, r=40, t=20, b=20),
     )
     st.plotly_chart(fig_intercept, use_container_width=True)

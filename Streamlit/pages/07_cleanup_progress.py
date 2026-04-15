@@ -49,8 +49,8 @@ with k3:
 with k4:
     st.metric("Annual Plastic Input", f"{ANNUAL_INPUT_T:,} t", delta_color="off")
 
-st.markdown("<br>", unsafe_allow_html=True)
-
+# ── Divider ────────────────────────────────────────────────────
+st.markdown('<hr style="border-color:#1f2d40;">', unsafe_allow_html=True)
 # ── Line chart ────────────────────────────────────────────────
 fig = go.Figure()
 

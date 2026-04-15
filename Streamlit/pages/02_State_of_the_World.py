@@ -21,7 +21,7 @@ with open("assets/logo_icon.svg", "r") as f:
 
 page_header("Global Overview", logo_svg)
 
-# ── KPIs (3 cards — removed Top 101 Rivers and Top Uncovered River) ───────────
+# ── KPIs  ───────────
 k1, k2, k3 = st.columns(3)
 with k1:
     st.metric("Annual Plastic Input", f"{ANNUAL_INPUT_T:,} t", delta_color="off")
@@ -31,6 +31,8 @@ with k3:
     st.metric("Cleanup Coverage", f"{BEST_CLEANUP_PCT}%", delta="of annual input", delta_color="off")
 
 st.markdown("<br>", unsafe_allow_html=True)
+# ── Divider ────────────────────────────────────────────────────
+st.markdown('<hr style="border-color:#1f2d40;margin-top:-0.5rem;">', unsafe_allow_html=True)
 
 # ── Load data ─────────────────────────────────────────────────
 rivers       = load_rivers()
@@ -90,11 +92,11 @@ df_all = load_all_samples()
 # ── Gyre Map ───────────────────────────────────────────────────
 st.markdown("### Ocean Plastic Accumulation — The 5 Gyres")
 st.markdown("""
-<div style="font-family:'DM Sans',sans-serif; font-size:0.85rem; color:#64748b;
+<div style="font-family:'DM Sans',sans-serif; font-size:1rem; color:#ccc7c7;
             margin-top:-0.5rem; margin-bottom:1rem; line-height:1.6;">
   Net-tow sample measurements of floating microplastics (pieces/m³).
   Gyre markers show published accumulation estimates
-  <span style="color:#464748;">(Eriksen et al. 2014; Ocean Cleanup 2018)</span>
+  <span style="color:#64748b;">(Eriksen et al. 2014; Ocean Cleanup 2018)</span>
   cross-validated against our observed concentration data.
 </div>
 """, unsafe_allow_html=True)
@@ -138,8 +140,8 @@ with col_map:
         cmin=0,
         showscale=True,
         colorbar=dict(
-            title=dict(text="pieces/m³", font=dict(color="#64748b", size=9)),
-            tickfont=dict(color="#64748b", size=8),
+            title=dict(text="pieces/m³", font=dict(color="#ccc7c7", size=9)),
+            tickfont=dict(color="#ccc7c7", size=8),
             thickness=10,
             len=0.5,
             bgcolor="#111827",
@@ -196,7 +198,7 @@ with col_map:
     )
     st.plotly_chart(fig_gyre, use_container_width=True)
     st.markdown("""
-    <div style="font-size:0.75rem; color:#64748b; margin-top:-0.5rem; line-height:1.6;">
+    <div style="font-size:0.9rem; color:#ccc7c7; margin-top:-0.5rem; line-height:1.6;">
      ★ marks the gyre. Dot density reflects sampling effort, not plastic volume —
      the <strong style="color:#e2e8f0;">South Pacific</strong>, 
      <strong style="color:#e2e8f0;">South Atlantic</strong> and <strong style="color:#e2e8f0;">Indian Ocean</strong> gyres are under-represented
@@ -206,7 +208,7 @@ with col_map:
 
 with col_cards:
     st.markdown("""
-    <div style="font-family:'Space Mono',monospace; font-size:0.65rem; color:#64748b;
+    <div style="font-family:'Space Mono',monospace; font-size:0.8rem; color:#ccc7c7;
                 letter-spacing:0.1em; margin-bottom:0.75rem;">GYRE ACCUMULATION</div>
     """, unsafe_allow_html=True)
 
@@ -236,15 +238,15 @@ with col_cards:
               ~{row['tonnes']//1000:,}k t
             </span>
             <span style="font-family:'Space Mono',monospace; font-size:0.65rem;
-                         color:#64748b;">{conc:.2f} p/m³</span>
+                         color:#ccc7c7;">{conc:.2f} p/m³</span>
           </div>
         </div>
         """, unsafe_allow_html=True)
 
     st.markdown("""
-    <div style="font-size:0.7rem; color:#64748b; margin-top:0.5rem; line-height:1.5;">
+    <div style="font-size:0.9rem; color:#ccc7c7; margin-top:0.5rem; line-height:1.5;">
       Tonnes: published estimates.<br>
-      p/m³: our observed mean<br>from net-tow samples.
+      p/m³: our observed mean from net-tow samples.
     </div>
     """, unsafe_allow_html=True)
 
@@ -280,8 +282,8 @@ with col_map2:
         marker_line_color="#1f2d40",
         marker_line_width=0.5,
         colorbar=dict(
-            title=dict(text="t/yr", font=dict(color="#64748b", size=10)),
-            tickfont=dict(color="#64748b", size=9),
+            title=dict(text="t/yr", font=dict(color="#ccc7c7", size=10)),
+            tickfont=dict(color="#ccc7c7", size=9),
             bgcolor="#111827",
             bordercolor="#1f2d40",
             borderwidth=1,
@@ -332,24 +334,24 @@ with col_right:
     st.markdown(f"""
     <div style="background:#111827; border:1px solid #1f2d40; border-left:3px solid #00d4aa;
                 border-radius:6px; padding:1.2rem; margin-bottom:1rem;">
-      <div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#64748b;
+      <div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#ccc7c7;
                   margin-bottom:0.75rem; letter-spacing:0.08em;">INTERCEPTOR STATUS</div>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem;">
         <div>
           <div style="color:#00d4aa; font-size:1.6rem; font-weight:700;">19</div>
-          <div style="color:#64748b; font-size:0.8rem;">deployed</div>
+          <div style="color:#ccc7c7; font-size:0.8rem;">deployed</div>
         </div>
         <div>
           <div style="color:#ff3b5c; font-size:1.6rem; font-weight:700;">82</div>
-          <div style="color:#64748b; font-size:0.8rem;">still needed</div>
+          <div style="color:#ccc7c7; font-size:0.8rem;">still needed</div>
         </div>
         <div>
           <div style="color:#f59e0b; font-size:1.6rem; font-weight:700;">101</div>
-          <div style="color:#64748b; font-size:0.8rem;">target total</div>
+          <div style="color:#ccc7c7; font-size:0.8rem;">target total</div>
         </div>
         <div>
           <div style="color:#e2e8f0; font-size:1.6rem; font-weight:700;">2.9%</div>
-          <div style="color:#64748b; font-size:0.8rem;">cleaned / 34.5% coverable</div>
+          <div style="color:#ccc7c7; font-size:0.8rem;">cleaned / 34.5% coverable</div>
         </div>
       </div>
     </div>
@@ -364,7 +366,7 @@ with col_right:
         marker=dict(color="#8b1a2d", line=dict(color="#0a0e17", width=0.5)),
         text=[f"{v/1000:.0f}k t" for v in top5["total_emission"]],
         textposition="outside",
-        textfont=dict(color="#64748b", size=9),
+        textfont=dict(color="#ccc7c7", size=9),
         hovertemplate="<b>%{y}</b><br>%{x:,.0f} t/yr<extra></extra>",
     ))
     fig_bar.update_layout(

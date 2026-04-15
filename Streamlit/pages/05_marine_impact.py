@@ -37,7 +37,8 @@ with k3:
 with k4:
     st.metric("Species Groups", str(groups))
 
-st.markdown("<br>", unsafe_allow_html=True)
+# ── Divider ────────────────────────────────────────────────────
+st.markdown('<hr style="border-color:#1f2d40;">', unsafe_allow_html=True)
 
 # ── Filter ────────────────────────────────────────────────────
 col_f1, col_f2 = st.columns([2, 3])
@@ -76,18 +77,18 @@ with col1:
         marker=dict(color="#8b1a2d", line=dict(color="#0a0e17", width=0.5)),
         text=[f"{v:.1f}%" for v in ingestion_by_group["rate"]],
         textposition="outside",
-        textfont=dict(color="#64748b", size=9),
+        textfont=dict(color="#ccc7c7", size=11),
         hovertemplate="<b>%{y}</b><br>Ingestion rate: %{x:.1f}%<extra></extra>",
     ))
     fig_ing.update_layout(
         paper_bgcolor="#0a0e17",
         plot_bgcolor="#111827",
         font=dict(color="#e2e8f0"),
-        title=dict(text="Plastic Ingestion Rate by Species Group<br><sup style='color:#64748b'>% of examined animals with plastic found</sup>",
+        title=dict(text="Plastic Ingestion Rate by Species Group<br><sup style='color:#ccc7c7'>% of examined animals with plastic found</sup>",
            font=dict(color="#e2e8f0", size=16)),
         height=500,
-        xaxis=dict(gridcolor="#1f2d40", ticksuffix="%", range=[0, 100]),
-        yaxis=dict(gridcolor="#1f2d40"),
+        xaxis=dict(gridcolor="#1f2d40", ticksuffix="%", range=[0, 100], showgrid=False),
+        yaxis=dict(gridcolor="#1f2d40", showgrid=False),
         margin=dict(l=12, r=60, t=40, b=20),
     )
     st.plotly_chart(fig_ing, use_container_width=True)
@@ -114,7 +115,7 @@ with col2:
         marker=dict(color="#a66800", line=dict(color="#0a0e17", width=0.5)),
         text=[f"{v:.1f}%" for v in entangle_by_group["rate"]],
         textposition="outside",
-        textfont=dict(color="#64748b", size=9),
+        textfont=dict(color="#ccc7c7", size=11),
         hovertemplate="<b>%{y}</b><br>Entanglement rate: %{x:.1f}%<extra></extra>",
     ))
     fig_ent.update_layout(
@@ -124,8 +125,8 @@ with col2:
         title=dict(text="Entanglement Rate by Species Group",
                    font=dict(color="#e2e8f0", size=16)),
         height=500,
-        xaxis=dict(gridcolor="#1f2d40", ticksuffix="%", range=[0, 100]),
-        yaxis=dict(gridcolor="#1f2d40"),
+        xaxis=dict(gridcolor="#1f2d40", ticksuffix="%", range=[0, 100], showgrid=False),
+        yaxis=dict(gridcolor="#1f2d40", showgrid=False),
         margin=dict(l=12, r=60, t=40, b=20),
     )
     st.plotly_chart(fig_ent, use_container_width=True)
@@ -133,7 +134,7 @@ with col2:
 # ── Plastic type heatmap ──────────────────────────────────────
 st.markdown("### Plastic Type Profile by Species Group")
 st.markdown("""
-<div style="font-family:'DM Sans',sans-serif; font-size:0.85rem; color:#64748b; margin-top:-0.5rem; margin-bottom:0.5rem;">
+<div style="font-family:'DM Sans',sans-serif; font-size:1rem; color:#ccc7c7; margin-top:-0.5rem; margin-bottom:0.5rem;">
   % of examined animals in each group found with each plastic type
 </div>
 """, unsafe_allow_html=True)
@@ -163,8 +164,8 @@ fig_heat = go.Figure(go.Heatmap(
     texttemplate=None,
     textfont=dict(size=9, color="#e2e8f0"),
     colorbar=dict(
-        title=dict(text="%", font=dict(color="#64748b", size=9)),
-        tickfont=dict(color="#64748b", size=9),
+        title=dict(text="%", font=dict(color="#ccc7c7", size=9)),
+        tickfont=dict(color="#ccc7c7", size=9),
         bgcolor="#111827",
         bordercolor="#1f2d40",
         thickness=12,
@@ -190,7 +191,7 @@ map_data = filtered.dropna(subset=["latitude", "longitude"])
 fig_map = go.Figure()
 
 color_sequence = ["#00d4aa", "#ff3b5c", "#f59e0b", "#457B9D", "#8b1a2d",
-                  "#00856b", "#e2e8f0", "#64748b", "#a66800", "#003d2e",
+                  "#00856b", "#e2e8f0", "#ccc7c7", "#a66800", "#003d2e",
                   "#ff8fa1", "#1a3a2a", "#3d2800", "#0a2a4a", "#1f2d40",
                   "#457B9D", "#8b1a2d", "#00d4aa", "#f59e0b", "#ff3b5c"]
 
@@ -258,7 +259,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.markdown("""
-<div style="font-family:'DM Sans',sans-serif; font-size:0.85rem; color:#64748b;
+<div style="font-family:'DM Sans',sans-serif; font-size:1rem; color:#ccc7c7;
             margin-top:0.5rem; margin-bottom:1rem; line-height:1.6;">
   Microplastic particles found per individual fish examined.<br>
   Fish consumed whole <strong style="color:#f59e0b;">(★) mean the entire plastic load
@@ -275,14 +276,14 @@ habitat_colors = {
     "Farmed":   "#ff3b5c",
 }
 
-bar_colors = [habitat_colors.get(h, "#64748b") for h in fish["habitat"]]
+bar_colors = [habitat_colors.get(h, "#ccc7c7") for h in fish["habitat"]]
 
 # Add star to consumed_whole fish
 fish["label"] = fish["common_name"] + fish["consumed_whole"].apply(
     lambda x: " ★" if x else ""
 )
 
-col_fish, col_info = st.columns([3, 2], gap="large")
+col_fish, col_info = st.columns([3.2, 2], gap="large")
 
 with col_fish:
     fig_fish = go.Figure(go.Bar(
@@ -295,7 +296,7 @@ with col_fish:
         ),
         text=[f"{v:.1f} MPs" for v in fish["mp_per_individual"]],
         textposition="outside",
-        textfont=dict(color="#64748b", size=9),
+        textfont=dict(color="#ccc7c7", size=10),
         hovertemplate="<b>%{y}</b><br>%{x:.1f} microplastic particles per individual"
                       "<br>Habitat: %{customdata[0]}"
                       "<br>Feeding: %{customdata[1]}"
@@ -312,9 +313,9 @@ with col_fish:
         height=420,
         xaxis=dict(
             title="Microplastic particles per individual",
-            gridcolor="#1f2d40",
+            gridcolor="#1f2d40", showgrid=False
         ),
-        yaxis=dict(gridcolor="#1f2d40"),
+        yaxis=dict(gridcolor="#1f2d40", showgrid=False),
         margin=dict(l=12, r=80, t=40, b=40),
     )
     st.plotly_chart(fig_fish, use_container_width=True)
@@ -323,8 +324,8 @@ with col_info:
     # Legend
     st.markdown("""
     <div style="background:#111827; border:1px solid #1f2d40; border-radius:6px;
-                padding:1.2rem; margin-bottom:0.75rem; margin-top:-5rem;">
-      <div style="font-family:'Space Mono',monospace; font-size:0.65rem; color:#64748b;
+                padding:1.2rem; margin-bottom:0.75rem; margin-top:-8rem;">
+      <div style="font-family:'Space Mono',monospace; font-size:0.65rem; color:#ccc7c7;
                   letter-spacing:0.08em; margin-bottom:0.75rem;">HABITAT</div>
       <div style="display:flex; flex-direction:column; gap:0.5rem;">
         <div style="display:flex; align-items:center; gap:0.5rem;">
@@ -350,9 +351,9 @@ with col_info:
     st.markdown(f"""
     <div style="background:#111827; border:1px solid #1f2d40; border-left:3px solid #ff3b5c;
                 border-radius:6px; padding:1.2rem; margin-bottom:0.75rem;">
-      <div style="font-family:'Space Mono',monospace; font-size:0.65rem; color:#64748b;
+      <div style="font-family:'Space Mono',monospace; font-size:0.65rem; color:#ccc7c7;
                   letter-spacing:0.08em; margin-bottom:0.5rem;">SURPRISING FINDING</div>
-      <div style="font-size:0.85rem; color:#e2e8f0; line-height:1.6;">
+      <div style="font-size:1rem; color:#e2e8f0; line-height:1.6;">
         <strong style="color:#ff3b5c;">Farmed rainbow trout</strong> has the highest
         contamination at <strong style="color:#ff3b5c;">9.3 MPs</strong> per individual —
         more than wild-caught species. Likely from microplastic-contaminated feed
@@ -362,20 +363,20 @@ with col_info:
 
     <div style="background:#111827; border:1px solid #1f2d40; border-left:3px solid #00d4aa;
                 border-radius:6px; padding:1.2rem; margin-bottom:0.75rem;">
-      <div style="font-family:'Space Mono',monospace; font-size:0.65rem; color:#64748b;
+      <div style="font-family:'Space Mono',monospace; font-size:0.65rem; color:#ccc7c7;
                   letter-spacing:0.08em; margin-bottom:0.5rem;">★ CONSUMED WHOLE</div>
-      <div style="font-size:0.85rem; color:#e2e8f0; line-height:1.6;">
+      <div style="font-size:1rem; color:#e2e8f0; line-height:1.6;">
         <strong style="color:#00d4aa;">Sardines and anchovies</strong> are typically
         eaten whole — meaning the consumer ingests 100% of the plastic load
         found in the fish, gut and all.
       </div>
     </div>
 
-    <div style="background:#111827; border:1px solid #1f2d40; border-left:3px solid #64748b;
+    <div style="background:#111827; border:1px solid #1f2d40; border-left:3px solid #ccc7c7;
                 border-radius:6px; padding:1.2rem;">
-      <div style="font-family:'Space Mono',monospace; font-size:0.65rem; color:#64748b;
+      <div style="font-family:'Space Mono',monospace; font-size:0.65rem; color:#ccc7c7;
                   letter-spacing:0.08em; margin-bottom:0.5rem;">SOURCES</div>
-      <div style="font-size:0.75rem; color:#64748b; line-height:1.7;">
+      <div style="font-size:0.75rem; color:#ccc7c7; line-height:1.7;">
         Danopoulos et al. 2020<br>
         Frontiers Marine Science 2023<br>
         Black Sea study 2023<br>

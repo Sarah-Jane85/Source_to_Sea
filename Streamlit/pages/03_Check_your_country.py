@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 import pandas as pd
 from components.shared import (
     COLORS, load_rivers, load_interceptors,
-    apply_global_css, page_header, load_river_names
+    apply_global_css, page_header
 )
 
 st.set_page_config(page_title="Explore by Country", page_icon="🗺️", layout="wide")
@@ -20,17 +20,6 @@ page_header("Explore by Country", logo_svg)
 # ── Load data ─────────────────────────────────────────────────
 rivers       = load_rivers()
 interceptors = load_interceptors()
-river_names_df = load_river_names()
-
-def get_name(lat, lon, country):
-    match = river_names_df[
-        (river_names_df['country'] == country) &
-        (abs(river_names_df['lat'] - lat) < 0.01) &
-        (abs(river_names_df['lon'] - lon) < 0.01)
-    ]
-    if not match.empty and match.iloc[0]['river_name'] != '':
-        return match.iloc[0]['river_name']
-    return f"{lat:.2f}°N, {lon:.2f}°E"
 
 # ── Country selector ──────────────────────────────────────────
 countries_sorted = sorted(rivers["country"].unique())
@@ -57,7 +46,8 @@ with k3:
 with k4:
     st.metric("Interceptors", str(len(country_intercept)))
 
-st.markdown("<br>", unsafe_allow_html=True)
+# ── Divider ────────────────────────────────────────────────────
+st.markdown('<hr style="border-color:#1f2d40;">', unsafe_allow_html=True)
 
 # ── Map + Bar ─────────────────────────────────────────────────
 col_map, col_bar = st.columns([3, 2], gap="large")
@@ -169,24 +159,6 @@ with col_bar:
         <div>
           <div style="color:#f59e0b; font-size:1.5rem; font-weight:700;">{avg_emission:.1f} t</div>
           <div style="color:#64748b; font-size:0.8rem;">avg per river mouth</div>
-        </div>
-      </div>
-
-      <div style="border-top:1px solid #1f2d40; padding-top:1rem; margin-bottom:1rem;">
-        <div style="font-family:'Space Mono',monospace; font-size:0.65rem; color:#64748b; margin-bottom:0.5rem;">
-          TOP 3 EMISSION POINTS
-        </div>
-        <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
-          <div style="color:#e2e8f0; font-size:0.8rem;">{get_name(top3.iloc[0]["lat"], top3.iloc[0]["lon"], selected)}</div>
-          <div style="color:#8b1a2d; font-size:0.8rem; font-weight:700;">{top3.iloc[0]["emission"]:,.0f} t/yr</div>
-        </div>
-        <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
-          <div style="color:#e2e8f0; font-size:0.8rem;">{get_name(top3.iloc[1]["lat"], top3.iloc[1]["lon"], selected)}</div>
-          <div style="color:#8b1a2d; font-size:0.8rem; font-weight:700;">{top3.iloc[1]["emission"]:,.0f} t/yr</div>
-        </div>
-        <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
-          <div style="color:#e2e8f0; font-size:0.8rem;">{get_name(top3.iloc[2]["lat"], top3.iloc[2]["lon"], selected)}</div>
-          <div style="color:#8b1a2d; font-size:0.8rem; font-weight:700;">{top3.iloc[2]["emission"]:,.0f} t/yr</div>
         </div>
       </div>
 

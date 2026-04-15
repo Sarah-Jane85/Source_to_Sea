@@ -13,7 +13,7 @@ st.markdown("""
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&family=Space+Mono&display=swap');
 
 html, body, [data-testid="stAppViewContainer"] {
-    background-color: #0a0e17 !important;
+    background-color: #014654 !important;
     color: #e2e8f0 !important;
     font-family:'Orbitron',sans-serif;
 }
@@ -43,27 +43,27 @@ h1, h2, h3 {
 """, unsafe_allow_html=True)
 
 # ── Landing page ──────────────────────────────────────────────
-col1, col2, col3 = st.columns([1, 1, 1])
+col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
-    st.image("assets/logo.svg", width=800, use_container_width=False)
+    st.image("assets/logo.svg", width=1500, use_container_width=False)
 
 st.markdown("""
 <div style="display:flex; flex-direction:column; align-items:center;
-            text-align:center; gap:0.5rem; margin-top:-6rem;">
-  <div style="font-family:'Syne',sans-serif; font-weight:800; font-size:2.8rem;
+            text-align:center; gap:0.5rem; margin-top:-11rem;">
+  <div style="font-family:'Syne',sans-serif; font-weight:800; font-size:4.5rem;
               color:#e2e8f0; letter-spacing:-0.03em;">
     Source to Sea
   </div>
-  <div style="font-family:'Space Mono',monospace; font-size:0.75rem;
+  <div style="font-family:'Space Mono',monospace; font-size:1.5rem;
               color:#00d4aa; letter-spacing:0.15em;">
-    OCEAN PLASTIC ANALYSIS
+    OCEAN PLASTIC ANALYSIS<br> built to inform — and to call to action!
   </div>
-  <div style="color:#64748b; max-width:480px; line-height:1.6; margin-top:0.5rem;">
+  <div style="color:#ccc7c7; max-width:480px; line-height:1.6; font-size:1.2rem; margin-top:0.5rem;">
     Tracking <strong style="color:#e2e8f0;">1,001,000 t/yr</strong> of ocean-bound
     plastic from river source to marine impact.
   </div>
-  <div style="font-family:'Space Mono',monospace; font-size:0.7rem;
-              color:#1f2d40; margin-top:0.5rem;">
+  <div style="font-family:'Space Mono',monospace; font-size:0.85rem;
+              color:#64748b; margin-top:0.5rem;">
     ← Select a page from the sidebar
   </div>
 </div>

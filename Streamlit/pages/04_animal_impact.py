@@ -13,8 +13,8 @@ with open("assets/logo_icon.svg", "r") as f:
 page_header("The Cost to Ocean Life", logo_svg)
 
 st.markdown("""
-<div style="font-family:'DM Sans',sans-serif; font-size:0.95rem; color:#64748b;
-            max-width:800px; line-height:1.7; margin-bottom:2rem;">
+<div style="font-family:'DM Sans',sans-serif; font-size:1.25rem; color:#ccc7c7;
+            max-width:800px; line-height:1; margin-bottom:2rem;">
   Plastic doesn't just float. It wraps, chokes, starves and poisons.
   For marine animals, every piece of plastic that enters the ocean is a potential
   death sentence — through entanglement, ingestion, or the slow accumulation
@@ -29,28 +29,28 @@ def stat_pill(value, label, color="#ff3b5c"):
                 border:1px solid {color}; border-radius:4px;
                 padding:0.3rem 0.8rem; margin-bottom:1rem;">
       <span style="color:{color}; font-family:'Orbitron',sans-serif;
-                   font-size:0.9rem; font-weight:700;">{value}</span>
-      <span style="color:#94a3b8; font-size:0.8rem; margin-left:0.4rem;">{label}</span>
+                   font-size:1.2rem; font-weight:700;">{value}</span>
+      <span style="color:#ccc7c7; font-size:0.8rem; margin-left:0.4rem;">{label}</span>
     </div>"""
 
 # ── Section 1 — Sea Turtles ────────────────────────────────────
 col1, col2 = st.columns([2, 3], gap="large")
 
 with col1:
-    st.markdown('<div style="padding-top:8rem;">', unsafe_allow_html=True)
+    st.markdown('<div style="padding-top:10rem;">', unsafe_allow_html=True)
     st.image("assets/turtle_plastic.jpg", use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
 with col2:
     st.markdown(f"""
     <div style="padding-top:0.5rem;">
-      <div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#f59e0b;
+      <div style="font-family:'Space Mono',monospace; font-size:1rem; color:#f59e0b;
                   letter-spacing:0.15em; margin-bottom:0.5rem;">SEA TURTLES</div>
       <h2 style="font-family:'Orbitron',sans-serif; color:#e2e8f0; font-size:1.5rem;
                  margin-bottom:1rem;">Mistaken for Jellyfish</h2>
       {stat_pill("52%", "of sea turtles have ingested plastic", "#f59e0b")}
-      <div style="font-family:'DM Sans',sans-serif; font-size:0.9rem; color:#94a3b8;
-                  line-height:1.8;">
+      <div style="font-family:'DM Sans',sans-serif; font-size:1.2rem; color:#ccc7c7;
+                  line-height:1;">
         Plastic bags floating in the ocean look almost identical to jellyfish —
         a sea turtle's favourite food. Once ingested, plastic cannot be digested
         and accumulates in the gut, causing blockages, internal injuries and starvation.
@@ -77,13 +77,13 @@ col1, col2 = st.columns([3, 2], gap="large")
 with col1:
     st.markdown(f"""
     <div style="padding-top:0.5rem;">
-      <div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#ff3b5c;
+      <div style="font-family:'Space Mono',monospace; font-size:1rem; color:#ff3b5c;
                   letter-spacing:0.15em; margin-bottom:0.5rem;">WHALES & LARGE MARINE MAMMALS</div>
       <h2 style="font-family:'Orbitron',sans-serif; color:#e2e8f0; font-size:1.5rem;
                  margin-bottom:1rem;">Ghost Nets — The Silent Killers</h2>
       {stat_pill("640,000 t", "of ghost gear abandoned in oceans every year", "#ff3b5c")}
-      <div style="font-family:'DM Sans',sans-serif; font-size:0.9rem; color:#94a3b8;
-                  line-height:1.8;">
+      <div style="font-family:'DM Sans',sans-serif; font-size:1.2rem; color:#ccc7c7;
+                  line-height:1;">
         Abandoned, lost or discarded fishing gear — known as <strong style="color:#e2e8f0;">
         ghost nets</strong> — is considered the deadliest form of plastic pollution
         for large marine animals. These nets continue fishing indefinitely after
@@ -115,20 +115,20 @@ st.markdown("<br>", unsafe_allow_html=True)
 col1, col2 = st.columns([2, 3], gap="large")
 
 with col1:
-    st.markdown('<div style="padding-top:8rem;">', unsafe_allow_html=True)
+    st.markdown('<div style="padding-top:10rem;">', unsafe_allow_html=True)
     st.image("assets/seal_entangled.jpg", use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
 with col2:
     st.markdown(f"""
     <div style="padding-top:0.5rem;">
-      <div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#ff3b5c;
+      <div style="font-family:'Space Mono',monospace; font-size:1rem; color:#ff3b5c;
                   letter-spacing:0.15em; margin-bottom:0.5rem;">SEALS & SEA LIONS</div>
       <h2 style="font-family:'Orbitron',sans-serif; color:#e2e8f0; font-size:1.5rem;
                  margin-bottom:1rem;">Trapped from Birth</h2>
       {stat_pill("100,000+", "marine mammals die from plastic entanglement each year", "#ff3b5c")}
-      <div style="font-family:'DM Sans',sans-serif; font-size:0.9rem; color:#94a3b8;
-                  line-height:1.8;">
+      <div style="font-family:'DM Sans',sans-serif; font-size:1.2rem; color:#ccc7c7;
+                  line-height:1;">
         Seals and sea lions are among the most vulnerable to entanglement — their
         natural curiosity leads them to investigate floating debris, and their
         streamlined bodies make it easy for netting and packaging rings to
@@ -156,13 +156,13 @@ col1, col2 = st.columns([3, 2], gap="large")
 with col1:
     st.markdown(f"""
     <div style="padding-top:0.5rem;">
-      <div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#00d4aa;
+      <div style="font-family:'Space Mono',monospace; font-size:1rem; color:#00d4aa;
                   letter-spacing:0.15em; margin-bottom:0.5rem;">SMALL SPECIES</div>
       <h2 style="font-family:'Orbitron',sans-serif; color:#e2e8f0; font-size:1.5rem;
                  margin-bottom:1rem;">No Animal Is Too Small</h2>
       {stat_pill("800+", "marine species affected by plastic pollution", "#00d4aa")}
-      <div style="font-family:'DM Sans',sans-serif; font-size:0.9rem; color:#94a3b8;
-                  line-height:1.8;">
+      <div style="font-family:'DM Sans',sans-serif; font-size:1.2rem; color:#ccc7c7;
+                  line-height:1;">
         This photograph — a seahorse clinging to a cotton swab in the Sargasso Sea —
         became one of the most shared environmental images in history. Taken by
         photographer Justin Hofman, it captures something the statistics alone
@@ -195,20 +195,20 @@ st.markdown("<br>", unsafe_allow_html=True)
 col1, col2 = st.columns([2, 3], gap="large")
 
 with col1:
-    st.markdown('<div style="padding-top:6rem;">', unsafe_allow_html=True)
+    st.markdown('<div style="padding-top:10rem;">', unsafe_allow_html=True)
     st.image("assets/plastic_ocean.jpg", use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
 with col2:
     st.markdown(f"""
     <div style="padding-top:0.5rem;">
-      <div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#f59e0b;
+      <div style="font-family:'Space Mono',monospace; font-size:1rem; color:#f59e0b;
                   letter-spacing:0.15em; margin-bottom:0.5rem;">FISH & THE REEF ECOSYSTEM</div>
       <h2 style="font-family:'Orbitron',sans-serif; color:#e2e8f0; font-size:1.5rem;
                  margin-bottom:1rem;">An Ocean Choked at Every Level</h2>
       {stat_pill("1 in 3", "fish caught for human consumption contain plastic", "#f59e0b")}
-      <div style="font-family:'DM Sans',sans-serif; font-size:0.9rem; color:#94a3b8;
-                  line-height:1.8;">
+      <div style="font-family:'DM Sans',sans-serif; font-size:1.2rem; color:#ccc7c7;
+                  line-height:1;">
         Coral reefs — home to 25% of all marine species — are being smothered
         by plastic waste. Bags and sheeting block sunlight from reaching coral,
         while sharp debris physically damages reef structures that took
@@ -237,13 +237,13 @@ col1, col2 = st.columns([3, 2], gap="large")
 with col1:
     st.markdown(f"""
     <div style="padding-top:0.5rem;">
-      <div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#ff3b5c;
+      <div style="font-family:'Space Mono',monospace; font-size:1rem; color:#ff3b5c;
                   letter-spacing:0.15em; margin-bottom:0.5rem;">THE FINAL TOLL</div>
       <h2 style="font-family:'Orbitron',sans-serif; color:#e2e8f0; font-size:1.5rem;
                  margin-bottom:1rem;">Washing Up on Every Shore</h2>
       {stat_pill("1M+", "seabirds and 100,000 marine mammals die from plastic each year", "#ff3b5c")}
-      <div style="font-family:'DM Sans',sans-serif; font-size:0.9rem; color:#94a3b8;
-                  line-height:1.8;">
+      <div style="font-family:'DM Sans',sans-serif; font-size:1.2rem; color:#ccc7c7;
+                  line-height:1;">
         Dead fish washing ashore with plastic debris surrounding them has
         become a familiar sight on coastlines worldwide. The image is not
         coincidental — plastic pollution disrupts every level of marine life,
@@ -288,7 +288,7 @@ for col, (val, label, color) in zip([s1, s2, s3, s4], stats):
                     padding:1rem 1.2rem; text-align:center;">
           <div style="color:{color}; font-family:'Orbitron',sans-serif;
                       font-size:1.3rem; font-weight:700;">{val}</div>
-          <div style="color:#64748b; font-size:0.78rem; margin-top:0.3rem;">{label}</div>
+          <div style="color:#ccc7c7; font-size:0.78rem; margin-top:0.3rem;">{label}</div>
         </div>
         """, unsafe_allow_html=True)
 
@@ -296,8 +296,8 @@ st.markdown("<br>", unsafe_allow_html=True)
 st.markdown("""
 <div style="background:#111827; border:1px solid #1f2d40; border-radius:8px;
             padding:1.4rem 2rem; text-align:center;">
-  <div style="font-family:'DM Sans',sans-serif; font-size:0.9rem; color:#64748b;
-              max-width:700px; margin:0 auto; line-height:1.8;">
+  <div style="font-family:'DM Sans',sans-serif; font-size:1.2rem; color:#ccc7c7;
+              max-width:700px; margin:0 auto; line-height:1;">
     The data on the following pages shows where this plastic comes from,
     how it accumulates, and — crucially —
     <strong style="color:#00d4aa;">what we can do to stop it.</strong>

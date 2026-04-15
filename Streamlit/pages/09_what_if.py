@@ -20,7 +20,7 @@ with open("assets/logo_icon.svg", "r") as f:
 page_header("What If?", logo_svg)
 
 st.markdown("""
-<div style="font-family:'DM Sans',sans-serif; font-size:0.95rem; color:#64748b;
+<div style="font-family:'DM Sans',sans-serif; font-size:0.95rem; color:#ccc7c7;
             max-width:720px; line-height:1.7; margin-bottom:1.5rem;">
   The Guatemala interceptor captures ~<strong style="color:#e2e8f0;">10,000 t/yr</strong> —
   the best single-unit benchmark available. Use the sliders to model how many
@@ -76,16 +76,16 @@ st.markdown("<br>", unsafe_allow_html=True)
 
 def result_card(label, value, sub=None, color="#00d4aa", border_color="#00d4aa"):
     sub_html = (
-        f'<div style="color:#64748b; font-size:0.78rem; margin-top:0.3rem;">{sub}</div>'
+        f'<div style="color:#ccc7c7; font-size:1rem; margin-top:0.3rem;">{sub}</div>'
         if sub else ""
     )
     return f"""
     <div style="background:#111827; border:1px solid #1f2d40;
                 border-left:3px solid {border_color}; border-radius:6px;
                 padding:1.2rem 1.4rem; margin-bottom:1rem;">
-      <div style="font-family:'Space Mono',monospace; font-size:0.65rem; color:#64748b;
+      <div style="font-family:'Space Mono',monospace; font-size:1rem; color:#ccc7c7;
                   letter-spacing:0.08em; margin-bottom:0.5rem;">{label}</div>
-      <div style="font-size:1.8rem; font-weight:700; color:{color};
+      <div style="font-size:1.6rem; font-weight:700; color:{color};
                   font-family:'Orbitron',sans-serif;">{value}</div>
       {sub_html}
     </div>"""
@@ -141,7 +141,7 @@ with r4:
 # ── Context note ───────────────────────────────────────────────
 st.markdown(f"""
 <div style="background:#111827; border:1px solid #1f2d40; border-radius:6px;
-            padding:1rem 1.4rem; font-size:0.82rem; color:#64748b; line-height:1.8;">
+            padding:1rem 1.4rem; font-size:1.3rem; color:#ccc7c7; line-height:1.8;">
   <strong style="color:#e2e8f0;">To fully offset annual input</strong> at
   {efficiency_pct}% efficiency you need
   <strong style="color:#f59e0b;">{interceptors_needed_to_offset} interceptors</strong>.<br>
@@ -249,7 +249,7 @@ eff_levels  = [50, 60, 70, 80, 90, 100]
 scenario_ns = [20, 50, 101, 150, 200]
 
 eff_headers = "".join([
-    f'<th style="text-align:right; padding:0.5rem 0.9rem; color:#64748b; '
+    f'<th style="text-align:right; padding:0.5rem 0.9rem; color:#ccc7c7; '
     f'font-weight:400; border-bottom:1px solid #1f2d40;">{e}%</th>'
     for e in eff_levels
 ])
@@ -271,11 +271,11 @@ for n in scenario_ns:
 st.markdown(f"""
 <div style="overflow-x:auto;">
 <table style="width:100%; border-collapse:collapse; background:#111827;
-              border:1px solid #1f2d40; border-radius:6px; font-size:0.82rem;
+              border:1px solid #1f2d40; border-radius:6px; font-size:1.5rem;
               font-family:'Space Mono',monospace;">
   <thead>
     <tr>
-      <th style="text-align:left; padding:0.5rem 0.9rem; color:#64748b;
+      <th style="text-align:left; padding:0.5rem 0.9rem; color:#ccc7c7;
                  font-weight:400; border-bottom:1px solid #1f2d40;">
         interceptors ↓ &nbsp;&nbsp; efficiency →
       </th>
@@ -284,7 +284,7 @@ st.markdown(f"""
   </thead>
   <tbody>{table_rows}</tbody>
 </table>
-<div style="font-size:0.72rem; color:#64748b; margin-top:0.5rem;">
+<div style="font-size:0.8rem; color:#ccc7c7; margin-top:0.5rem;">
   Values = % of {ANNUAL_INPUT_T:,} t/yr annual input offset at each efficiency level
 </div>
 </div>

@@ -13,7 +13,7 @@ with open("assets/logo_icon.svg", "r") as f:
 page_header("Take Action", logo_svg)
 
 st.markdown("""
-<div style="font-family:'DM Sans',sans-serif; font-size:0.95rem; color:#64748b;
+<div style="font-family:'DM Sans',sans-serif; font-size:0.95rem; color:##ccc7c7;
             max-width:800px; line-height:1.7; margin-bottom:0.5rem;">
   The data tells the story — now here's what you can do about it.
   Every bottle collected, every event joined, every donation made moves the needle.
@@ -42,12 +42,12 @@ def link_card(name, url, description, flag, color="#00d4aa", btn_label="VISIT �
                   font-weight:700; white-space:nowrap;">{btn_label}</a>
       </div>
       <div style="font-family:'DM Sans',sans-serif; font-size:0.82rem;
-                  color:#64748b; line-height:1.6;">{description}</div>
+                  color:##ccc7c7; line-height:1.6;">{description}</div>
     </div>"""
 
 # ── Section 1 — Cleanup Events ────────────────────────────────
 st.markdown("""
-<div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#00d4aa;
+<div style="font-family:'Space Mono',monospace; font-size:1.5rem; color:#00d4aa;
             letter-spacing:0.15em; margin-bottom:1rem;">🧤 JOIN A CLEANUP EVENT</div>
 """, unsafe_allow_html=True)
 
@@ -116,7 +116,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 st.markdown('<hr style="border-color:#1f2d40;">', unsafe_allow_html=True)
 
 st.markdown("""
-<div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#00856b;
+<div style="font-family:'Space Mono',monospace; font-size:1.5rem; color:#00856b;
             letter-spacing:0.15em; margin:1rem 0;">📱 TRACK YOUR DAILY IMPACT</div>
 """, unsafe_allow_html=True)
 
@@ -133,7 +133,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 
 # ── Section 2 — Donate / Support ─────────────────────────────
 st.markdown("""
-<div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#f59e0b;
+<div style="font-family:'Space Mono',monospace; font-size:1.5rem; color:#f59e0b;
             letter-spacing:0.15em; margin-bottom:1rem;">💛 SUPPORT THE ORGANISATIONS MAKING IT HAPPEN</div>
 """, unsafe_allow_html=True)
 
@@ -190,7 +190,7 @@ st.markdown('<hr style="border-color:#1f2d40;">', unsafe_allow_html=True)
 st.markdown("<br>", unsafe_allow_html=True)
 
 st.markdown("""
-<div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#457B9D;
+<div style="font-family:'Space Mono',monospace; font-size:1.5rem; color:#457B9D;
             letter-spacing:0.15em; margin-bottom:1rem;">🔭 INTERESTING INITIATIVES TO EXPLORE</div>
 """, unsafe_allow_html=True)
 
@@ -225,7 +225,7 @@ st.markdown("""
             padding:1.6rem 2rem; text-align:center;">
   <div style="font-family:'Orbitron',sans-serif; font-size:1.1rem; color:#e2e8f0;
               margin-bottom:0.75rem;">Every Bottle Counts</div>
-  <div style="font-family:'DM Sans',sans-serif; font-size:0.9rem; color:#64748b;
+  <div style="font-family:'DM Sans',sans-serif; font-size:0.9rem; color:##ccc7c7;
               max-width:600px; margin:0 auto; line-height:1.8;">
     The <strong style="color:#e2e8f0;">1,001,000 tonnes</strong> entering the ocean each year
     didn't get there in one go — it got there one bottle, one bag, one piece at a time.
