@@ -320,7 +320,6 @@ def plot_cleanup_growth(annual_org: pd.DataFrame, annual_total_cumsum: pd.Series
         fig.write_html(f"{FIGURES_DIR}/q4_h1_cleanup_growth.html")
     return fig
 
-
 # ── H2 helpers ────────────────────────────────────────────────────────────────
 
 def get_interceptor_stats(stats: dict, annual_org: pd.DataFrame) -> dict:
