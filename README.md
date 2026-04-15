@@ -19,6 +19,7 @@
 - [Setup & Installation](#setup--installation)
 - [Notebooks](#notebooks)
 - [Tableau](#tableau)
+- [Beyond the Data](#beyond-the-data)
 - [Valuable Extensions](#valuable-extensions)
 - [Links](#links)
 
@@ -60,7 +61,6 @@ The project combines a **MySQL relational database**, a **modular analytical not
 
 - **H1:** The majority of floating plastic concentrates in 5 gyre systems, with the North Pacific being the largest
 - **H2:** Coastal regions near high-input rivers show disproportionately high surface plastic density
-- **H3:** Ocean cleanup efforts are outpaced by the rate of plastic accumulation
 
 ### Q3 — What is the impact?
 *"Which ecosystems and species are most affected by ocean plastic?"*
@@ -292,14 +292,59 @@ Function modules in `Src/` are imported by both the notebooks and the Streamlit 
 
 ## Tableau
 
-The Tableau workbook (`Source to Sea - a data-driven analysis of ocean plastic.twbx`) connects to the CSV exports in `Data/Tableau/` and covers four dashboards:
+The Tableau workbook (`Source to Sea - a data-driven analysis of ocean plastic.twbx`) connects to the CSV exports in `Data/Tableau/` and covers six dashboards:
 
-- **Dashboard 1** — Plastic vs pollution (country-level overview)
+- **Dashboard 0** — The Crisis 
+- **Dashboard 1** — Where it comes from 
 - **Dashboard 2** — Ocean plastic accumulation
 - **Dashboard 3** — Marine species impact
 - **Dashboard 4** — Cleanup efforts and interceptor deployment
+- **Dashboard 5** — Solution
 
 To refresh the Tableau data, re-run `export_for_tableau.ipynb` — it regenerates all CSV files from the cleaned parquet files and the MySQL database.
+
+---
+## Beyond the Data
+
+This project focuses on river-borne plastic emissions as the primary pathway 
+to ocean pollution. Three additional dimensions fall outside the project scope 
+but are worth acknowledging — each representing a significant and underexplored 
+layer of the ocean plastic problem.
+
+### 1. Shipping lanes as a plastic source
+A 2025 study published in *Microplastics and Nanoplastics* found direct evidence 
+that shipping activities measurably increase microplastic concentrations along 
+maritime routes. Research from the University of Oldenburg suggests that up to 
+80% of microplastics in North Sea shipping lane surface waters derive from 
+antifouling hull paints alone. The straight-line patterns visible in the NOAA 
+microplastic dataset used in this project likely reflect this effect.
+— Oo et al. 2025, Microplastics and Nanoplastics (https://link.springer.com/article/10.1186/s43591-025-00147-4)
+— University of Oldenburg, Chemistry World, 2021 (https://pubs.acs.org/doi/10.1021/acs.est.0c04522)
+
+### 2. Farmed fish and microplastic accumulation
+The fish-to-human analysis in this project shows farmed rainbow trout has the 
+highest microplastic load of all species analysed. Research confirms this is 
+driven by three compounding factors: contaminated fishmeal feed (microplastics 
+found in 100% of fishmeal samples across 11 countries), enclosed farming 
+environments where plastic equipment continuously sheds particles, and selective 
+breeding that makes farmed fish less discriminating eaters than wild fish.
+— Danopoulos et al. 2020 (https://doi.org/10.1016/j.envpol.2020.114452)
+— EHN / Gündoğdu et al., Aquaculture, 2021 (https://www.sciencedirect.com/science/article/abs/pii/S0044848620340229?via%3Dihub))
+— Thiele et al. 2021 (https://www.nature.com/articles/s41598-021-81499-8)
+
+### 3. Plastic waste exports — the hidden responsibility gap
+The river emission data in this project correctly attributes plastic emissions 
+to the countries where rivers are located. However, this obscures a significant 
+transfer of responsibility: high-income countries export an estimated 5 million 
+tonnes of plastic waste annually — 71% from just 10 wealthy nations — to 
+lower-income countries that lack the infrastructure to manage it. When China 
+banned plastic waste imports in 2018, trade shifted to Southeast Asian countries 
+including Malaysia, Indonesia and the Philippines — the same countries that 
+appear as top emitters in this project's river data. Our World in Data estimates 
+that rich countries contribute between 1.6% and 11% of ocean plastics 
+indirectly through waste exports alone.
+— Our World in Data, 2022: (https://ourworldindata.org/plastic-waste-trade)
+— http://environment.ec.europa.eu/topics/waste-and-recycling/waste-shipments_en
 
 ---
 
@@ -333,6 +378,7 @@ The **Alliance to End Plastic Waste** works directly with governments and commun
 | 📊 Streamlit App | `[add deployed link]` |
 | 📈 Tableau Public | https://public.tableau.com/app/profile/sarah.jane.nede/viz/SourcetoSea-adata-drivenanalysisofoceanplastic/Q1EmissionMap |
 | 🗂️ Trello Board | https://trello.com/b/qAb9odfa/source-to-sea |
+| 🖼️ ERM | https://miro.com/app/board/uXjVG40KWwg=/?share_link_id=490917459116 |
 | 🗄️ ERD | https://www.drawdb.app/editor/diagrams/fda31b46-42de-468b-8638-6995853a6a3f |
 | 🎤 Presentation Slides | https://docs.google.com/presentation/d/1krScsEmnLrn3JrrEPwEUiUeHs9LGcbglG4TqTv40Sng/edit?slide=id.p#slide=id.p |
 
