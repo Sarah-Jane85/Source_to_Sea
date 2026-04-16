@@ -37,7 +37,7 @@ def stat_pill(value, label, color="#ff3b5c"):
 col1, col2 = st.columns([2, 3], gap="large")
 
 with col1:
-    st.markdown('<div style="padding-top:10rem;">', unsafe_allow_html=True)
+    st.markdown('<div style="padding-top:4rem;">', unsafe_allow_html=True)
     st.image("assets/turtle_plastic.jpg", use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
@@ -103,7 +103,7 @@ with col1:
     """, unsafe_allow_html=True)
 
 with col2:
-    st.markdown('<div style="padding-top:10rem;">', unsafe_allow_html=True)
+    st.markdown('<div style="padding-top:5rem;">', unsafe_allow_html=True)
     st.image("assets/whale_entangled.jpg", use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
@@ -115,7 +115,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 col1, col2 = st.columns([2, 3], gap="large")
 
 with col1:
-    st.markdown('<div style="padding-top:10rem;">', unsafe_allow_html=True)
+    st.markdown('<div style="padding-top:5rem;">', unsafe_allow_html=True)
     st.image("assets/seal_entangled.jpg", use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
@@ -183,7 +183,7 @@ with col1:
     """, unsafe_allow_html=True)
 
 with col2:
-    st.markdown('<div style="padding-top:10rem;">', unsafe_allow_html=True)
+    st.markdown('<div style="padding-top:5rem;">', unsafe_allow_html=True)
     st.image("assets/sea_horse1.jpg", use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
@@ -195,7 +195,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 col1, col2 = st.columns([2, 3], gap="large")
 
 with col1:
-    st.markdown('<div style="padding-top:10rem;">', unsafe_allow_html=True)
+    st.markdown('<div style="padding-top:3rem;">', unsafe_allow_html=True)
     st.image("assets/plastic_ocean.jpg", use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
@@ -265,7 +265,7 @@ with col1:
     """, unsafe_allow_html=True)
 
 with col2:
-    st.markdown('<div style="padding-top:10rem;">', unsafe_allow_html=True)
+    st.markdown('<div style="padding-top:5rem;">', unsafe_allow_html=True)
     st.image("assets/dead_fish.jpg", use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 # ── Closing stat bar ───────────────────────────────────────────
