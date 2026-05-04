@@ -44,11 +44,3 @@ output_data_exploratory:
   file9: "../../Data/Clean/species.parquet"
   file10: "../../Data/Clean/fish_to_human.parquet"
   
-
-tableau_output:
-  file1: 
-  file2: 
-  file3: 
-  file4: 
-  file5: 
-  file6: 

@@ -12,14 +12,23 @@ from sqlalchemy import create_engine
 # ── Country name maps (reused across multiple functions) ──────────────────────
 
 COUNTRY_NAME_MAP = {
-    "United States of America": "United States",
-    "Solomon Is.":              "Solomon Islands",
-    "Dominican Rep.":           "Dominican Republic",
-    "Cote d'Ivoire":            "Cote d'Ivoire",
-    "Timor-Leste":              "East Timor",
-    "Eq. Guinea":               "Equatorial Guinea",
-    "Dem. Rep. Congo":          "Democratic Republic of Congo",
-    "N. Cyprus":                "Cyprus"
+    "United States of America":  "United States",
+    "Solomon Is.":               "Solomon Islands",
+    "Dominican Rep.":            "Dominican Republic",
+    "Côte d'Ivoire":             "Cote d'Ivoire",   # ← fix: ô and smart quote
+    "Timor-Leste":               "East Timor",
+    "Eq. Guinea":                "Equatorial Guinea",
+    "Dem. Rep. Congo":           "Democratic Republic of Congo",
+    "N. Cyprus":                 "Cyprus",
+    # ── add the missing 8 ──
+    "Antigua and Barb.":         "Antigua and Barbuda",
+    "Bosnia and Herz.":          "Bosnia and Herzegovina",
+    "Dhekelia":                  "Cyprus",
+    "Micronesia":                "Micronesia (country)",
+    "Somaliland":                "Somalia",
+    "St. Kitts and Nevis":       "Saint Kitts and Nevis",
+    "St. Vin. and Gren.":        "Saint Vincent and the Grenadines",
+    "São Tomé and Principe":     "Sao Tome and Principe",
 }
 
 INCOME_OVERRIDES = {
@@ -37,7 +46,7 @@ INCOME_OVERRIDES = {
 
 # ── DB connection ─────────────────────────────────────────────────────────────
 
-def get_engine(password: str, db: str = "river_risk_index"):
+def get_engine(password: str, db: str = "source_to_sea"):
     """Create SQLAlchemy engine for MySQL."""
     return create_engine(f"mysql+mysqlconnector://root:{password}@localhost/{db}")
 

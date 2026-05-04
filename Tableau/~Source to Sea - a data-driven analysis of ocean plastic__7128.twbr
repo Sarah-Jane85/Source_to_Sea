@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8' ?>
 
 <!-- build 20261.26.0226.1626                               -->
-<workbook original-version='18.1' source-build='2026.1.0 (20261.26.0226.1626)' source-platform='win' version='18.1' xml:base='https://localhost:8080' xmlns:user='http://www.tableausoftware.com/xml/user'>
+<workbook original-version='18.1' source-build='2026.1.0 (20261.26.0226.1626)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <document-format-change-manifest>
     <AccessibleZoneTabOrder />
     <AnimationOnByDefault />
@@ -22,7 +22,7 @@
     <WindowsPersistSimpleIdentifiers />
     <WorksheetBackgroundTransparency />
   </document-format-change-manifest>
-  <repository-location derived-from='https://public.tableau.com/workbooks/SourcetoSea-adata-drivenanalysisofoceanplastic?rev=1.1' id='SourcetoSea-adata-drivenanalysisofoceanplastic' path='/workbooks' revision='1.1' />
+  <repository-location derived-from='https://public.tableau.com/workbooks/SourcetoSea-adata-drivenanalysisofoceanplastic?rev=1.1' id='SourcetoSea-adata-drivenanalysisofoceanplastic' path='/workbooks' revision='1.5' />
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
     <preference name='ui.shelf.height' value='26' />
@@ -237,7 +237,7 @@
         </drill-path>
       </drill-paths>
       <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
-        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp 1/#TableauTemp_0dwhjab16fjjp6188du8r1osuyzo.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='04/12/2026 09:11:24 AM' username=''>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp 1/#TableauTemp_0dwhjab16fjjp6188du8r1osuyzo.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username=''>
           <relation name='Extract' table='[Extract].[Extract]' type='table' />
           <metadata-records>
             <metadata-record class='column'>
@@ -408,323 +408,6 @@
         </objects>
       </object-graph>
     </datasource>
-    <datasource caption='cleanup_efforts' inline='true' name='federated.02nimti018vqtu193xte017lsub4' version='18.1'>
-      <connection class='federated'>
-        <named-connections>
-          <named-connection caption='cleanup_efforts' name='textscan.1yrh3bo0bc2ejc18y8ymw0v6w5uf'>
-            <connection class='textscan' directory='C:/Users/Ready2Use/Documents/my-folder/Ironhack-week8/river-risk-index/Data/Tableau' workgroup-auth-mode='as-is' />
-          </named-connection>
-        </named-connections>
-        <relation connection='textscan.1yrh3bo0bc2ejc18y8ymw0v6w5uf' name='cleanup_efforts.csv' table='[cleanup_efforts#csv]' type='table'>
-          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-            <column datatype='integer' name='year' ordinal='0' />
-            <column datatype='string' name='organisation' ordinal='1' />
-            <column datatype='string' name='cleanup_type' ordinal='2' />
-            <column datatype='string' name='source_url' ordinal='3' />
-            <column datatype='integer' name='kg_removed_annual' ordinal='4' />
-            <column datatype='integer' name='kg_removed_cumulative' ordinal='5' />
-            <column datatype='integer' name='volunteers' ordinal='6' />
-            <column datatype='integer' name='countries' ordinal='7' />
-          </columns>
-        </relation>
-        <metadata-records>
-          <metadata-record class='capability'>
-            <remote-name />
-            <remote-type>0</remote-type>
-            <parent-name>[cleanup_efforts.csv]</parent-name>
-            <remote-alias />
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
-              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
-              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
-              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
-              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
-              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
-            </attributes>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>year</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[year]</local-name>
-            <parent-name>[cleanup_efforts.csv]</parent-name>
-            <remote-alias>year</remote-alias>
-            <ordinal>0</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>organisation</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[organisation]</local-name>
-            <parent-name>[cleanup_efforts.csv]</parent-name>
-            <remote-alias>organisation</remote-alias>
-            <ordinal>1</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>cleanup_type</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[cleanup_type]</local-name>
-            <parent-name>[cleanup_efforts.csv]</parent-name>
-            <remote-alias>cleanup_type</remote-alias>
-            <ordinal>2</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>source_url</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[source_url]</local-name>
-            <parent-name>[cleanup_efforts.csv]</parent-name>
-            <remote-alias>source_url</remote-alias>
-            <ordinal>3</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>kg_removed_annual</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[kg_removed_annual]</local-name>
-            <parent-name>[cleanup_efforts.csv]</parent-name>
-            <remote-alias>kg_removed_annual</remote-alias>
-            <ordinal>4</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>kg_removed_cumulative</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[kg_removed_cumulative]</local-name>
-            <parent-name>[cleanup_efforts.csv]</parent-name>
-            <remote-alias>kg_removed_cumulative</remote-alias>
-            <ordinal>5</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>volunteers</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[volunteers]</local-name>
-            <parent-name>[cleanup_efforts.csv]</parent-name>
-            <remote-alias>volunteers</remote-alias>
-            <ordinal>6</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>countries</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[countries]</local-name>
-            <parent-name>[cleanup_efforts.csv]</parent-name>
-            <remote-alias>countries</remote-alias>
-            <ordinal>7</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
-          </metadata-record>
-        </metadata-records>
-      </connection>
-      <aliases enabled='yes' />
-      <column caption='Tonnes Removes 2025' datatype='real' name='[Calculation_1504740228079617]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='SUM([kg_removed_annual])/1000' />
-      </column>
-      <column caption='Pct of Annual Input' datatype='real' name='[Calculation_1504740228558850]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='SUM([kg_removed_annual]) / 1001000000' />
-      </column>
-      <column caption='Total KG Annual' datatype='integer' name='[Calculation_1504740313927685]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='SUM([kg_removed_annual])' />
-      </column>
-      <column caption='cleanup_efforts.csv' datatype='table' name='[__tableau_internal_object_id__].[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]' role='measure' type='quantitative' />
-      <column caption='Cleanup Type' datatype='string' name='[cleanup_type]' role='dimension' type='nominal' />
-      <column caption='Countries' datatype='integer' name='[countries]' role='measure' type='quantitative' />
-      <column caption='Kg Removed Annual' datatype='integer' name='[kg_removed_annual]' role='measure' type='quantitative' />
-      <column caption='Kg Removed Cumulative' datatype='integer' name='[kg_removed_cumulative]' role='measure' type='quantitative' />
-      <column caption='Organisation' datatype='string' name='[organisation]' role='dimension' type='nominal' />
-      <column caption='Source Url' datatype='string' name='[source_url]' role='dimension' type='nominal' />
-      <column caption='Volunteers' datatype='integer' name='[volunteers]' role='measure' type='quantitative' />
-      <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
-      <column-instance column='[organisation]' derivation='None' name='[none:organisation:nk]' pivot='key' type='nominal' />
-      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
-        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp/#TableauTemp_1qcnrjh06v8b8114pmvh71j5ag0i.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='04/11/2026 11:03:29 AM' username=''>
-          <relation name='Extract' table='[Extract].[Extract]' type='table' />
-          <metadata-records>
-            <metadata-record class='column'>
-              <remote-name>year</remote-name>
-              <remote-type>20</remote-type>
-              <local-name>[year]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>year</remote-alias>
-              <ordinal>0</ordinal>
-              <family>cleanup_efforts.csv</family>
-              <local-type>integer</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>18</approx-count>
-              <contains-null>true</contains-null>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>organisation</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[organisation]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>organisation</remote-alias>
-              <ordinal>1</ordinal>
-              <family>cleanup_efforts.csv</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>2</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='0' name='LEN_RUS' />
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>cleanup_type</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[cleanup_type]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>cleanup_type</remote-alias>
-              <ordinal>2</ordinal>
-              <family>cleanup_efforts.csv</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>2</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='0' name='LEN_RUS' />
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>source_url</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[source_url]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>source_url</remote-alias>
-              <ordinal>3</ordinal>
-              <family>cleanup_efforts.csv</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>2</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='0' name='LEN_RUS' />
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>kg_removed_annual</remote-name>
-              <remote-type>20</remote-type>
-              <local-name>[kg_removed_annual]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>kg_removed_annual</remote-alias>
-              <ordinal>4</ordinal>
-              <family>cleanup_efforts.csv</family>
-              <local-type>integer</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>23</approx-count>
-              <contains-null>true</contains-null>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>kg_removed_cumulative</remote-name>
-              <remote-type>20</remote-type>
-              <local-name>[kg_removed_cumulative]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>kg_removed_cumulative</remote-alias>
-              <ordinal>5</ordinal>
-              <family>cleanup_efforts.csv</family>
-              <local-type>integer</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>25</approx-count>
-              <contains-null>true</contains-null>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>volunteers</remote-name>
-              <remote-type>20</remote-type>
-              <local-name>[volunteers]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>volunteers</remote-alias>
-              <ordinal>6</ordinal>
-              <family>cleanup_efforts.csv</family>
-              <local-type>integer</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>17</approx-count>
-              <contains-null>true</contains-null>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>countries</remote-name>
-              <remote-type>20</remote-type>
-              <local-name>[countries]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>countries</remote-alias>
-              <ordinal>7</ordinal>
-              <family>cleanup_efforts.csv</family>
-              <local-type>integer</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>13</approx-count>
-              <contains-null>true</contains-null>
-            </metadata-record>
-          </metadata-records>
-        </connection>
-      </extract>
-      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
-      <style>
-        <style-rule element='mark'>
-          <encoding attr='color' field='[none:organisation:nk]' type='palette'>
-            <map to='#368323'>
-              <bucket>&quot;The Ocean Cleanup&quot;</bucket>
-            </map>
-            <map to='#ba7a2b'>
-              <bucket>&quot;Ocean Conservancy (ICC)&quot;</bucket>
-            </map>
-          </encoding>
-        </style-rule>
-      </style>
-      <semantic-values>
-        <semantic-value key='[Country].[Name]' value='&quot;Germany&quot;' />
-      </semantic-values>
-      <object-graph>
-        <objects>
-          <object caption='cleanup_efforts.csv' id='cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789'>
-            <properties context=''>
-              <relation connection='textscan.1yrh3bo0bc2ejc18y8ymw0v6w5uf' name='cleanup_efforts.csv' table='[cleanup_efforts#csv]' type='table'>
-                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                  <column datatype='integer' name='year' ordinal='0' />
-                  <column datatype='string' name='organisation' ordinal='1' />
-                  <column datatype='string' name='cleanup_type' ordinal='2' />
-                  <column datatype='string' name='source_url' ordinal='3' />
-                  <column datatype='integer' name='kg_removed_annual' ordinal='4' />
-                  <column datatype='integer' name='kg_removed_cumulative' ordinal='5' />
-                  <column datatype='integer' name='volunteers' ordinal='6' />
-                  <column datatype='integer' name='countries' ordinal='7' />
-                </columns>
-              </relation>
-            </properties>
-            <properties context='extract'>
-              <relation name='Extract' table='[Extract].[Extract]' type='table' />
-            </properties>
-          </object>
-        </objects>
-      </object-graph>
-    </datasource>
     <datasource caption='ghost_net' inline='true' name='federated.048gnsg0exq2u0149nibk0jx8cmi' version='18.1'>
       <connection class='federated'>
         <named-connections>
@@ -804,7 +487,7 @@
       <column caption='ghost_net.csv' datatype='table' name='[__tableau_internal_object_id__].[ghost_net.csv_BA20B1081AB34156BAD8DB4F1ADAA75E]' role='measure' type='quantitative' />
       <column-instance column='[Size_Class]' derivation='None' name='[none:Size_Class:nk]' pivot='key' type='nominal' />
       <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
-        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp/#TableauTemp_1m63yf00e9kl8g1gmh4pa1i8dhaj.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='04/11/2026 02:17:45 PM' username=''>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp/#TableauTemp_1m63yf00e9kl8g1gmh4pa1i8dhaj.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username=''>
           <relation name='Extract' table='[Extract].[Extract]' type='table' />
           <metadata-records>
             <metadata-record class='column'>
@@ -980,7 +663,7 @@
       <column caption='top5_uncovered.csv' datatype='table' name='[__tableau_internal_object_id__].[top5_uncovered.csv_A063C18A30D2426F87A7636FC5D0DDCC]' role='measure' type='quantitative' />
       <column-instance column='[Calculation_1504740325064710]' derivation='None' name='[none:Calculation_1504740325064710:nk]' pivot='key' type='nominal' />
       <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
-        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp/#TableauTemp_1100quw0i9e7q81d0ripu1gi0pwz.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='04/11/2026 05:29:18 PM' username=''>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp/#TableauTemp_1100quw0i9e7q81d0ripu1gi0pwz.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username=''>
           <relation name='Extract' table='[Extract].[Extract]' type='table' />
           <metadata-records>
             <metadata-record class='column'>
@@ -1164,7 +847,7 @@
       <column caption='plastic_heatmap.csv' datatype='table' name='[__tableau_internal_object_id__].[plastic_heatmap.csv_F211AF2325754263BB1A7A8BF961AF03]' role='measure' type='quantitative' />
       <column caption='Group' datatype='string' name='[group]' role='dimension' type='nominal' />
       <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
-        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp/#TableauTemp_1n3dzkt1gy3mz3165hids0dri0jg.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='04/11/2026 02:40:24 PM' username=''>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp/#TableauTemp_1n3dzkt1gy3mz3165hids0dri0jg.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username=''>
           <relation name='Extract' table='[Extract].[Extract]' type='table' />
           <metadata-records>
             <metadata-record class='column'>
@@ -1340,7 +1023,7 @@
       <column caption='Sampling Method' datatype='string' name='[sampling_method]' role='dimension' type='nominal' />
       <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
       <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
-        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp/#TableauTemp_1i69yul1pw744q1cx589i1vvhhjx.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='04/11/2026 12:46:37 PM' username=''>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp/#TableauTemp_1i69yul1pw744q1cx589i1vvhhjx.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username=''>
           <relation name='Extract' table='[Extract].[Extract]' type='table' />
           <metadata-records>
             <metadata-record class='column'>
@@ -1600,7 +1283,7 @@
       <column caption='Source' datatype='string' name='[source]' role='dimension' type='nominal' />
       <column caption='Species' datatype='string' name='[species]' role='dimension' type='nominal' />
       <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
-        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp/#TableauTemp_0h5m1tq0m3zkbo1bokf8i0rzjs62.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='04/11/2026 03:04:39 PM' username=''>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp/#TableauTemp_0h5m1tq0m3zkbo1bokf8i0rzjs62.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username=''>
           <relation name='Extract' table='[Extract].[Extract]' type='table' />
           <metadata-records>
             <metadata-record class='column'>
@@ -1744,24 +1427,26 @@
         </objects>
       </object-graph>
     </datasource>
-    <datasource caption='proximity' inline='true' name='federated.1atyyn01fpdupc1eqawmn06y5sr1' version='18.1'>
+    <datasource caption='ingestion_by_class' inline='true' name='federated.0344vdc1ao0zfl10g9zz11st4jw0' version='18.1'>
       <connection class='federated'>
         <named-connections>
-          <named-connection caption='proximity' name='textscan.116con81tlr9z816lcyyg1wyq6rf'>
-            <connection class='textscan' directory='C:/Users/Ready2Use/Documents/my-folder/Ironhack-week8/river-risk-index/Data/Tableau' workgroup-auth-mode='as-is' />
+          <named-connection caption='ingestion_by_class' name='textscan.0m1dyow1o7kbnc15iyw0q1kb3phv'>
+            <connection class='textscan' directory='C:/Users/Ready2Use/Documents/my-folder/Ironhack-week8/Source-to-Sea/Data/Tableau' filename='ingestion_by_class.csv' password='' server='' workgroup-auth-mode='as-is' />
           </named-connection>
         </named-connections>
-        <relation connection='textscan.116con81tlr9z816lcyyg1wyq6rf' name='proximity.csv' table='[proximity#csv]' type='table'>
+        <relation connection='textscan.0m1dyow1o7kbnc15iyw0q1kb3phv' name='ingestion_by_class.csv' table='[ingestion_by_class#csv]' type='table'>
           <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-            <column datatype='string' name='Zone' ordinal='0' />
-            <column datatype='real' name='Avg_Concentration' ordinal='1' />
+            <column datatype='string' name='Class' ordinal='0' />
+            <column datatype='integer' name='N_Animals' ordinal='1' />
+            <column datatype='integer' name='N_With_Ingestion' ordinal='2' />
+            <column datatype='real' name='Ingestion_Rate_Pct' ordinal='3' />
           </columns>
         </relation>
         <metadata-records>
           <metadata-record class='capability'>
             <remote-name />
             <remote-type>0</remote-type>
-            <parent-name>[proximity.csv]</parent-name>
+            <parent-name>[ingestion_by_class.csv]</parent-name>
             <remote-alias />
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -1775,11 +1460,11 @@
             </attributes>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>Zone</remote-name>
+            <remote-name>Class</remote-name>
             <remote-type>129</remote-type>
-            <local-name>[Zone]</local-name>
-            <parent-name>[proximity.csv]</parent-name>
-            <remote-alias>Zone</remote-alias>
+            <local-name>[Class]</local-name>
+            <parent-name>[ingestion_by_class.csv]</parent-name>
+            <remote-alias>Class</remote-alias>
             <ordinal>0</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
@@ -1787,56 +1472,106 @@
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <object-id>[proximity.csv_7B9D515727184A2EB6444214908C3FB5]</object-id>
+            <object-id>[ingestion_by_class.csv_54D6188F1A144592A8183257A19C7603]</object-id>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>Avg_Concentration</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[Avg_Concentration]</local-name>
-            <parent-name>[proximity.csv]</parent-name>
-            <remote-alias>Avg_Concentration</remote-alias>
+            <remote-name>N_Animals</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[N_Animals]</local-name>
+            <parent-name>[ingestion_by_class.csv]</parent-name>
+            <remote-alias>N_Animals</remote-alias>
             <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ingestion_by_class.csv_54D6188F1A144592A8183257A19C7603]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>N_With_Ingestion</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[N_With_Ingestion]</local-name>
+            <parent-name>[ingestion_by_class.csv]</parent-name>
+            <remote-alias>N_With_Ingestion</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ingestion_by_class.csv_54D6188F1A144592A8183257A19C7603]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Ingestion_Rate_Pct</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Ingestion_Rate_Pct]</local-name>
+            <parent-name>[ingestion_by_class.csv]</parent-name>
+            <remote-alias>Ingestion_Rate_Pct</remote-alias>
+            <ordinal>3</ordinal>
             <local-type>real</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[proximity.csv_7B9D515727184A2EB6444214908C3FB5]</object-id>
+            <object-id>[ingestion_by_class.csv_54D6188F1A144592A8183257A19C7603]</object-id>
           </metadata-record>
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
-      <column caption='Avg Concentration' datatype='real' name='[Avg_Concentration]' role='measure' type='quantitative' />
-      <column datatype='string' name='[Zone]' role='dimension' type='nominal' />
-      <column caption='proximity.csv' datatype='table' name='[__tableau_internal_object_id__].[proximity.csv_7B9D515727184A2EB6444214908C3FB5]' role='measure' type='quantitative' />
-      <column-instance column='[Zone]' derivation='None' name='[none:Zone:nk]' pivot='key' type='nominal' />
+      <column datatype='string' name='[Class]' role='dimension' type='nominal' />
+      <column caption='N Animals' datatype='integer' name='[N_Animals]' role='measure' type='quantitative' />
+      <column caption='ingestion_by_class.csv' datatype='table' name='[__tableau_internal_object_id__].[ingestion_by_class.csv_54D6188F1A144592A8183257A19C7603]' role='measure' type='quantitative' />
+      <column-instance column='[Class]' derivation='None' name='[none:Class:nk]' pivot='key' type='nominal' />
       <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
-        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp/#TableauTemp_1043gns1wz2e4s17zza3v1azrc5p.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='04/11/2026 01:19:36 PM' username=''>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp 2/#TableauTemp_128761d124spqc1aq3l370hwwdu6.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
           <relation name='Extract' table='[Extract].[Extract]' type='table' />
           <metadata-records>
             <metadata-record class='column'>
-              <remote-name>Zone</remote-name>
+              <remote-name>Class</remote-name>
               <remote-type>129</remote-type>
-              <local-name>[Zone]</local-name>
+              <local-name>[Class]</local-name>
               <parent-name>[Extract]</parent-name>
-              <remote-alias>Zone</remote-alias>
+              <remote-alias>Class</remote-alias>
               <ordinal>0</ordinal>
-              <family>proximity.csv</family>
+              <family>ingestion_by_class.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
-              <approx-count>3</approx-count>
+              <approx-count>5</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
             </metadata-record>
             <metadata-record class='column'>
-              <remote-name>Avg_Concentration</remote-name>
-              <remote-type>5</remote-type>
-              <local-name>[Avg_Concentration]</local-name>
+              <remote-name>N_Animals</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[N_Animals]</local-name>
               <parent-name>[Extract]</parent-name>
-              <remote-alias>Avg_Concentration</remote-alias>
+              <remote-alias>N_Animals</remote-alias>
               <ordinal>1</ordinal>
-              <family>proximity.csv</family>
+              <family>ingestion_by_class.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>N_With_Ingestion</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[N_With_Ingestion]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>N_With_Ingestion</remote-alias>
+              <ordinal>2</ordinal>
+              <family>ingestion_by_class.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Ingestion_Rate_Pct</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Ingestion_Rate_Pct]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Ingestion_Rate_Pct</remote-alias>
+              <ordinal>3</ordinal>
+              <family>ingestion_by_class.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>3</approx-count>
+              <approx-count>5</approx-count>
               <contains-null>true</contains-null>
             </metadata-record>
           </metadata-records>
@@ -1845,15 +1580,21 @@
       <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
       <style>
         <style-rule element='mark'>
-          <encoding attr='color' field='[none:Zone:nk]' type='palette'>
+          <encoding attr='color' field='[none:Class:nk]' type='palette'>
+            <map to='#76b7b2'>
+              <bucket>&quot;Very High&quot;</bucket>
+            </map>
             <map to='#96151d'>
-              <bucket>&quot;Near River (&lt;50km)&quot;</bucket>
+              <bucket>&quot;High&quot;</bucket>
             </map>
-            <map to='#bc7429'>
-              <bucket>&quot;Open Ocean (&gt;200km)&quot;</bucket>
+            <map to='#c47a2b'>
+              <bucket>&quot;Low&quot;</bucket>
             </map>
-            <map to='#d4ae46'>
-              <bucket>&quot;Regional (50-200km)&quot;</bucket>
+            <map to='#c47a2b'>
+              <bucket>&quot;Medium&quot;</bucket>
+            </map>
+            <map to='#c47a2b'>
+              <bucket>&quot;Very Low&quot;</bucket>
             </map>
           </encoding>
         </style-rule>
@@ -1863,12 +1604,14 @@
       </semantic-values>
       <object-graph>
         <objects>
-          <object caption='proximity.csv' id='proximity.csv_7B9D515727184A2EB6444214908C3FB5'>
+          <object caption='ingestion_by_class.csv' id='ingestion_by_class.csv_54D6188F1A144592A8183257A19C7603'>
             <properties context=''>
-              <relation connection='textscan.116con81tlr9z816lcyyg1wyq6rf' name='proximity.csv' table='[proximity#csv]' type='table'>
+              <relation connection='textscan.0m1dyow1o7kbnc15iyw0q1kb3phv' name='ingestion_by_class.csv' table='[ingestion_by_class#csv]' type='table'>
                 <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                  <column datatype='string' name='Zone' ordinal='0' />
-                  <column datatype='real' name='Avg_Concentration' ordinal='1' />
+                  <column datatype='string' name='Class' ordinal='0' />
+                  <column datatype='integer' name='N_Animals' ordinal='1' />
+                  <column datatype='integer' name='N_With_Ingestion' ordinal='2' />
+                  <column datatype='real' name='Ingestion_Rate_Pct' ordinal='3' />
                 </columns>
               </relation>
             </properties>
@@ -1883,7 +1626,7 @@
       <connection class='federated'>
         <named-connections>
           <named-connection caption='emission_points' name='textscan.124fe8v02verlp1bwpk3p0oo2ol8'>
-            <connection class='textscan' directory='C:/Users/Ready2Use/Documents/my-folder/Ironhack-week8/river-risk-index/Data/Tableau' workgroup-auth-mode='as-is' />
+            <connection class='textscan' directory='C:/Users/Ready2Use/Documents/my-folder/Ironhack-week8/Source-to-Sea/Data/Tableau' filename='emission_points.csv' password='' server='' workgroup-auth-mode='as-is' />
           </named-connection>
         </named-connections>
         <relation connection='textscan.124fe8v02verlp1bwpk3p0oo2ol8' name='emission_points.csv' table='[emission_points#csv]' type='table'>
@@ -2026,6 +1769,9 @@
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
+      <column caption='rounded emission_points' datatype='real' name='[Calculation_0489899199774720]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='ROUND(SUM([emission_tons_year]), -3)' />
+      </column>
       <column caption='Tonnes Removed 2025' datatype='real' name='[Calculation_1504740227678208]' role='measure' type='quantitative'>
         <calculation class='tableau' formula='SUM([federated.02nimti018vqtu193xte017lsub4].[kg_removed_annual]) /1000' />
       </column>
@@ -2045,7 +1791,7 @@
         </groupfilter>
       </group>
       <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
-        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp/#TableauTemp_1wllayv0bydvoj18fuwcz10v9tkq.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='04/11/2026 10:35:53 AM' username=''>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp 3/#TableauTemp_0lq5ol8050cq5v1521vm907o0dmm.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
           <relation name='Extract' table='[Extract].[Extract]' type='table' />
           <metadata-records>
             <metadata-record class='column'>
@@ -2058,9 +1804,8 @@
               <family>emission_points.csv</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>31685</approx-count>
+              <approx-count>31819</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[emission_points.csv_5255B6DF0E274F598CF8547AF23905A1]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>lat</remote-name>
@@ -2072,9 +1817,8 @@
               <family>emission_points.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>19557</approx-count>
+              <approx-count>24208</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[emission_points.csv_5255B6DF0E274F598CF8547AF23905A1]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>lon</remote-name>
@@ -2086,9 +1830,8 @@
               <family>emission_points.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>27142</approx-count>
+              <approx-count>30298</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[emission_points.csv_5255B6DF0E274F598CF8547AF23905A1]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>emission_tons_year</remote-name>
@@ -2100,9 +1843,8 @@
               <family>emission_points.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>30171</approx-count>
+              <approx-count>31819</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[emission_points.csv_5255B6DF0E274F598CF8547AF23905A1]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>income_group</remote-name>
@@ -2117,7 +1859,6 @@
               <approx-count>5</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <object-id>[emission_points.csv_5255B6DF0E274F598CF8547AF23905A1]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>country_name</remote-name>
@@ -2129,10 +1870,9 @@
               <family>emission_points.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
-              <approx-count>176</approx-count>
+              <approx-count>166</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <object-id>[emission_points.csv_5255B6DF0E274F598CF8547AF23905A1]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>iso_code</remote-name>
@@ -2144,10 +1884,9 @@
               <family>emission_points.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
-              <approx-count>176</approx-count>
+              <approx-count>166</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <object-id>[emission_points.csv_5255B6DF0E274F598CF8547AF23905A1]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>continent_name</remote-name>
@@ -2162,7 +1901,6 @@
               <approx-count>7</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <object-id>[emission_points.csv_5255B6DF0E274F598CF8547AF23905A1]</object-id>
             </metadata-record>
           </metadata-records>
         </connection>
@@ -2219,26 +1957,30 @@
         </objects>
       </object-graph>
     </datasource>
-    <datasource caption='ingestion_by_class' inline='true' name='federated.0344vdc1ao0zfl10g9zz11st4jw0' version='18.1'>
+    <datasource caption='cleanup_efforts' inline='true' name='federated.02nimti018vqtu193xte017lsub4' version='18.1'>
       <connection class='federated'>
         <named-connections>
-          <named-connection caption='ingestion_by_class' name='textscan.0m1dyow1o7kbnc15iyw0q1kb3phv'>
-            <connection class='textscan' directory='C:/Users/Ready2Use/Documents/my-folder/Ironhack-week8/Source-to-Sea/Data/Tableau' filename='ingestion_by_class.csv' password='' server='' workgroup-auth-mode='as-is' />
+          <named-connection caption='cleanup_efforts' name='textscan.1yrh3bo0bc2ejc18y8ymw0v6w5uf'>
+            <connection class='textscan' directory='C:/Users/Ready2Use/Documents/my-folder/Ironhack-week8/Source-to-Sea/Data/Tableau' filename='cleanup_efforts.csv' password='' server='' workgroup-auth-mode='as-is' />
           </named-connection>
         </named-connections>
-        <relation connection='textscan.0m1dyow1o7kbnc15iyw0q1kb3phv' name='ingestion_by_class.csv' table='[ingestion_by_class#csv]' type='table'>
+        <relation connection='textscan.1yrh3bo0bc2ejc18y8ymw0v6w5uf' name='cleanup_efforts.csv' table='[cleanup_efforts#csv]' type='table'>
           <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-            <column datatype='string' name='Class' ordinal='0' />
-            <column datatype='integer' name='N_Animals' ordinal='1' />
-            <column datatype='integer' name='N_With_Ingestion' ordinal='2' />
-            <column datatype='real' name='Ingestion_Rate_Pct' ordinal='3' />
+            <column datatype='integer' name='year' ordinal='0' />
+            <column datatype='string' name='organisation' ordinal='1' />
+            <column datatype='string' name='cleanup_type' ordinal='2' />
+            <column datatype='string' name='source_url' ordinal='3' />
+            <column datatype='integer' name='kg_removed_annual' ordinal='4' />
+            <column datatype='integer' name='kg_removed_cumulative' ordinal='5' />
+            <column datatype='integer' name='volunteers' ordinal='6' />
+            <column datatype='integer' name='countries' ordinal='7' />
           </columns>
         </relation>
         <metadata-records>
           <metadata-record class='capability'>
             <remote-name />
             <remote-type>0</remote-type>
-            <parent-name>[ingestion_by_class.csv]</parent-name>
+            <parent-name>[cleanup_efforts.csv]</parent-name>
             <remote-alias />
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -2252,123 +1994,250 @@
             </attributes>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>Class</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[Class]</local-name>
-            <parent-name>[ingestion_by_class.csv]</parent-name>
-            <remote-alias>Class</remote-alias>
+            <remote-name>year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[cleanup_efforts.csv]</parent-name>
+            <remote-alias>year</remote-alias>
             <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>organisation</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[organisation]</local-name>
+            <parent-name>[cleanup_efforts.csv]</parent-name>
+            <remote-alias>organisation</remote-alias>
+            <ordinal>1</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <object-id>[ingestion_by_class.csv_54D6188F1A144592A8183257A19C7603]</object-id>
+            <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>N_Animals</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[N_Animals]</local-name>
-            <parent-name>[ingestion_by_class.csv]</parent-name>
-            <remote-alias>N_Animals</remote-alias>
-            <ordinal>1</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[ingestion_by_class.csv_54D6188F1A144592A8183257A19C7603]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>N_With_Ingestion</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[N_With_Ingestion]</local-name>
-            <parent-name>[ingestion_by_class.csv]</parent-name>
-            <remote-alias>N_With_Ingestion</remote-alias>
+            <remote-name>cleanup_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[cleanup_type]</local-name>
+            <parent-name>[cleanup_efforts.csv]</parent-name>
+            <remote-alias>cleanup_type</remote-alias>
             <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>source_url</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[source_url]</local-name>
+            <parent-name>[cleanup_efforts.csv]</parent-name>
+            <remote-alias>source_url</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>kg_removed_annual</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[kg_removed_annual]</local-name>
+            <parent-name>[cleanup_efforts.csv]</parent-name>
+            <remote-alias>kg_removed_annual</remote-alias>
+            <ordinal>4</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[ingestion_by_class.csv_54D6188F1A144592A8183257A19C7603]</object-id>
+            <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>Ingestion_Rate_Pct</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[Ingestion_Rate_Pct]</local-name>
-            <parent-name>[ingestion_by_class.csv]</parent-name>
-            <remote-alias>Ingestion_Rate_Pct</remote-alias>
-            <ordinal>3</ordinal>
-            <local-type>real</local-type>
+            <remote-name>kg_removed_cumulative</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[kg_removed_cumulative]</local-name>
+            <parent-name>[cleanup_efforts.csv]</parent-name>
+            <remote-alias>kg_removed_cumulative</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[ingestion_by_class.csv_54D6188F1A144592A8183257A19C7603]</object-id>
+            <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>volunteers</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[volunteers]</local-name>
+            <parent-name>[cleanup_efforts.csv]</parent-name>
+            <remote-alias>volunteers</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>countries</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[countries]</local-name>
+            <parent-name>[cleanup_efforts.csv]</parent-name>
+            <remote-alias>countries</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
           </metadata-record>
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
-      <column datatype='string' name='[Class]' role='dimension' type='nominal' />
-      <column caption='N Animals' datatype='integer' name='[N_Animals]' role='measure' type='quantitative' />
-      <column caption='ingestion_by_class.csv' datatype='table' name='[__tableau_internal_object_id__].[ingestion_by_class.csv_54D6188F1A144592A8183257A19C7603]' role='measure' type='quantitative' />
-      <column-instance column='[Class]' derivation='None' name='[none:Class:nk]' pivot='key' type='nominal' />
+      <column caption='Tonnes Removes 2025' datatype='real' name='[Calculation_1504740228079617]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([kg_removed_annual])/1000' />
+      </column>
+      <column caption='Pct of Annual Input' datatype='real' name='[Calculation_1504740228558850]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([kg_removed_annual]) / 1001000000' />
+      </column>
+      <column caption='Total KG Annual' datatype='integer' name='[Calculation_1504740313927685]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([kg_removed_annual])' />
+      </column>
+      <column caption='cleanup_efforts.csv' datatype='table' name='[__tableau_internal_object_id__].[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]' role='measure' type='quantitative' />
+      <column caption='Cleanup Type' datatype='string' name='[cleanup_type]' role='dimension' type='nominal' />
+      <column caption='Countries' datatype='integer' name='[countries]' role='measure' type='quantitative' />
+      <column caption='Kg Removed Annual' datatype='integer' name='[kg_removed_annual]' role='measure' type='quantitative' />
+      <column caption='Kg Removed Cumulative' datatype='integer' name='[kg_removed_cumulative]' role='measure' type='quantitative' />
+      <column caption='Organisation' datatype='string' name='[organisation]' role='dimension' type='nominal' />
+      <column caption='Source Url' datatype='string' name='[source_url]' role='dimension' type='nominal' />
+      <column caption='Volunteers' datatype='integer' name='[volunteers]' role='measure' type='quantitative' />
+      <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
+      <column-instance column='[organisation]' derivation='None' name='[none:organisation:nk]' pivot='key' type='nominal' />
       <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
-        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp 2/#TableauTemp_128761d124spqc1aq3l370hwwdu6.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='04/16/2026 09:10:14 AM' username='tableau_internal_user'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp 3/#TableauTemp_0th8z760546dv417nt88t1oqro71.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='05/04/2026 03:40:11 PM' username='tableau_internal_user'>
           <relation name='Extract' table='[Extract].[Extract]' type='table' />
           <metadata-records>
             <metadata-record class='column'>
-              <remote-name>Class</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[Class]</local-name>
+              <remote-name>year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[year]</local-name>
               <parent-name>[Extract]</parent-name>
-              <remote-alias>Class</remote-alias>
+              <remote-alias>year</remote-alias>
               <ordinal>0</ordinal>
-              <family>ingestion_by_class.csv</family>
+              <family>cleanup_efforts.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>18</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>organisation</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[organisation]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>organisation</remote-alias>
+              <ordinal>1</ordinal>
+              <family>cleanup_efforts.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
-              <approx-count>5</approx-count>
+              <approx-count>2</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <object-id>[ingestion_by_class.csv_54D6188F1A144592A8183257A19C7603]</object-id>
+              <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
             </metadata-record>
             <metadata-record class='column'>
-              <remote-name>N_Animals</remote-name>
-              <remote-type>20</remote-type>
-              <local-name>[N_Animals]</local-name>
+              <remote-name>cleanup_type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[cleanup_type]</local-name>
               <parent-name>[Extract]</parent-name>
-              <remote-alias>N_Animals</remote-alias>
-              <ordinal>1</ordinal>
-              <family>ingestion_by_class.csv</family>
-              <local-type>integer</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>5</approx-count>
-              <contains-null>true</contains-null>
-              <object-id>[ingestion_by_class.csv_54D6188F1A144592A8183257A19C7603]</object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>N_With_Ingestion</remote-name>
-              <remote-type>20</remote-type>
-              <local-name>[N_With_Ingestion]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>N_With_Ingestion</remote-alias>
+              <remote-alias>cleanup_type</remote-alias>
               <ordinal>2</ordinal>
-              <family>ingestion_by_class.csv</family>
-              <local-type>integer</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>4</approx-count>
+              <family>cleanup_efforts.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[ingestion_by_class.csv_54D6188F1A144592A8183257A19C7603]</object-id>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
             </metadata-record>
             <metadata-record class='column'>
-              <remote-name>Ingestion_Rate_Pct</remote-name>
-              <remote-type>5</remote-type>
-              <local-name>[Ingestion_Rate_Pct]</local-name>
+              <remote-name>source_url</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[source_url]</local-name>
               <parent-name>[Extract]</parent-name>
-              <remote-alias>Ingestion_Rate_Pct</remote-alias>
+              <remote-alias>source_url</remote-alias>
               <ordinal>3</ordinal>
-              <family>ingestion_by_class.csv</family>
-              <local-type>real</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>5</approx-count>
+              <family>cleanup_efforts.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[ingestion_by_class.csv_54D6188F1A144592A8183257A19C7603]</object-id>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>kg_removed_annual</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[kg_removed_annual]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>kg_removed_annual</remote-alias>
+              <ordinal>4</ordinal>
+              <family>cleanup_efforts.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>23</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>kg_removed_cumulative</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[kg_removed_cumulative]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>kg_removed_cumulative</remote-alias>
+              <ordinal>5</ordinal>
+              <family>cleanup_efforts.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>volunteers</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[volunteers]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>volunteers</remote-alias>
+              <ordinal>6</ordinal>
+              <family>cleanup_efforts.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>17</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>countries</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[countries]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>countries</remote-alias>
+              <ordinal>7</ordinal>
+              <family>cleanup_efforts.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789]</object-id>
             </metadata-record>
           </metadata-records>
         </connection>
@@ -2376,21 +2245,12 @@
       <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
       <style>
         <style-rule element='mark'>
-          <encoding attr='color' field='[none:Class:nk]' type='palette'>
-            <map to='#76b7b2'>
-              <bucket>&quot;Very High&quot;</bucket>
+          <encoding attr='color' field='[none:organisation:nk]' type='palette'>
+            <map to='#368323'>
+              <bucket>&quot;The Ocean Cleanup&quot;</bucket>
             </map>
-            <map to='#96151d'>
-              <bucket>&quot;High&quot;</bucket>
-            </map>
-            <map to='#c47a2b'>
-              <bucket>&quot;Low&quot;</bucket>
-            </map>
-            <map to='#c47a2b'>
-              <bucket>&quot;Medium&quot;</bucket>
-            </map>
-            <map to='#c47a2b'>
-              <bucket>&quot;Very Low&quot;</bucket>
+            <map to='#ba7a2b'>
+              <bucket>&quot;Ocean Conservancy (ICC)&quot;</bucket>
             </map>
           </encoding>
         </style-rule>
@@ -2400,14 +2260,153 @@
       </semantic-values>
       <object-graph>
         <objects>
-          <object caption='ingestion_by_class.csv' id='ingestion_by_class.csv_54D6188F1A144592A8183257A19C7603'>
+          <object caption='cleanup_efforts.csv' id='cleanup_efforts.csv_80E31AACF5E74B829C203C475F169789'>
             <properties context=''>
-              <relation connection='textscan.0m1dyow1o7kbnc15iyw0q1kb3phv' name='ingestion_by_class.csv' table='[ingestion_by_class#csv]' type='table'>
+              <relation connection='textscan.1yrh3bo0bc2ejc18y8ymw0v6w5uf' name='cleanup_efforts.csv' table='[cleanup_efforts#csv]' type='table'>
                 <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                  <column datatype='string' name='Class' ordinal='0' />
-                  <column datatype='integer' name='N_Animals' ordinal='1' />
-                  <column datatype='integer' name='N_With_Ingestion' ordinal='2' />
-                  <column datatype='real' name='Ingestion_Rate_Pct' ordinal='3' />
+                  <column datatype='integer' name='year' ordinal='0' />
+                  <column datatype='string' name='organisation' ordinal='1' />
+                  <column datatype='string' name='cleanup_type' ordinal='2' />
+                  <column datatype='string' name='source_url' ordinal='3' />
+                  <column datatype='integer' name='kg_removed_annual' ordinal='4' />
+                  <column datatype='integer' name='kg_removed_cumulative' ordinal='5' />
+                  <column datatype='integer' name='volunteers' ordinal='6' />
+                  <column datatype='integer' name='countries' ordinal='7' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='proximity' inline='true' name='federated.1atyyn01fpdupc1eqawmn06y5sr1' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='proximity' name='textscan.116con81tlr9z816lcyyg1wyq6rf'>
+            <connection class='textscan' directory='C:/Users/Ready2Use/Documents/my-folder/Ironhack-week8/Source-to-Sea/Data/Tableau' filename='proximity.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.116con81tlr9z816lcyyg1wyq6rf' name='proximity.csv' table='[proximity#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='Zone' ordinal='0' />
+            <column datatype='real' name='Avg_Concentration' ordinal='1' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[proximity.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Zone</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Zone]</local-name>
+            <parent-name>[proximity.csv]</parent-name>
+            <remote-alias>Zone</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[proximity.csv_7B9D515727184A2EB6444214908C3FB5]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Avg_Concentration</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Avg_Concentration]</local-name>
+            <parent-name>[proximity.csv]</parent-name>
+            <remote-alias>Avg_Concentration</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[proximity.csv_7B9D515727184A2EB6444214908C3FB5]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Avg Concentration' datatype='real' name='[Avg_Concentration]' role='measure' type='quantitative' />
+      <column datatype='string' name='[Zone]' role='dimension' type='nominal' />
+      <column caption='proximity.csv' datatype='table' name='[__tableau_internal_object_id__].[proximity.csv_7B9D515727184A2EB6444214908C3FB5]' role='measure' type='quantitative' />
+      <column-instance column='[Zone]' derivation='None' name='[none:Zone:nk]' pivot='key' type='nominal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='Data/TableauTemp 3/#TableauTemp_0xhd4a40fp2qt61fe1psg1a3jmxs.hyper' default-settings='yes' schema='Extract' sslmode='' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Zone</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Zone]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Zone</remote-alias>
+              <ordinal>0</ordinal>
+              <family>proximity.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Avg_Concentration</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Avg_Concentration]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Avg_Concentration</remote-alias>
+              <ordinal>1</ordinal>
+              <family>proximity.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Zone:nk]' type='palette'>
+            <map to='#96151d'>
+              <bucket>&quot;Near River (&lt;50km)&quot;</bucket>
+            </map>
+            <map to='#bc7429'>
+              <bucket>&quot;Open Ocean (&gt;200km)&quot;</bucket>
+            </map>
+            <map to='#d4ae46'>
+              <bucket>&quot;Regional (50-200km)&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Germany&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='proximity.csv' id='proximity.csv_7B9D515727184A2EB6444214908C3FB5'>
+            <properties context=''>
+              <relation connection='textscan.116con81tlr9z816lcyyg1wyq6rf' name='proximity.csv' table='[proximity#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='Zone' ordinal='0' />
+                  <column datatype='real' name='Avg_Concentration' ordinal='1' />
                 </columns>
               </relation>
             </properties>
@@ -2459,9 +2458,7 @@
               <groupfilter function='member' level='[none:income_group:nk]' member='&quot;Unknown&quot;' />
             </groupfilter>
           </filter>
-          <shelf-sorts>
-            <shelf-sort-v2 dimension-to-sort='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[none:income_group:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[sum:emission_tons_year:qk]' shelf='rows' />
-          </shelf-sorts>
+          <computed-sort column='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[none:income_group:nk]' direction='DESC' using='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[sum:emission_tons_year:qk]' />
           <slices>
             <column>[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[none:income_group:nk]</column>
           </slices>
@@ -2469,7 +2466,6 @@
         </view>
         <style>
           <style-rule element='axis'>
-            <format attr='display' class='0' field='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[sum:emission_tons_year:qk]' scope='cols' value='false' />
             <format attr='stroke-size' scope='cols' value='0' />
             <format attr='line-visibility' scope='cols' value='off' />
             <format attr='tick-color' scope='cols' value='#00000000' />
@@ -2478,12 +2474,12 @@
             <format attr='height' field='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[none:income_group:nk]' value='50' />
           </style-rule>
           <style-rule element='header'>
-            <format attr='background-color' field='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[sum:emission_tons_year:qk]' value='#000000' />
+            <format attr='background-color' field='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[sum:emission_tons_year:qk]' value='#16687f' />
           </style-rule>
           <style-rule element='label'>
             <format attr='font-size' field='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[none:income_group:nk]' value='9' />
             <format attr='color' field='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[none:income_group:nk]' value='#ffffff' />
-            <format attr='color' field='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[sum:emission_tons_year:qk]' value='#ffffff' />
+            <format attr='color' value='#ffffff' />
           </style-rule>
           <style-rule element='table'>
             <format attr='background-color' value='#16687f' />
@@ -2743,8 +2739,11 @@
             <datasource caption='emission_points' name='federated.0oq2dpo1c84wh01bzj3dm07vdtof' />
           </datasources>
           <datasource-dependencies datasource='federated.0oq2dpo1c84wh01bzj3dm07vdtof'>
+            <column caption='rounded emission_points' datatype='real' name='[Calculation_0489899199774720]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='ROUND(SUM([emission_tons_year]), -3)' />
+            </column>
             <column caption='Emission Tons Year' datatype='real' name='[emission_tons_year]' role='dimension' type='quantitative' />
-            <column-instance column='[emission_tons_year]' derivation='Sum' name='[sum:emission_tons_year:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0489899199774720]' derivation='User' name='[usr:Calculation_0489899199774720:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
           <aggregation value='true' />
         </view>
@@ -2756,15 +2755,11 @@
             <format attr='text-align' value='center' />
             <format attr='vertical-align' value='center' />
             <format attr='color' value='#ffffff' />
-            <format attr='text-format' field='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[sum:emission_tons_year:qk]' value='' />
           </style-rule>
           <style-rule element='pane'>
             <format attr='background-color' value='#00000000' />
           </style-rule>
           <style-rule element='table'>
-            <format attr='omit-on-special' field='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[sum:emission_tons_year:qk]' value='true' />
-            <format attr='break-on-special' field='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[sum:emission_tons_year:qk]' value='true' />
-            <format attr='show-null-value-warning' field='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[sum:emission_tons_year:qk]' value='true' />
             <format attr='background-color' value='#16687f' />
           </style-rule>
           <style-rule element='worksheet'>
@@ -2791,12 +2786,12 @@
             </view>
             <mark class='Text' />
             <encodings>
-              <text column='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[sum:emission_tons_year:qk]' />
+              <text column='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[usr:Calculation_0489899199774720:qk]' />
             </encodings>
             <style>
               <style-rule element='mark'>
-                <format attr='mark-labels-show' value='true' />
                 <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
               </style-rule>
               <style-rule element='trendline'>
                 <format attr='stroke-size' value='0' />
@@ -2838,7 +2833,7 @@
             <column-instance column='[income_group]' derivation='None' name='[none:income_group:nk]' pivot='key' type='nominal' />
           </datasource-dependencies>
           <filter class='categorical' column='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[Action (Income Group)]'>
-            <groupfilter function='member' level='[income_group]' member='&quot;Lower-middle-income countries&quot;' user:ui-action-filter='[Action1_C988F989C7CB4CAB98EE59E60558D73A]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+            <groupfilter function='level-members' level='[income_group]' user:ui-action-filter='[Action1_C988F989C7CB4CAB98EE59E60558D73A]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
           <filter class='categorical' column='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[none:income_group:nk]'>
             <groupfilter function='level-members' level='[none:income_group:nk]' user:ui-enumeration='all' user:ui-exclude='true' user:ui-marker='enumerate' />
@@ -4000,7 +3995,20 @@
               </groupfilter>
             </groupfilter>
           </filter>
-          <computed-sort column='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[none:country_name:nk]' direction='DESC' using='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[sum:emission_tons_year:qk]' />
+          <manual-sort column='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[none:country_name:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Philippines&quot;</bucket>
+              <bucket>&quot;India&quot;</bucket>
+              <bucket>&quot;Malaysia&quot;</bucket>
+              <bucket>&quot;China&quot;</bucket>
+              <bucket>&quot;Indonesia&quot;</bucket>
+              <bucket>&quot;Myanmar&quot;</bucket>
+              <bucket>&quot;Brazil&quot;</bucket>
+              <bucket>&quot;Vietnam&quot;</bucket>
+              <bucket>&quot;Bangladesh&quot;</bucket>
+              <bucket>&quot;Thailand&quot;</bucket>
+            </dictionary>
+          </manual-sort>
           <slices>
             <column>[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[none:country_name:nk]</column>
           </slices>
@@ -4050,7 +4058,7 @@
             <column-instance column='[emission_tons_year]' derivation='Sum' name='[sum:emission_tons_year:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
           <filter class='categorical' column='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[Action (Income Group)]'>
-            <groupfilter function='member' level='[income_group]' member='&quot;Lower-middle-income countries&quot;' user:ui-action-filter='[Action1_C988F989C7CB4CAB98EE59E60558D73A]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+            <groupfilter function='level-members' level='[income_group]' user:ui-action-filter='[Action1_C988F989C7CB4CAB98EE59E60558D73A]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
           <filter class='categorical' column='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[none:country_name:nk]'>
             <groupfilter count='15' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
@@ -4059,9 +4067,7 @@
               </groupfilter>
             </groupfilter>
           </filter>
-          <shelf-sorts>
-            <shelf-sort-v2 dimension-to-sort='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[none:country_name:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[sum:emission_tons_year:qk]' shelf='rows' />
-          </shelf-sorts>
+          <computed-sort column='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[none:country_name:nk]' direction='DESC' using='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[sum:emission_tons_year:qk]' />
           <slices>
             <column>[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[none:country_name:nk]</column>
             <column>[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[Action (Income Group)]</column>
@@ -4071,7 +4077,6 @@
         <style>
           <style-rule element='axis'>
             <format attr='height' field='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[sum:emission_tons_year:qk]' value='47' />
-            <format attr='display' class='0' field='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[sum:emission_tons_year:qk]' scope='cols' value='false' />
             <format attr='tick-color' scope='rows' value='#00000000' />
             <format attr='stroke-size' scope='rows' value='0' />
             <format attr='line-visibility' scope='rows' value='off' />
@@ -4085,9 +4090,9 @@
           <style-rule element='header'>
             <format attr='band-color' scope='rows' value='#00000000' />
             <format attr='band-color' scope='cols' value='#00000000' />
-            <format attr='background-color' field='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[sum:emission_tons_year:qk]' value='#000000' />
             <format attr='border-width' data-class='total' value='0' />
             <format attr='border-style' data-class='total' value='none' />
+            <format attr='background-color' field='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[sum:emission_tons_year:qk]' value='#16687f' />
           </style-rule>
           <style-rule element='label'>
             <format attr='color' field='[federated.0oq2dpo1c84wh01bzj3dm07vdtof].[none:country_name:nk]' value='#ffffff' />
@@ -4220,8 +4225,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='1050' minheight='1050' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='34' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98000' id='33' param='vert' type-v2='layout-flow' w='98666' x='667' y='1000'>
+            <zone h='100000' id='40' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='39' param='vert' type-v2='layout-flow' w='98666' x='667' y='1000'>
                 <zone forceUpdate='true' h='16125' id='12' type-v2='text' w='100667' x='-750' y='500'>
                   <formatted-text>
                     <run bold='true' fontcolor='#ffffff' fontsize='48'>THE OCEAN PLASTIC CRISIS</run>
@@ -4351,8 +4356,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='1000' minheight='1000' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='30' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98000' id='29' param='vert' type-v2='layout-flow' w='98666' x='667' y='1000'>
+            <zone h='100000' id='36' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='35' param='vert' type-v2='layout-flow' w='98666' x='667' y='1000'>
                 <zone h='14875' id='9' type-v2='text' w='100250' x='-583' y='500'>
                   <formatted-text>
                     <run bold='true' fontalignment='1' fontcolor='#ffffff' fontsize='48'>Where does it come from?</run>
@@ -4449,8 +4454,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='24' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98000' id='23' param='vert' type-v2='layout-flow' w='98666' x='667' y='1000'>
+            <zone h='100000' id='30' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='29' param='vert' type-v2='layout-flow' w='98666' x='667' y='1000'>
                 <zone forceUpdate='true' h='12625' id='3' type-v2='text' w='99917' x='-83' y='375'>
                   <formatted-text>
                     <run bold='true' fontalignment='1' fontcolor='#ffffff' fontsize='28'>IT&apos;S EVERYWHERE — AND IT&apos;S </run>
@@ -4543,10 +4548,10 @@
       </zones>
       <devicelayouts>
         <devicelayout auto-generated='true' name='Phone'>
-          <size maxheight='1300' minheight='1300' sizing-mode='vscroll' />
+          <size maxheight='1100' minheight='1100' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='25' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98000' id='24' param='vert' type-v2='layout-flow' w='98666' x='667' y='1000'>
+            <zone h='100000' id='33' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='32' param='vert' type-v2='layout-flow' w='98666' x='667' y='1000'>
                 <zone forceUpdate='true' h='17750' id='3' type-v2='text' w='99833' x='-1250' y='0'>
                   <formatted-text>
                     <run fontalignment='1' fontcolor='#ffffff' fontsize='36'>WILDLIFE IS PAYING THE PRICE ...</run>
@@ -4560,7 +4565,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='42500' id='8' is-fixed='true' name='Q3 Plastic Heatmap' w='64250' x='36250' y='14000'>
+                <zone fixed-size='280' h='42500' id='8' is-fixed='true' name='Q3 Plastic Heatmap' w='69750' x='12917' y='13375'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -4569,7 +4574,10 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='48000' id='9' is-fixed='true' name='Q3 Fish to Human' w='59417' x='40000' y='53000'>
+                <zone forceUpdate='true' h='6875' id='27' type-v2='text' w='32667' x='63417' y='52875'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#ffffff' fontsize='28'>...And so are you!</run>
+                  </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -4578,7 +4586,28 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='36875' id='4' is-fixed='true' name='Q3 Ingestion rate' w='39583' x='750' y='62000'>
+                <zone fixed-size='280' h='48000' id='9' is-fixed='true' name='Q3 Fish to Human' w='59417' x='40083' y='55875'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='37000' id='4' is-fixed='true' name='Q3 Ingestion rate' w='32250' x='3000' y='60500'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='4750' id='26' type-v2='text' w='8750' x='3000' y='61750'>
+                  <formatted-text>
+                    <run fontcolor='#ffffff' fontsize='10'>Density</run>
+                  </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -4630,8 +4659,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='1400' minheight='1400' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='26' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98140' id='25' param='vert' type-v2='layout-flow' w='98666' x='667' y='930'>
+            <zone h='100000' id='32' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98140' id='31' param='vert' type-v2='layout-flow' w='98666' x='667' y='930'>
                 <zone h='13488' id='3' type-v2='text' w='85833' x='-12167' y='349'>
                   <formatted-text>
                     <run fontalignment='1' fontcolor='#ffffff' fontsize='36'>CLEANUP IS GROWING...</run>
@@ -4766,8 +4795,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='750' minheight='750' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='18' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98140' id='17' param='vert' type-v2='layout-flow' w='98666' x='667' y='930'>
+            <zone h='100000' id='24' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98140' id='23' param='vert' type-v2='layout-flow' w='98666' x='667' y='930'>
                 <zone h='12326' id='3' type-v2='text' w='80500' x='11250' y='2674'>
                   <formatted-text>
                     <run fontcolor='#ffffff' fontsize='36'>HERE IS WHAT WE DO ABOUT IT</run>
@@ -4841,7 +4870,7 @@
       <simple-id uuid='{A5216691-92F2-49DD-92C0-D56407312C3B}' />
     </dashboard>
   </dashboards>
-  <windows pres-mode='true' source-height='219'>
+  <windows source-height='219'>
     <window class='worksheet' name='Q1 Emission Map'>
       <cards>
         <edge name='left'>
@@ -5356,26 +5385,6 @@
       </cards>
       <simple-id uuid='{BA3EC386-4F7E-4AA7-8B33-67A853B06E91}' />
     </window>
-    <window class='dashboard' maximized='true' name='1 - Where From'>
-      <viewpoints>
-        <viewpoint name='Emission by Income Group' />
-        <viewpoint name='Q1 Emission Map'>
-          <zoom type='entire-view' />
-        </viewpoint>
-        <viewpoint name='Top 15 Countries' />
-      </viewpoints>
-      <active id='5' />
-      <simple-id uuid='{92060E45-91F2-47AE-AD29-C2C6DAD24F70}' />
-    </window>
-    <window class='dashboard' name='3 - Impact'>
-      <viewpoints>
-        <viewpoint name='Q3 Fish to Human' />
-        <viewpoint name='Q3 Ingestion rate' />
-        <viewpoint name='Q3 Plastic Heatmap' />
-      </viewpoints>
-      <active id='-1' />
-      <simple-id uuid='{91106D5C-8189-440D-AEFD-A914C7AD5215}' />
-    </window>
     <window class='dashboard' name='0 - The Crisis'>
       <viewpoints>
         <viewpoint name='KPI Best Cleanup' />
@@ -5389,6 +5398,17 @@
       <device-preview visible='true' />
       <simple-id uuid='{3C4D0A32-D2EA-4B0D-9BB5-2319021E3C9D}' />
     </window>
+    <window class='dashboard' name='1 - Where From'>
+      <viewpoints>
+        <viewpoint name='Emission by Income Group' />
+        <viewpoint name='Q1 Emission Map'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Top 15 Countries' />
+      </viewpoints>
+      <active id='5' />
+      <simple-id uuid='{92060E45-91F2-47AE-AD29-C2C6DAD24F70}' />
+    </window>
     <window class='dashboard' name='2 - Accumulation'>
       <viewpoints>
         <viewpoint name='Q2 Plastic Map'>
@@ -5399,7 +5419,16 @@
       <active id='-1' />
       <simple-id uuid='{347EBED3-264E-403B-92B4-689797A1BDCC}' />
     </window>
-    <window class='dashboard' name='4 - Cleanup'>
+    <window class='dashboard' name='3 - Impact'>
+      <viewpoints>
+        <viewpoint name='Q3 Fish to Human' />
+        <viewpoint name='Q3 Ingestion rate' />
+        <viewpoint name='Q3 Plastic Heatmap' />
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{91106D5C-8189-440D-AEFD-A914C7AD5215}' />
+    </window>
+    <window class='dashboard' maximized='true' name='4 - Cleanup'>
       <viewpoints>
         <viewpoint name='KPI Best Cleanup' />
         <viewpoint name='KPI Pct Cleaned' />

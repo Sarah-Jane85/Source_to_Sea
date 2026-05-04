@@ -380,7 +380,7 @@ The **Alliance to End Plastic Waste** works directly with governments and commun
 | 🗂️ Trello Board | https://trello.com/b/qAb9odfa/source-to-sea |
 | 🖼️ ERM | https://miro.com/app/board/uXjVG40KWwg=/?share_link_id=490917459116 |
 | 🗄️ ERD | https://www.drawdb.app/editor/diagrams/fda31b46-42de-468b-8638-6995853a6a3f |
-| 🎤 Presentation Slides | https://docs.google.com/presentation/d/1krScsEmnLrn3JrrEPwEUiUeHs9LGcbglG4TqTv40Sng/edit?slide=id.p#slide=id.p |
+| 🎤 Presentation Slides | https://docs.google.com/presentation/d/1krScsEmnLrn3JrrEPwEUiUeHs9LGcbglG4TqTv40Sng/edit?usp=sharing |
 
 ---
 

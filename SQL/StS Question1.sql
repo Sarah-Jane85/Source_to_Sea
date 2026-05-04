@@ -3,7 +3,7 @@
 USE source_to_sea;
 
 select round(sum(emission_tons_year)) from emission_points;
--- global total = 1.001.00 tons a year 
+-- global total = 1.006.000 tons a year 
 
 WITH ranked_rivers AS (
     SELECT
