@@ -76,6 +76,7 @@ def build_interceptors() -> pd.DataFrame:
     interceptor_data = [
         # ── Indonesia ─────────────────────────────────────────
         {"interceptor_id": "001", "river": "Cengkareng Drain",     "city": "Jakarta",        "country": "Indonesia",          "lat": -6.1144,   "lon": 106.7436,   "year_deployed": 2019, "type": "Original",        "status": "In operation"},
+        {"interceptor_id": "020", "river": "Cisedane",             "city": "Jakarta",        "country": "Indonesia",          "lat": -6.0550167, "lon": 106.63485, "year_deployed": 2025, "type": "Original",        "status": "In operation"},
         # ── Malaysia ──────────────────────────────────────────
         {"interceptor_id": "002", "river": "Klang River",          "city": "Selangor",       "country": "Malaysia",           "lat":  3.0319,   "lon": 101.3841,   "year_deployed": 2019, "type": "Original",        "status": "In operation"},
         {"interceptor_id": "005", "river": "Klang River",          "city": "Klang",          "country": "Malaysia",           "lat":  3.0350,   "lon": 101.3900,   "year_deployed": 2022, "type": "Original Gen3",   "status": "Maintenance"},
@@ -103,8 +104,7 @@ def build_interceptors() -> pd.DataFrame:
         # ── Thailand ──────────────────────────────────────────
         {"interceptor_id": "019", "river": "Chao Phraya River",    "city": "Bangkok",        "country": "Thailand",           "lat": 13.7200,  "lon": 100.5300,     "year_deployed": 2024, "type": "Original Gen3",   "status": "In operation"},
         # ── Panama ────────────────────────────────────────────
-        {"interceptor_id": "020", "river": "Panama Bay tributary", "city": "Panama City",    "country": "Panama",             "lat":  8.9940,  "lon": -79.5190,     "year_deployed": 2025, "type": "Original",        "status": "In operation"},
-        {"interceptor_id": "022", "river": "Rio Abajo",            "city": "Panama City",    "country": "Panama",             "lat": 9.013421, "lon": -79.485937,   "year_deployed": 2025, "type": "Guard",           "status": "Installed for testing"},
+        {"interceptor_id": "022", "river": "Rio Abajo",            "city": "Panama City",    "country": "Panama",             "lat": 9.013421, "lon": -79.485937,   "year_deployed": 2025, "type": "Guard",           "status": "In operation"},
         # ── Ocean System (not a river interceptor) ────────────
         {"interceptor_id": "S03", "river": "Pacific Ocean",        "city": "Victoria",       "country": "Canada",             "lat": 48.4284,  "lon": -123.3656,    "year_deployed": 2023, "type": "Ocean System",    "status": "Port call / mobilisation"},
     ]
@@ -226,23 +226,33 @@ def cluster_summary(rivers: pd.DataFrame) -> pd.DataFrame:
 
 # ── H1: Interceptor coverage ──────────────────────────────────
 
-def compute_coverage(rivers: pd.DataFrame) -> dict:
+def compute_coverage(rivers: pd.DataFrame, df_cleanup: pd.DataFrame) -> dict:
     """
     Compute what share of global river plastic emission
-    is covered vs uncovered by interceptors.
+    is covered by actual cleanup removal (from parquet).
     """
     total = rivers["emission"].sum()
-    covered = rivers[rivers["has_interceptor"]]["emission"].sum()
+
+    annual = (
+        df_cleanup
+        .groupby("year")["kg_removed_annual"]
+        .sum()
+    )
+    latest_year = annual.index.max()
+    covered_kg = annual.loc[latest_year]
+    covered = covered_kg / 1_000  # tons
+
     uncovered = total - covered
     result = {
-        "total_emission": total,
-        "covered_emission": covered,
+        "total_emission":    total,
+        "covered_emission":  covered,
         "uncovered_emission": uncovered,
-        "covered_pct": covered / total * 100,
-        "uncovered_pct": uncovered / total * 100,
+        "covered_pct":       covered / total * 100,
+        "uncovered_pct":     uncovered / total * 100,
+        "latest_year":       latest_year,
     }
     print(f"Total emission    : {total:,.0f} t/yr")
-    print(f"Covered           : {covered:,.0f} t/yr ({result['covered_pct']:.1f}%)")
+    print(f"Covered ({latest_year})   : {covered:,.0f} t/yr ({result['covered_pct']:.1f}%)")
     print(f"Uncovered         : {uncovered:,.0f} t/yr ({result['uncovered_pct']:.1f}%)")
     return result
 

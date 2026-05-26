@@ -11,9 +11,9 @@ from plotly.subplots import make_subplots
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 
-ANNUAL_INPUT_T       = 1_001_000   # t/yr — Meijer 2021
+ANNUAL_INPUT_T       = 1_006_000   # t/yr — Meijer 2021
 GUATEMALA_T_PER_YEAR = 10_000      # t/yr — best performing interceptor (Rio Las Vacas)
-BEST_CLEANUP_T       = 28_629      # t/yr — best recorded cleanup year (2025)
+BEST_CLEANUP_T       = 23_881      # t/yr — best recorded cleanup year (2025)
 HISTORICAL_CAGR      = 0.40        # 40% — observed cleanup sector growth rate 2019-2025
 PLASTIC_GROWTH       = 0.04        # 4%  — global plastic production growth (PlasticsEurope 2024)
 

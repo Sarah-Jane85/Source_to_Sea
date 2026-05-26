@@ -120,7 +120,7 @@ def plot_accumulation_vs_cleanup(microplastic: pd.DataFrame, df_cleanup: pd.Data
 
     accumulation  = df_nets[df_nets["year"] >= 2008].groupby("year")["microplastics_measurement"].mean()
     sample_counts = df_nets[df_nets["year"] >= 2008].groupby("year").size()
-    cleanup       = df_cleanup.groupby("year")["kg_removed_cumulative"].max()
+    cleanup = (df_cleanup.groupby("year")["kg_removed_annual"].sum().sort_index().cumsum())
 
     common_years = accumulation.index.intersection(cleanup.index)
     acc_norm     = accumulation[common_years] / accumulation[common_years].iloc[0] * 100

@@ -337,55 +337,41 @@ def clean_plastic_vs_pollution(path: str) -> tuple:
 def build_toc_dataset() -> pd.DataFrame:
     """Create The Ocean Cleanup dataset from hardcoded milestones."""
     toc_data = {
-        "year":         [2019, 2020, 2021, 2022, 2023, 2024, 2025],
-        "kg_removed":   [103000, 397000, 500000, 2000000, 8000000, 11500000, 25000000],
+        "year":                  [2020,   2021,    2022,   2023,     2024],
+        "kg_removed_annual":     [235505, 819480,  923000, 8727627,  20493696],
+        "kg_removed_cumulative": [235505, 1054985, 1977985, 10705612, 31199308],
         "organisation": "The Ocean Cleanup",
         "cleanup_type": "Ocean + River",
-        "source_url":   "https://theoceancleanup.com/milestones"
+        "source_url":   "https://theoceancleanup.com/milestones",
     }
-    df = pd.DataFrame(toc_data)
-    df["kg_removed_annual"]     = df["kg_removed"]
-    df["kg_removed_cumulative"] = df["kg_removed"].cumsum()
-    return df.drop(columns=["kg_removed"])
+    return pd.DataFrame(toc_data)
 
 
 def build_icc_dataset() -> pd.DataFrame:
     """Create ICC (Ocean Conservancy) dataset from published annual reports."""
     icc_data = {
-        "year": list(range(2008, 2026)),
-        "volunteers": [
-            378000, 408000, 520000, 519000, 560000, 648000,
-            561000, 788000, 800000, 892000, 704000, 530000,
-            630000, 486000, 486000, 550000, 486000, 500000
+        "year": list(range(2008, 2025)),
+        "kg_removed_annual": [
+            3085668, 3356581, 3945855, 4165445, 4603804, 5592174,
+            7341617, 8277568, 8436811, 9431210, 10634826, 9549914,
+            2371864, 2557092, 3700589, 3612215, 3387301
         ],
-        "kg_removed": [
-            round(x * 0.453592) for x in [
-                7200000, 7600000, 8000000, 9200000, 10200000, 12400000,
-                10100000, 18400000, 18600000, 23600000, 19700000, 9100000,
-                16800000, 8000000, 7900000, 8200000, 7400000, 8000000
-            ]
-        ],
-        "countries": [
-            104, 108, 108, 112, 151, 153,
-            91, 112, 112, 122, 112, 80,
-            100, 116, 116, 120, 120, 125
+        "kg_removed_cumulative": [
+            3085668,  6442249,  10388104, 14553549, 19157353, 24749527,
+            32091144, 40368712, 48805523, 58236733, 68871559, 78421473,
+            80793337, 83350429, 87051018, 90663233, 94050534
         ],
         "organisation": "Ocean Conservancy (ICC)",
         "cleanup_type": "Beach + Waterway",
-        "source_url": "https://oceanconservancy.org/work/plastics/cleanups-icc/annual-data-release/"
+        "source_url":   "https://oceanconservancy.org/work/plastics/cleanups-icc/annual-data-release/",
     }
-    df = pd.DataFrame(icc_data)
-    df["kg_removed_annual"]     = df["kg_removed"]
-    df["kg_removed_cumulative"] = df["kg_removed"].cumsum()
-    return df.drop(columns=["kg_removed"])
+    return pd.DataFrame(icc_data)
 
 
 def combine_cleanup_efforts(toc_df: pd.DataFrame, icc_df: pd.DataFrame) -> pd.DataFrame:
     """Combine TOC and ICC into one unified cleanup_efforts DataFrame."""
     combined = pd.concat([toc_df, icc_df], ignore_index=True)
     combined = combined.sort_values(["year", "organisation"]).reset_index(drop=True)
-    combined["volunteers"] = combined["volunteers"].fillna(0).astype(int)
-    combined["countries"]  = combined["countries"].fillna(0).astype(int)
     print(f"Shape: {combined.shape}")
     print(f"Organisations: {combined['organisation'].unique()}")
     print(f"Year range   : {combined['year'].min()} – {combined['year'].max()}")
@@ -410,7 +396,7 @@ def build_cleanup_efforts() -> pd.DataFrame:
     return df
 
 
-# ── Dataset 8 (extra): top50_rivers_ranked from PDF ──────────────────────────
+# ── Dataset 9 (extra): top50_rivers_ranked from PDF ──────────────────────────
 
 def parse_rivers_from_pdf(pdf_path: str) -> pd.DataFrame:
     """Extract top-50 river rankings from supplementary PDF."""
@@ -451,7 +437,7 @@ def parse_rivers_from_pdf(pdf_path: str) -> pd.DataFrame:
     print(f"Shape: {df.shape}")
     return df
 
-# ── Dataset 9: species ────────────────────────────────────────────────────────
+# ── Dataset 10: species ────────────────────────────────────────────────────────
 
 def clean_species(path: str) -> pd.DataFrame:
     """Load and clean marine species plastic ingestion dataset."""
