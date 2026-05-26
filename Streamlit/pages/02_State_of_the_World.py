@@ -8,7 +8,7 @@ import numpy as np
 from components.shared import (
     ANNUAL_INPUT_T, BEST_CLEANUP_T, BEST_CLEANUP_PCT,
     INTERCEPTORS_DEPLOYED, INTERCEPTORS_NEEDED, INTERCEPTORS_GAP,
-    TOP_101_PCT, PHILIPPINES_TOP_T,
+    TOP_100_PCT, PHILIPPINES_TOP_T,
     COLORS, load_rivers, load_interceptors,
     apply_global_css, page_header
 )
@@ -26,7 +26,7 @@ k1, k2, k3 = st.columns(3)
 with k1:
     st.metric("Annual Plastic Input", f"{ANNUAL_INPUT_T:,} t", delta_color="off")
 with k2:
-    st.metric("Best Cleanup Year", f"{BEST_CLEANUP_T:,} t", delta="2025")
+    st.metric("Best Cleanup Year", f"{BEST_CLEANUP_T:,} t", delta="2024")
 with k3:
     st.metric("Cleanup Coverage", f"{BEST_CLEANUP_PCT}%", delta="of annual input", delta_color="off")
 
@@ -342,15 +342,15 @@ with col_right:
           <div style="color:#ccc7c7; font-size:0.8rem;">deployed</div>
         </div>
         <div>
-          <div style="color:#ff3b5c; font-size:1.6rem; font-weight:700;">82</div>
+          <div style="color:#ff3b5c; font-size:1.6rem; font-weight:700;">81</div>
           <div style="color:#ccc7c7; font-size:0.8rem;">still needed</div>
         </div>
         <div>
-          <div style="color:#f59e0b; font-size:1.6rem; font-weight:700;">101</div>
+          <div style="color:#f59e0b; font-size:1.6rem; font-weight:700;">100</div>
           <div style="color:#ccc7c7; font-size:0.8rem;">target total</div>
         </div>
         <div>
-          <div style="color:#e2e8f0; font-size:1.6rem; font-weight:700;">2.9%</div>
+          <div style="color:#e2e8f0; font-size:1.6rem; font-weight:700;">2.4%</div>
           <div style="color:#ccc7c7; font-size:0.8rem;">cleaned / 34.5% coverable</div>
         </div>
       </div>

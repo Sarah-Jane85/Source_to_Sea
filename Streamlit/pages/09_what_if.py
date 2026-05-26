@@ -7,7 +7,7 @@ import math
 from components.shared import (
     ANNUAL_INPUT_T, BEST_CLEANUP_T, GUATEMALA_T_PER_YEAR,
     INTERCEPTORS_DEPLOYED, INTERCEPTORS_NEEDED, INTERCEPTORS_GAP,
-    TOP_101_PCT, COLORS, load_cleanup,
+    TOP_100_PCT, COLORS, load_cleanup,
     apply_global_css, page_header
 )
 
@@ -25,7 +25,7 @@ st.markdown("""
   The Guatemala interceptor captures ~<strong style="color:#e2e8f0;">10,000 t/yr</strong> —
   the best single-unit benchmark available. Use the sliders to model how many
   interceptors, at what efficiency, would be needed to close the gap against
-  <strong style="color:#e2e8f0;">1,001,000 t/yr</strong> of ocean-bound plastic.
+  <strong style="color:#e2e8f0;">1,006,000 t/yr</strong> of ocean-bound plastic.
 </div>
 """, unsafe_allow_html=True)
 
@@ -65,11 +65,11 @@ interceptors_needed_to_offset = math.ceil(
 if n_interceptors <= INTERCEPTORS_DEPLOYED:
     years_to_parity = None
 else:
-    target_t = offset_t
-    if target_t <= BEST_CLEANUP_T:
+    remaining_after_interceptors = ANNUAL_INPUT_T - offset_t
+    if remaining_after_interceptors <= BEST_CLEANUP_T:
         years_to_parity = 0.0
     else:
-        years_to_parity = math.log(target_t / BEST_CLEANUP_T) / math.log(1 + CAGR)
+        years_to_parity = math.log(remaining_after_interceptors / BEST_CLEANUP_T) / math.log(1 + CAGR)
 
 # ── Result cards ───────────────────────────────────────────────
 st.markdown("<br>", unsafe_allow_html=True)
@@ -124,8 +124,8 @@ with r4:
         ytp_sub   = "increase interceptors to model future growth"
         ytp_color = "#00d4aa"
     elif years_to_parity == 0.0:
-        ytp_val   = "Already there"
-        ytp_sub   = "cleanup sector already matches this scenario"
+        ytp_val   = "Interceptors sufficient"
+        ytp_sub   = "this interceptor scenario alone offsets 100%+ of annual input"
         ytp_color = "#00d4aa"
     else:
         ytp_val   = f"{years_to_parity:.1f} yrs"
@@ -246,7 +246,7 @@ st.plotly_chart(fig, use_container_width=True)
 st.markdown("### Sensitivity — % of annual input offset")
 
 eff_levels  = [50, 60, 70, 80, 90, 100]
-scenario_ns = [20, 50, 101, 150, 200]
+scenario_ns = [20, 50, 100, 150, 200]
 
 eff_headers = "".join([
     f'<th style="text-align:right; padding:0.5rem 0.9rem; color:#ccc7c7; '

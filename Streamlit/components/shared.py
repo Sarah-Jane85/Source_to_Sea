@@ -9,14 +9,14 @@ BASE_DIR  = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fi
 CLEAN_DIR = os.path.join(BASE_DIR, "Data", "Clean")
 
 # ── Key numbers ───────────────────────────────────────────────
-ANNUAL_INPUT_T        = 1_001_000
-BEST_CLEANUP_T        = 28_629
-BEST_CLEANUP_PCT      = 2.9
+ANNUAL_INPUT_T        = 1_006_000
+BEST_CLEANUP_T        = 23_881
+BEST_CLEANUP_PCT      = 2.4
 GUATEMALA_T_PER_YEAR  = 10_000
-INTERCEPTORS_NEEDED   = 101
+INTERCEPTORS_NEEDED   = 100
 INTERCEPTORS_DEPLOYED = 19  # 17 in operation + 2 installed for testing
-INTERCEPTORS_GAP      = 82
-TOP_101_PCT           = 34.5
+INTERCEPTORS_GAP      = 81
+TOP_100_PCT           = 34.5
 PHILIPPINES_TOP_T     = 62_592
 
 # ── Colors ────────────────────────────────────────────────────

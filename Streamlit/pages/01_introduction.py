@@ -16,7 +16,7 @@ page_header("Source to Sea", logo_svg)
 st.markdown("""
 <div style="font-family:'DM Sans',sans-serif; font-size:1.5rem; color:#ccc7c7;
             max-width:900px; line-height:1.3; margin-bottom:2rem;">
-  Every year, <strong style="color:#e2e8f0;">1,001,000 tonnes</strong> of plastic
+  Every year, <strong style="color:#e2e8f0;">1,006,000 tonnes</strong> of plastic
   enters the world's oceans — not in one catastrophic event, but bottle by bottle,
   bag by bag, through rivers and coastlines across the globe.
   <br><br>

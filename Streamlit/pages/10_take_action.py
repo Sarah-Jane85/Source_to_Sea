@@ -227,7 +227,7 @@ st.markdown("""
               margin-bottom:0.75rem;">Every Bottle Counts</div>
   <div style="font-family:'DM Sans',sans-serif; font-size:0.9rem; color:##ccc7c7;
               max-width:600px; margin:0 auto; line-height:1.8;">
-    The <strong style="color:#e2e8f0;">1,001,000 tonnes</strong> entering the ocean each year
+    The <strong style="color:#e2e8f0;">1,006,000 tonnes</strong> entering the ocean each year
     didn't get there in one go — it got there one bottle, one bag, one piece at a time.
     The solution works the same way.<br><br>
     <strong style="color:#00d4aa;">Pick up one piece of plastic today.</strong>

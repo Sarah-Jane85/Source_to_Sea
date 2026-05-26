@@ -59,7 +59,7 @@ st.markdown("""
     OCEAN PLASTIC ANALYSIS<br> built to inform — and to call to action!
   </div>
   <div style="color:#ccc7c7; max-width:480px; line-height:1.6; font-size:1.2rem; margin-top:0.5rem;">
-    Tracking <strong style="color:#e2e8f0;">1,001,000 t/yr</strong> of ocean-bound
+    Tracking <strong style="color:#e2e8f0;">1,006,000 t/yr</strong> of ocean-bound
     plastic from river source to marine impact.
   </div>
   <div style="font-family:'Space Mono',monospace; font-size:0.85rem;

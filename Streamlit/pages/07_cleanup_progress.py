@@ -17,8 +17,6 @@ with open("assets/logo_icon.svg", "r") as f:
 
 page_header("Cleanup Progress", logo_svg)
 
-st.set_page_config(page_title="Cleanup Progress", page_icon="🧹", layout="wide")
-
 # ── Load data ─────────────────────────────────────────────────
 df = load_cleanup()
 
@@ -45,7 +43,7 @@ with k1:
 with k2:
     st.metric("Year-on-Year Growth", f"+{yoy:.1f}%", delta="vs previous year")
 with k3:
-    st.metric("% of Annual Input", f"{BEST_CLEANUP_PCT}%", delta="2025")
+    st.metric("% of Annual Input", f"{BEST_CLEANUP_PCT}%", delta="2024")
 with k4:
     st.metric("Annual Plastic Input", f"{ANNUAL_INPUT_T:,} t", delta_color="off")
 

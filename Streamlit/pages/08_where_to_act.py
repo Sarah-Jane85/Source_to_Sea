@@ -7,7 +7,7 @@ import pandas as pd
 from components.shared import (
     ANNUAL_INPUT_T, INTERCEPTORS_DEPLOYED, INTERCEPTORS_NEEDED,
     INTERCEPTORS_GAP, GUATEMALA_T_PER_YEAR, PHILIPPINES_TOP_T,
-    TOP_101_PCT, COLORS, load_rivers, load_interceptors,
+    TOP_100_PCT, COLORS, load_rivers, load_interceptors,
     apply_global_css, page_header
 )
 
@@ -35,7 +35,7 @@ top_rivers = rivers.nlargest(500, "emission").copy()
 # ── KPIs ──────────────────────────────────────────────────────
 k1, k2, k3, k4, k5 = st.columns(5)
 with k1:
-    st.metric("Top 101 Rivers", f"{TOP_101_PCT}%",
+    st.metric("Top 101 Rivers", f"{TOP_100_PCT}%",
               delta="of global input", delta_color="off")
 with k2:
     st.metric("Guatemala Benchmark", f"{GUATEMALA_T_PER_YEAR:,} t/yr",
