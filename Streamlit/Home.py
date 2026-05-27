@@ -1,5 +1,5 @@
 import streamlit as st
-
+import os
 st.set_page_config(
     page_title="Source to Sea",
     page_icon="🌊",
@@ -45,7 +45,8 @@ h1, h2, h3 {
 # ── Landing page ──────────────────────────────────────────────
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
-    st.image("assets/logo.svg", width=1500, use_container_width=False)
+    img_path = os.path.join(os.path.dirname(__file__), "assets", "logo.svg")
+    st.image(img_path, width=1500, use_container_width=False)
 
 st.markdown("""
 <div style="display:flex; flex-direction:column; align-items:center;
