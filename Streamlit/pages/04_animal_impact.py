@@ -7,7 +7,7 @@ from components.shared import apply_global_css, page_header
 st.set_page_config(page_title="Animal Impact", page_icon="🐢", layout="wide")
 apply_global_css()
 
-with open("assets/logo_icon.svg", "r") as f:
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets", "logo_icon.svg"), "r") as f:
     logo_svg = f.read()
 
 page_header("The Cost to Ocean Life", logo_svg)
