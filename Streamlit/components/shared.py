@@ -96,3 +96,20 @@ def page_header(title, logo_svg):
 def load_fish_to_human():
     return pd.read_parquet(os.path.join(CLEAN_DIR, "fish_to_human.parquet")) 
 
+@st.cache_data
+def load_river_names():
+    """Loads the GeoNames river name lookup and joins it to rivers_with_countries."""
+    from shapely import wkb
+ 
+    rivers = pd.read_parquet(os.path.join(CLEAN_DIR, "rivers_with_countries.parquet"))
+    rivers["lon"] = rivers["geometry"].apply(lambda g: wkb.loads(g).x)
+    rivers["lat"] = rivers["geometry"].apply(lambda g: wkb.loads(g).y)
+    rivers = rivers.drop(columns=["geometry"])
+    rivers["point_id"] = rivers.index  # stable join key
+ 
+    names = pd.read_parquet(os.path.join(CLEAN_DIR, "river_names_all.parquet"))
+    names = names[["point_id", "river_name"]]
+ 
+    merged = rivers.merge(names, on="point_id", how="left")
+    merged["river_name"] = merged["river_name"].fillna("").str.strip()
+    return merged

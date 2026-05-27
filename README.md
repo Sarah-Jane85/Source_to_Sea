@@ -376,7 +376,7 @@ The **Alliance to End Plastic Waste** works directly with governments and commun
 |----------|------|
 | 📁 Data (Google Drive) | [Download](https://drive.google.com/drive/folders/1cEMrfJ50brnJaw1KGaI5zK5R36--q1dG?usp=sharing) |
 | 📊 Streamlit App | `[add deployed link]` |
-| 📈 Tableau Public | https://public.tableau.com/app/profile/sarah.jane.nede/viz/SourcetoSea-adata-drivenanalysisofoceanplastic/Q1EmissionMap |
+| 📈 Tableau Public | https://public.tableau.com/shared/5YFW6KBN6?:display_count=n&:origin=viz_share_link |
 | 🗂️ Trello Board | https://trello.com/b/qAb9odfa/source-to-sea |
 | 🖼️ ERM | https://miro.com/app/board/uXjVG40KWwg=/?share_link_id=490917459116 |
 | 🗄️ ERD | https://www.drawdb.app/editor/diagrams/fda31b46-42de-468b-8638-6995853a6a3f |
