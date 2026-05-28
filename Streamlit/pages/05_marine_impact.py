@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 import pandas as pd
 import numpy as np
 from components.shared import (
-    load_species, load_fish_to_human, apply_global_css, page_header
+    load_species, load_fish_to_human, apply_global_css, page_header, ASSETS_DIR
 )
 
 st.set_page_config(page_title="Marine Impact", page_icon="🐢", layout="wide")
@@ -244,7 +244,7 @@ st.plotly_chart(fig_map, use_container_width=True)
 # ── From Ocean to Plate ───────────────────────────────────────
 
 st.markdown("---")
-with open("assets/sushi_icon.svg", "r") as f:
+with open(os.path.join(ASSETS_DIR, "sushi_icon.svg"), "r") as f:
     sushi_svg = f.read()
 
 sushi_svg_small = sushi_svg.replace('width="800px" height="800px"', 'width="50px" height="50px"')

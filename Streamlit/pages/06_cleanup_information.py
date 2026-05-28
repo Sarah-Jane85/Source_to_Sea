@@ -2,7 +2,7 @@ import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import streamlit as st
-from components.shared import apply_global_css, page_header
+from components.shared import apply_global_css, page_header, ASSETS_DIR
 
 st.set_page_config(page_title="Cleanup Information", page_icon="🌊", layout="wide")
 apply_global_css()
@@ -26,7 +26,7 @@ col1, col2 = st.columns([2, 3], gap="large")
 
 with col1:
     st.markdown('<div style="padding-top:3rem;">', unsafe_allow_html=True)
-    st.image("assets/park_cleanup.jpg", use_container_width=True)
+    st.image(os.path.join(ASSETS_DIR, "park_cleanup.jpg"), use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
 with col2:
@@ -109,7 +109,7 @@ with col1:
 
 with col2:
     st.markdown('<div style="padding-top:3rem;">', unsafe_allow_html=True)
-    st.image("assets/beach_cleanup.jpg", use_container_width=True)
+    st.image(os.path.join(ASSETS_DIR, "beach_cleanup.jpg"), use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
 st.markdown("<br>", unsafe_allow_html=True)
@@ -145,7 +145,7 @@ st.markdown("""
 img1, img2, img3 = st.columns(3, gap="medium")
 
 with img1:
-    st.image("assets/barricade.jpg", use_container_width=True)
+    st.image(os.path.join(ASSETS_DIR, "barricade.jpg"), use_container_width=True)
     st.markdown("""
     <div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#64748b;
                 text-align:center; margin-top:0.5rem; line-height:1.5;">
@@ -155,7 +155,7 @@ with img1:
     """, unsafe_allow_html=True)
 
 with img2:
-    st.image("assets/interceptor.jpg", use_container_width=True)
+    st.image(os.path.join(ASSETS_DIR, "interceptor.jpg"), use_container_width=True)
     st.markdown("""
     <div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#64748b;
                 text-align:center; margin-top:0.5rem; line-height:1.5;">
@@ -165,7 +165,7 @@ with img2:
     """, unsafe_allow_html=True)
 
 with img3:
-    st.image("assets/inside_interceptor.jpg", use_container_width=True)
+    st.image(os.path.join(ASSETS_DIR, "inside_interceptor.jpg"), use_container_width=True)
     st.markdown("""
     <div style="font-family:'Space Mono',monospace; font-size:0.7rem; color:#64748b;
                 text-align:center; margin-top:0.5rem; line-height:1.5;">
