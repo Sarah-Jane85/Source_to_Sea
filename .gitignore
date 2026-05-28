@@ -1,3 +1,4 @@
-Data/
+Data/Raw
+Data/Tableau
 .env
 Notebooks/exploratory/

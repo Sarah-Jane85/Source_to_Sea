@@ -30,21 +30,21 @@ st.markdown("""
 # ── Hero images ────────────────────────────────────────────────
 col1, col2, col3 = st.columns(3, gap="medium")
 with col1:
-    st.image(os.path.join(_ASSETS, "garbage_patch.jpg"), use_container_width=True)
+    st.image(os.path.join(_ASSETS_DIR, "garbage_patch.jpg"), use_container_width=True)
     st.markdown("""
     <div style="font-family:'Space Mono',monospace; font-size:0.85rem; color:#ccc7c7;
                 text-align:center; margin-top:0.4rem;">
     A plastic garbage patch in the ocean
     </div>""", unsafe_allow_html=True)
 with col2:
-    st.image(os.path.join(_ASSETS, "turtle1.jpg"), use_container_width=True)
+    st.image(os.path.join(_ASSETS_DIR, "turtle1.jpg"), use_container_width=True)
     st.markdown("""
     <div style="font-family:'Space Mono',monospace; font-size:0.85rem; color:#ccc7c7;
                 text-align:center; margin-top:0.4rem;">
     Sea turtle ingesting a plastic bag
     </div>""", unsafe_allow_html=True)
 with col3:
-    st.image(os.path.join(_ASSETS, "inceptors.jpg"), use_container_width=True)
+    st.image(os.path.join(_ASSETS_DIR, "inceptors.jpg"), use_container_width=True)
     st.markdown("""
     <div style="font-family:'Space Mono',monospace; font-size:0.85rem; color:#ccc7c7;
                 text-align:center; margin-top:0.4rem;">
