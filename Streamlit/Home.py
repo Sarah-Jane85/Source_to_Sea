@@ -69,3 +69,18 @@ st.markdown("""
   </div>
 </div>
 """, unsafe_allow_html=True)
+
+# ── Navigation ──────────────────────────────────────────────
+pg = st.navigation([
+    st.Page("pages/01_Introduction.py", title="Introduction"),
+    st.Page("pages/02_State_of_the_World.py", title="State of the World"),
+    st.Page("pages/03_Check_your_country.py", title="Check Your Country"),
+    st.Page("pages/04_Animal_impact.py", title="Animal Impact"),
+    st.Page("pages/05_Marine_impact.py", title="Marine Impact"),
+    st.Page("pages/06_Cleanup_information.py", title="Cleanup Information"),
+    st.Page("pages/07_Cleanup_progress.py", title="Cleanup Progress"),
+    st.Page("pages/08_Where_to_act.py", title="Where to Act"),
+    st.Page("pages/09_What_if.py", title="What If"),
+    st.Page("pages/10_TAKE_ACTION.py", title="Take Action"),
+])
+pg.run()
