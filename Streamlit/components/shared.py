@@ -7,7 +7,7 @@ import streamlit as st
 # so we go up twice to reach the project root, then into Data/Clean
 BASE_DIR  = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 CLEAN_DIR = os.path.join(BASE_DIR, "Data", "Clean")
-ASSETS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets")
+ASSETS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets")
 # ── Key numbers ───────────────────────────────────────────────
 ANNUAL_INPUT_T        = 1_006_000
 BEST_CLEANUP_T        = 23_881
