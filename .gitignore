@@ -2,3 +2,4 @@ Data/Raw
 Data/Tableau
 .env
 Notebooks/exploratory/
+Streamlit\components\__pycache__

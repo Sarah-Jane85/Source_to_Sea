@@ -96,7 +96,7 @@ with col1:
         coastal cities can make a measurable difference.
       </div>
       <div style="margin-top:1.5rem;">
-        <a href="https://www.coastalcleanupday.org/"
+        <a href="https://oceanconservancy.org/work/plastics/cleanups-icc/"
            target="_blank"
            style="background:#a66800; color:#e2e8f0; padding:0.5rem 1.2rem;
                   border-radius:4px; font-family:'Space Mono',monospace;
