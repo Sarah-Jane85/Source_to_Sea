@@ -2,7 +2,7 @@ import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import streamlit as st
-from components.shared import apply_global_css, page_header
+from components.shared import apply_global_css, page_header, ASSETS_DIR
 
 st.set_page_config(page_title="Animal Impact", page_icon="🐢", layout="wide")
 apply_global_css()
@@ -38,7 +38,7 @@ col1, col2 = st.columns([2, 3], gap="large")
 
 with col1:
     st.markdown('<div style="padding-top:4rem;">', unsafe_allow_html=True)
-    st.image("assets/turtle_plastic.jpg", use_container_width=True)
+    st.image(os.path.join(ASSETS_DIR, "turtle_plastic.jpg"), use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
 with col2:
@@ -104,7 +104,7 @@ with col1:
 
 with col2:
     st.markdown('<div style="padding-top:5rem;">', unsafe_allow_html=True)
-    st.image("assets/whale_entangled.jpg", use_container_width=True)
+    st.image(os.path.join(ASSETS_DIR, "whale_entangled.jpg"), use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
 st.markdown("<br>", unsafe_allow_html=True)
@@ -116,7 +116,7 @@ col1, col2 = st.columns([2, 3], gap="large")
 
 with col1:
     st.markdown('<div style="padding-top:5rem;">', unsafe_allow_html=True)
-    st.image("assets/seal_entangled.jpg", use_container_width=True)
+    st.image(os.path.join(ASSETS_DIR, "seal_entangled.jpg"), use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
 with col2:
@@ -184,7 +184,7 @@ with col1:
 
 with col2:
     st.markdown('<div style="padding-top:5rem;">', unsafe_allow_html=True)
-    st.image("assets/sea_horse1.jpg", use_container_width=True)
+    st.image(os.path.join(ASSETS_DIR, "sea_horse1.jpg"), use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
 st.markdown("<br>", unsafe_allow_html=True)
@@ -196,7 +196,7 @@ col1, col2 = st.columns([2, 3], gap="large")
 
 with col1:
     st.markdown('<div style="padding-top:3rem;">', unsafe_allow_html=True)
-    st.image("assets/plastic_ocean.jpg", use_container_width=True)
+    st.image(os.path.join(ASSETS_DIR, "plastic_ocean.jpg"), use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
 with col2:
@@ -266,7 +266,7 @@ with col1:
 
 with col2:
     st.markdown('<div style="padding-top:5rem;">', unsafe_allow_html=True)
-    st.image("assets/dead_fish.jpg", use_container_width=True)
+    st.image(os.path.join(ASSETS_DIR, "dead_fish.jpg"), use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 # ── Closing stat bar ───────────────────────────────────────────
 st.markdown("<br>", unsafe_allow_html=True)
