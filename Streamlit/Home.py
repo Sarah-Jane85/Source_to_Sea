@@ -70,19 +70,3 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# ── Navigation ──────────────────────────────────────────────
-PAGES_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "pages")
-
-pg = st.navigation([
-    st.Page(os.path.join(PAGES_DIR, "01_Introduction.py"), title="Introduction"),
-    st.Page(os.path.join(PAGES_DIR, "02_State_of_the_World.py"), title="State of the World"),
-    st.Page(os.path.join(PAGES_DIR, "03_Check_your_country.py"), title="Check your country"),
-    st.Page(os.path.join(PAGES_DIR, "04_Animal_impact.py"), title="Animal impact"),
-    st.Page(os.path.join(PAGES_DIR, "05_Marine_impact.py"), title="Marine impact"),
-    st.Page(os.path.join(PAGES_DIR, "06_Cleanup_information.py"), title="Cleanup information"),
-    st.Page(os.path.join(PAGES_DIR, "07_Cleanup_progress.py"), title="Cleanup progress"),
-    st.Page(os.path.join(PAGES_DIR, "08_Where_to_act.py"), title="Where to act"),
-    st.Page(os.path.join(PAGES_DIR, "09_What_if.py"), title="What if"),
-    st.Page(os.path.join(PAGES_DIR, "10_TAKE_ACTION.py"), title="TAKE ACTION"),
-])
-pg.run()
