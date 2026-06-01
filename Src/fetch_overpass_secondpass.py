@@ -13,28 +13,27 @@ Usage:
 
 import os
 import time
-import signal
 import requests
 import pandas as pd
 from tqdm import tqdm
 
 # ── Config ───────────────────────────────────────────────────────────────────
-GEONAMES_CSV = r"Data\Clean\river_names_all.csv"
-OUTPUT_CSV   = r"Data\Clean\overpass_secondpass.csv"
-FINAL_PKL    = r"Data\Clean\river_names_all.parquet"
-LOCK_FILE    = r"Data\Clean\overpass.lock"
+GEONAMES_CSV    = r"Data\Clean\river_names_all.csv"
+OUTPUT_CSV      = r"Data\Clean\overpass_secondpass.csv"
+FINAL_PKL       = r"Data\Clean\river_names_all.parquet"
+LOCK_FILE       = r"Data\Clean\overpass.lock"
 
-SLEEP_S        = 1.5
-SAVE_EVERY     = 50
-BATCH_SIZE     = 400
-REQUEST_TIMEOUT = 12   # hard timeout per HTTP request in seconds
-MAX_RETRIES    = 2     # max retries per radius before giving up
+SLEEP_S         = 1.0    # 1 second between calls
+SAVE_EVERY      = 100
+BATCH_SIZE      = 400
+REQUEST_TIMEOUT = 12
+MAX_RETRIES     = 1      # give up fast, don't retry
 
-OVERPASS_URL   = "https://overpass-api.de/api/interpreter"
-HEADERS        = {"User-Agent": "SourceToSea-PlasticTracker/1.0"}
-RADII          = [1000, 3000, 8000]
-PRIORITY_TYPES = ["river", "stream", "canal", "drain", "tidal_channel",
-                  "waterway", "creek", "ditch"]
+OVERPASS_URL    = "https://overpass-api.de/api/interpreter"
+HEADERS         = {"User-Agent": "SourceToSea-PlasticTracker/1.0"}
+RADII           = [5000]  # single radius — covers most cases, much faster
+PRIORITY_TYPES  = ["river", "stream", "canal", "drain", "tidal_channel",
+                   "waterway", "creek", "ditch"]
 # ─────────────────────────────────────────────────────────────────────────────
 
 # ── Lock file ─────────────────────────────────────────────────────────────────
@@ -45,8 +44,7 @@ open(LOCK_FILE, "w").close()
 
 
 def get_name_overpass(lat, lon):
-    """Query Overpass for named waterways near (lat, lon).
-    Hard timeout per request — never hangs."""
+    """Query Overpass for named waterways near (lat, lon). Hard timeout."""
     for radius in RADII:
         query = (
             "[out:json][timeout:10];"
@@ -54,49 +52,40 @@ def get_name_overpass(lat, lon):
             str(lat) + "," + str(lon) + ");"
             "out tags 3;"
         )
-        for attempt in range(MAX_RETRIES):
-            try:
-                r = requests.post(
-                    OVERPASS_URL,
-                    data={"data": query},
-                    headers=HEADERS,
-                    timeout=REQUEST_TIMEOUT,  # hard cutoff
-                )
-                if r.status_code != 200:
-                    time.sleep(2)
-                    continue
+        try:
+            r = requests.post(
+                OVERPASS_URL,
+                data={"data": query},
+                headers=HEADERS,
+                timeout=REQUEST_TIMEOUT,
+            )
+            if r.status_code != 200:
+                return ""
 
-                elements = r.json().get("elements", [])
-                if not elements:
-                    break  # no results at this radius, try next
+            elements = r.json().get("elements", [])
+            if not elements:
+                return ""
 
-                # Priority match
-                for wtype in PRIORITY_TYPES:
-                    for el in elements:
-                        tags = el.get("tags", {})
-                        if tags.get("waterway") == wtype:
-                            name = tags.get("name:en") or tags.get("name", "")
-                            if name:
-                                return name.strip()
-
-                # Fallback to first named result
+            # Priority match by waterway type
+            for wtype in PRIORITY_TYPES:
                 for el in elements:
-                    name = (el.get("tags", {}).get("name:en") or
-                            el.get("tags", {}).get("name", ""))
-                    if name:
-                        return name.strip()
+                    tags = el.get("tags", {})
+                    if tags.get("waterway") == wtype:
+                        name = tags.get("name:en") or tags.get("name", "")
+                        if name:
+                            return name.strip()
 
-                break  # had results but no name match, try wider radius
+            # Fallback to first named result
+            for el in elements:
+                name = (el.get("tags", {}).get("name:en") or
+                        el.get("tags", {}).get("name", ""))
+                if name:
+                    return name.strip()
 
-            except requests.exceptions.Timeout:
-                # Hard timeout hit — don't retry, move on
-                break
-            except Exception:
-                if attempt < MAX_RETRIES - 1:
-                    time.sleep(2)
-                continue
-
-        time.sleep(0.3)
+        except requests.exceptions.Timeout:
+            return ""
+        except Exception:
+            return ""
 
     return ""
 
